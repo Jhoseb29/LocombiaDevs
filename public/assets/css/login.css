@@ -10,7 +10,8 @@ body{
     flex-direction: column; 
     align-items: center;
     right: 0;
-    background-color: rgba(196, 152, 170, 0.214);
+    background-color: rgba(148, 137, 141, 0.584);
+    border-radius: 5px 0px 0px 5px;
     width: 50%;
     height: 100vh;
 }
