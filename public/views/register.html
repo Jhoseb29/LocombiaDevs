@@ -5,17 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../assets/css/register.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/reset.css">
     <title>form_register</title>
 
 </head>
 <body>
-    <section>
-        <input type="text">
-    </section>
-
-    <div>
+    <div class="register_container">
         <form id="registerForm" class="form_register">
-            
+            <input type="text" name="name" id="name" placeholder="Full name">
+            <input type="email" name="email" id="email" placeholder="Email address">
+            <input type="text" name="password" id="password" placeholder="Password">
+            <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm password">
+            <p>I agree with <a href="#">Terms and conditions</a></p>
+            <input type="submit" value="register">
         </form>
     </div>
 </body>
