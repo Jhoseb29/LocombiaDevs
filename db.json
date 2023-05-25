@@ -11,6 +11,12 @@
       "username": "maria",
       "email": "dycjh@example.com",
       "password": "contraseña"
+    },
+    {
+      "username": "Dadsds",
+      "email": "dan@gmail.com",
+      "password": "Sexooooooooo1",
+      "id": 3
     }
   ],
   "products": [
