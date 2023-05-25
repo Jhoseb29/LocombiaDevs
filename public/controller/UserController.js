@@ -35,8 +35,6 @@ export function postUser(username, email, password) {
 //Function Get User
 export function loginValidation(username, password){
      
-
-
     return fetch('http://localhost:3000/users', {
         method: 'GET',
         headers: {
@@ -48,12 +46,11 @@ export function loginValidation(username, password){
     .then((data) => {
 
         const user = data.find(user => user.username === username && user.password === password); 
- 
         if (user) { 
             return user;
         }
         else{
-            alert('Invalid credentials');
+            throw new Error("Invalid Credentials");
         }
     })
     
