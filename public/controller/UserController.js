@@ -55,45 +55,8 @@ export function loginValidation(username, password){
     })
     
 }
-    
-/*
-
-function getPassword(password){
-     
-    return fetch('http://localhost:3000/users?password='+password, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }})
-    .then((response) =>{
-        return response.json()
-    })
-    .then((data) =>{
-        console.log(data)
-        const user = data.find(user => user.password === password)
-        return user.password  
-    })    
-
-} 
-*/
 
 
-//User validation
-
-
-        /*
-
-
-
-    if(usernameDb.lenght == 0 && passwordDb.lenght == 0){ 
-        alert("user doesn't exist")
-        
-    }else if(usernameDb.lenght == 1 && passwordDb.lenght == 0 ){
-        alert("password it's not related with this username. Please try again")
-    }else if(usernameDb.lenght == 0 && passwordDb > 1){
-        alert("Username it's not related with this password. Please try again")
-    }
-
-    })*/
+  
 
 
