@@ -1,170 +1,186 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "username": "josemon",
-        "email": "dycjh@example.com",
-        "password": "contraseña"
-      },
-      {
-        "id": 2,
-        "username": "maria",
-        "email": "dycjh@example.com",
-        "password": "contraseña"
-      }
-    ],
-    "products": [
-      {
-        "id": 1,
-        "name": "Producto1",
-        "brand": "Marca1",
-        "description": "Descripción del producto 1",
-        "stock": 10,
-        "soldUnits": 3,
-        "price": 19.99,
-        "genre": "RPG",
-        "categoryId": 1,
-        "developerId": 1,
-        "imgurl": "https://example.com/producto1.jpg",
-        "likes": [1]
-      },
-      {
-        "id": 2,
-        "name": "Producto2",
-        "brand": "Marca2",
-        "description": "Descripción del producto 2",
-        "stock": 10,
-        "soldUnits": 2,
-        "price": 19.99,
-        "genre": "survival",
-        "categoryId": 2,
-        "developerId": 2,
-        "imgurl": "https://example.com/producto2.jpg",
-        "likes": [1, 2]
-      }
-    ],
-    "categories": [
-      {
-        "id": 1,
-        "name": "Categoria1"
-      },
-      {
-        "id": 2,
-        "name": "Categoria2"
-      }
-    ],
-    "developers": [
-      {
-        "id": 1,
-        "name": "Fabricante1"
-      },
-      {
-        "id": 2,
-        "name": "Fabricante2"
-      }
-    ],
-    "likes": [
-      {
-        "id": 1,
-        "productId": 1,
-        "userId": 1
-      },
-      {
-        "id": 2,
-        "productId": 2,
-        "userId": 1
-      },
-      {
-        "id": 3,
-        "productId": 2,
-        "userId": 2
-      }
-    ],
-    "carts": [
-      {
-        "id": 1,
-        "userId": 1,
-        "products": [
-          {
-            "productId": 1,
-            "quantity": 1,
-            "price": 19.99
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "userId": 2,
-        "products": [
-          {
-            "productId": 1,
-            "quantity": 2,
-            "price": 39.98
-          }
-        ]
-      }
-    ],
-    "historic": [
-      {
-        "id": 1,
-        "userId": 1,
-        "date": "2023-05-18",
-        "products": [
-          {
-            "productId": 1,
-            "name": "Producto1",
-            "quantity": 1,
-            "price": 19.99
-          },
-          {
-            "productId": 2,
-            "name": "Producto2",
-            "quantity": 1,
-            "price": 10
-          }
-        ],
-        "order": "123456789",
-        "card": "123456789",
-        "status": "pending"
-      },
-      {
-        "id": 2,
-        "userId": 2,
-        "date": "2023-05-18",
-        "products": [
-          {
-            "productId": 1,
-            "name": "Producto2",
-            "quantity": 1,
-            "price": 10
-          },
-          {
-            "productId": 2,
-            "name": "Producto1",
-            "quantity": 1,
-            "price": 19.99
-          }
-        ],
-        "order": "123456789",
-        "card": "123456789",
-        "status": "pending"
-      },
-      {
-        "id": 3,
-        "userId": 1,
-        "date": "2023-06-05",
-        "products": [
-          {
-            "productId": 1,
-            "name": "Producto1",
-            "quantity": 1,
-            "price": 19.99
-          }
-        ],
-        "order": "123456789",
-        "card": "123456789",
-        "status": "pending"
-      }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "username": "josemon",
+      "email": "dycjh@example.com",
+      "password": "contraseña"
+    },
+    {
+      "id": 2,
+      "username": "maria",
+      "email": "dycjh@example.com",
+      "password": "contraseña"
+    },
+    {
+      "id": 3,
+      "username": "Jhoseb ",
+      "email": "jhoseb29@gmail.com",
+      "password": "sdfsdfvdsf"
+    },
+    {
+      "id": 4,
+      "username": "Youtube",
+      "email": "jmoya396@gmail.com",
+      "password": "fbvdfg"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Producto1",
+      "brand": "Marca1",
+      "description": "Descripción del producto 1",
+      "stock": 10,
+      "soldUnits": 3,
+      "price": 19.99,
+      "genre": "RPG",
+      "categoryId": 1,
+      "developerId": 1,
+      "imgurl": "https://example.com/producto1.jpg",
+      "likes": [
+        1
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Producto2",
+      "brand": "Marca2",
+      "description": "Descripción del producto 2",
+      "stock": 10,
+      "soldUnits": 2,
+      "price": 19.99,
+      "genre": "survival",
+      "categoryId": 2,
+      "developerId": 2,
+      "imgurl": "https://example.com/producto2.jpg",
+      "likes": [
+        1,
+        2
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Categoria1"
+    },
+    {
+      "id": 2,
+      "name": "Categoria2"
+    }
+  ],
+  "developers": [
+    {
+      "id": 1,
+      "name": "Fabricante1"
+    },
+    {
+      "id": 2,
+      "name": "Fabricante2"
+    }
+  ],
+  "likes": [
+    {
+      "id": 1,
+      "productId": 1,
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "productId": 2,
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "productId": 2,
+      "userId": 2
+    }
+  ],
+  "carts": [
+    {
+      "id": 1,
+      "userId": 1,
+      "products": [
+        {
+          "productId": 1,
+          "quantity": 1,
+          "price": 19.99
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "products": [
+        {
+          "productId": 1,
+          "quantity": 2,
+          "price": 39.98
+        }
+      ]
+    }
+  ],
+  "historic": [
+    {
+      "id": 1,
+      "userId": 1,
+      "date": "2023-05-18",
+      "products": [
+        {
+          "productId": 1,
+          "name": "Producto1",
+          "quantity": 1,
+          "price": 19.99
+        },
+        {
+          "productId": 2,
+          "name": "Producto2",
+          "quantity": 1,
+          "price": 10
+        }
+      ],
+      "order": "123456789",
+      "card": "123456789",
+      "status": "pending"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "date": "2023-05-18",
+      "products": [
+        {
+          "productId": 1,
+          "name": "Producto2",
+          "quantity": 1,
+          "price": 10
+        },
+        {
+          "productId": 2,
+          "name": "Producto1",
+          "quantity": 1,
+          "price": 19.99
+        }
+      ],
+      "order": "123456789",
+      "card": "123456789",
+      "status": "pending"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "date": "2023-06-05",
+      "products": [
+        {
+          "productId": 1,
+          "name": "Producto1",
+          "quantity": 1,
+          "price": 19.99
+        }
+      ],
+      "order": "123456789",
+      "card": "123456789",
+      "status": "pending"
+    }
+  ]
 }
-  
