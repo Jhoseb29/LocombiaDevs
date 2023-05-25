@@ -12,7 +12,7 @@ form.addEventListener('submit', function (event){
     console.log(password)
     loginValidation(username, password)
     .then((users)=>{
-        console.log(`Login Success ${users.username}`)
+        alert(`Login Success: Welcome ${users.username}!`)
         window.location.href= '../index.html'
     })
 })

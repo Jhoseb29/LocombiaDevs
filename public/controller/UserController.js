@@ -35,22 +35,25 @@ export function postUser(username, email, password) {
 //Function Get User
 export function loginValidation(username, password){
      
+
+
     return fetch('http://localhost:3000/users', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         }})
     .then((response) =>{
-        //console.log(response.json())
         return response.json()
     })
     .then((data) => {
+
         const user = data.find(user => user.username === username && user.password === password); 
+ 
         if (user) { 
             return user;
         }
         else{
-            throw new Error('Credenciales inválidas');
+            alert('Invalid credentials');
         }
     })
     
