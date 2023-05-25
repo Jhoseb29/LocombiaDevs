@@ -11,18 +11,6 @@
       "username": "maria",
       "email": "dycjh@example.com",
       "password": "contraseña"
-    },
-    {
-      "id": 3,
-      "username": "Jhoseb ",
-      "email": "jhoseb29@gmail.com",
-      "password": "sdfsdfvdsf"
-    },
-    {
-      "id": 4,
-      "username": "Youtube",
-      "email": "jmoya396@gmail.com",
-      "password": "fbvdfg"
     }
   ],
   "products": [
