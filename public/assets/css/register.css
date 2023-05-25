@@ -1,0 +1,87 @@
+:root{
+    --font-size:18px;
+}
+
+.register_container{
+    position: absolute;
+    display: flex;
+    right: 0;
+    height: 100vh;
+    width: 50%;
+    background: rgba(118, 80, 133, 0.57);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    justify-content: center;
+}
+
+.titleRegister{
+    position: absolute;
+    text-align: center;
+    margin-top: 10%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.form_register{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40%;
+    margin-top: 30%;
+}
+
+.inputInfoUser{
+    height: 30px;
+    width: 500px;
+    background-color: transparent;
+    border-width: 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--font-size);
+    line-height: 29px;
+    color: #FFFCFC;
+}
+
+.inputInfoUser::placeholder{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--font-size);
+    line-height: 29px;
+    color: #FFFCFC;
+}
+
+.inputInfoUser:focus{
+    outline: none;
+}
+
+.checkContainer{
+    display: flex;
+    align-items: center;
+}
+
+.checkboxTerms{
+    width: 24px;
+    height: 24px;
+}
+
+.agreement{
+    margin-left: 5px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--font-size);
+    line-height: 29px;
+    color: #FFFCFC;
+}
+
+.agreement a{
+    text-decoration: none;
+}
