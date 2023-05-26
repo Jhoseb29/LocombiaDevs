@@ -41,16 +41,16 @@ export function loginValidation(username, password){
             'Content-Type': 'application/json'
         }})
     .then((response) =>{
-        //console.log(response.json())
         return response.json()
     })
     .then((data) => {
+
         const user = data.find(user => user.username === username && user.password === password); 
         if (user) { 
             return user;
         }
         else{
-            throw new Error('Credenciales inválidas');
+            throw new Error("Invalid Credentials");
         }
     })
     
