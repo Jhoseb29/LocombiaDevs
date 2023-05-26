@@ -13,19 +13,79 @@
 
 </head>
 <body>
+
+    <div class="container">
+        <div class="bubbles">
+            <span style="--i:11;"></span>
+            <span style="--i:12;"></span>
+            <span style="--i:24;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:23;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:16;"></span>
+            <span style="--i:19;"></span>
+            <span style="--i:20;"></span>
+            <span style="--i:22;"></span>
+            <span style="--i:25;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:21;"></span>
+            <span style="--i:15;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:26;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:28;"></span>
+            <span style="--i:11;"></span>
+            <span style="--i:12;"></span>
+            <span style="--i:24;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:23;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:16;"></span>
+            <span style="--i:19;"></span>
+            <span style="--i:20;"></span>
+            <span style="--i:22;"></span>
+            <span style="--i:25;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:21;"></span>
+            <span style="--i:15;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:26;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:28;"></span>
+            <span style="--i:11;"></span>
+            <span style="--i:12;"></span>
+            <span style="--i:24;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:23;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:16;"></span>
+            <span style="--i:19;"></span>
+            <span style="--i:20;"></span>
+        </div>
+    </div>
+
     <div class="register_container">
         <h2 class="titleRegister">Register</h2>
         <form id="registerForm" class="form_register">
             <input class="name inputInfoUser" type="text" name="name" id="name" placeholder="Full name" required>
             <input class="email inputInfoUser" type="email" name="email" id="email" placeholder="Email address" required>
-            <input class="password inputInfoUser" type="password" name="password" id="password" placeholder="Password" required pattern="^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,10}$" title = "La contraseña debe tener al menos 8 caracteres, incluir al menos una letra mayúscula y al menos un número">
-            <input class="confirmPassword inputInfoUser" type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm password" required>
+            <input class="password inputInfoUser" type="password" name="password" id="password" placeholder="Password"
+            required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$"
+            title = "The password must have at least 8 characters, include at least one capital letter, and at least one number.">
+            <input class="confirmPassword inputInfoUser" type="password" name="confirmPassword"
+            id="confirmPassword" placeholder="Confirm password" required>
             <div class="checkContainer">
-                <input class="checkboxTerms" type="checkbox" name="checkboxTerms" id="checkboxTerms">
-                <label class="checkboxTermsLabel" for="checkboxTerms"><p class="agreement">I agree with <a href="#">Terms and conditions</a></p></label>
+                <input class="checkboxTerms" type="checkbox" name="checkboxTerms" id="checkboxTerms" required>
+                <label class="checkboxTermsLabel" for="checkboxTerms"><p class="agreement">
+                    I accept<a class="agreement" href="#">terms and conditions</a></p></label>
             </div>
-            <input type="submit" value="Create account">
-            <p class="loginText">Do you already have an account? <a class="loginLink" href="#">Login</a></p>
+            <input class="createAccountButton" type="submit" value="Create Account">
+            <p class="loginText">Already have an account? <a class="loginLink" href="#">Login</a></p>
         </form>
     </div>
     <script src="../scripts/register.js" type="module"></script>
