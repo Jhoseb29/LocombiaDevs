@@ -74,11 +74,15 @@
         <form id="registerForm" class="form_register">
             <input class="name inputInfoUser" type="text" name="name" id="name" placeholder="Full name" required>
             <input class="email inputInfoUser" type="email" name="email" id="email" placeholder="Email address" required>
-            <input class="password inputInfoUser" type="password" name="password" id="password" placeholder="Password" required pattern="^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,10}$" title = "La contraseña debe tener al menos 8 caracteres, incluir al menos una letra mayúscula y al menos un número">
-            <input class="confirmPassword inputInfoUser" type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm password" required>
+            <input class="password inputInfoUser" type="password" name="password" id="password" placeholder="Password"
+            required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$"
+            title = "The password must have at least 8 characters, include at least one capital letter, and at least one number.">
+            <input class="confirmPassword inputInfoUser" type="password" name="confirmPassword"
+            id="confirmPassword" placeholder="Confirm password" required>
             <div class="checkContainer">
                 <input class="checkboxTerms" type="checkbox" name="checkboxTerms" id="checkboxTerms" required>
-                <label class="checkboxTermsLabel" for="checkboxTerms"><p class="agreement">I accept<a class="agreement" href="#">terms and conditions</a></p></label>
+                <label class="checkboxTermsLabel" for="checkboxTerms"><p class="agreement">
+                    I accept<a class="agreement" href="#">terms and conditions</a></p></label>
             </div>
             <input class="createAccountButton" type="submit" value="Create Account">
             <p class="loginText">Already have an account? <a class="loginLink" href="#">Login</a></p>
