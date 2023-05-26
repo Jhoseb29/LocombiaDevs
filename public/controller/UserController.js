@@ -1,5 +1,4 @@
-
-// Function register post
+// Funcion de registro 
 export function postUser(username, email, password) {
     const userData = {
       username: username,
@@ -31,7 +30,32 @@ export function postUser(username, email, password) {
             });
         }
       });
-  }
+}
+
+//Function Get User
+export function loginValidation(username, password){
+     
+    return fetch('http://localhost:3000/users', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }})
+    .then((response) =>{
+        return response.json()
+    })
+    .then((data) => {
+
+        const user = data.find(user => user.username === username && user.password === password); 
+        if (user) { 
+            return user;
+        }
+        else{
+            throw new Error("Invalid Credentials");
+        }
+    })
+    
+}
+
 
   
 
