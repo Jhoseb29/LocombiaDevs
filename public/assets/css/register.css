@@ -132,9 +132,7 @@ body
     color: #FFFCFC;
 }
 
-.agreement a{
-    text-decoration: none;
-}
+
 
 .createAccountButton{
     background: #095458;
@@ -168,6 +166,7 @@ body
 .loginLink{
     color: #ED63F2;
 }
+
 
 /* No sé para qué sirve esto xd
 .btn_login:hover{
