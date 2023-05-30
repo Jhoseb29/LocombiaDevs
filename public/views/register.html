@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../assets/css/register.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>form_register</title>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="bubbles">
+            <span style="--i:11;"></span>
+            <span style="--i:12;"></span>
+            <span style="--i:24;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:23;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:16;"></span>
+            <span style="--i:19;"></span>
+            <span style="--i:20;"></span>
+            <span style="--i:22;"></span>
+            <span style="--i:25;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:21;"></span>
+            <span style="--i:15;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:26;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:28;"></span>
+            <span style="--i:11;"></span>
+            <span style="--i:12;"></span>
+            <span style="--i:24;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:23;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:16;"></span>
+            <span style="--i:19;"></span>
+            <span style="--i:20;"></span>
+            <span style="--i:22;"></span>
+            <span style="--i:25;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:21;"></span>
+            <span style="--i:15;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:26;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:28;"></span>
+            <span style="--i:11;"></span>
+            <span style="--i:12;"></span>
+            <span style="--i:24;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:23;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:16;"></span>
+            <span style="--i:19;"></span>
+            <span style="--i:20;"></span>
+        </div>
+    </div>
+
+    <div class="register_container">
+        <h2 class="titleRegister">Register</h2>
+        <form id="registerForm" class="form_register">
+            <input class="name inputInfoUser" type="text" name="name" id="name" placeholder="Full name" required>
+            <input class="email inputInfoUser" type="email" name="email" id="email" placeholder="Email address" required>
+            <input class="password inputInfoUser" type="password" name="password" id="password" placeholder="Password"
+            required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$"
+            title = "The password must have at least 8 characters, include at least one capital letter, and at least one number.">
+            <input class="confirmPassword inputInfoUser" type="password" name="confirmPassword"
+            id="confirmPassword" placeholder="Confirm password" required>
+            <div class="checkContainer">
+                <input class="checkboxTerms" type="checkbox" name="checkboxTerms" id="checkboxTerms" required>
+                <label class="checkboxTermsLabel" for="checkboxTerms"><p class="agreement">
+                    I accept<a class="agreement" href="#">terms and conditions</a></p></label>
+            </div>
+            <input class="createAccountButton" type="submit" value="Create Account">
+            <p class="loginText">Already have an account? <a class="loginLink" href="#">Login</a></p>
+        </form>
+    </div>
+    <script src="../scripts/register.js" type="module"></script>
+</body>
+</html>
