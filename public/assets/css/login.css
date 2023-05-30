@@ -1,5 +1,5 @@
 body{
-    background-image: url(../images/login_background.png);
+    background-image: url(../images/new-login-background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -94,7 +94,7 @@ body{
     font-style: normal;
     font-weight: 400;
     text-decoration: none;
-    color: #ED63F2;
+    color: #f573ac;
  
 }
 
