@@ -20,14 +20,21 @@
             <h1 class="glitch">Login</h1>
         </div>
         <form class="form_login" id="formId">
-            
-            <input class="user-name_input" id="userId" type="text" placeholder="Username" required/>
-            <input class="password_input" id="passId" type="password" placeholder="Password" required>
+            <span class="msError" id="ErorrMsTitle"></span>
+            <div class="inputContainer">
+                <input class="user-name_input" id="userId" type="text" name="user" placeholder="Username" required/>
+                <span class="msError mslogin"></span>
+            </div>
+            <div class="inputContainer">
+                <input class="password_input" id="passId" type="password" name="password" placeholder="Password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$">
+                <span class="msError mslogin"></span>
+            </div>
             <button class="btn_login" id="submitId" type="submit">Sing in</button>
-            <p class="advice_label">New to LoComBia? <a href="#" class="link_label">Create an account</a></p>
+            <p class="advice_label">New to LoComBia? <a href="./register.html" class="link_label">Create an account</a></p>
         </form>
     </div>
 
+    <script src="../scripts/validationFormLogin.js" type="module"></script>
     <script src="../scripts/login.js" type="module"></script>
 
 </body>
