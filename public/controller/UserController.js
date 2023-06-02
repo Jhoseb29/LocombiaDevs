@@ -1,5 +1,5 @@
 // Funcion de registro 
-export function postUser(username, email, password) {
+export function registerUser(username, email, password) {
     const userData = {
       username: username,
       email: email,
@@ -57,6 +57,6 @@ export function loginValidation(username, password){
 }
 
 
-  
+
 
 

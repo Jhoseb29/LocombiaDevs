@@ -8,9 +8,10 @@ form.addEventListener('submit', function (event){
     const username = document.getElementById("userId").value
     const password = document.getElementById("passId").value
     loginValidation(username, password)
-    .then((users)=>{
+    .then((user)=>{
         alert(`Login Success: Welcome!`)
         window.location.href= '../index.html'
+        localStorage.setItem('currentUser', JSON.stringify(user));
     })
     .catch((error)=> {
         alert(error.message)

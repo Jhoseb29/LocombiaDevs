@@ -1,4 +1,4 @@
-import { postUser } from "../controller/UserController.js";
+import { registerUser } from "../controller/UserController.js";
 const registerForm = document.getElementById('registerForm');
 
 
