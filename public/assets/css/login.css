@@ -25,6 +25,10 @@ body{
 
 }
 
+.inputContainer{
+  display: flex;
+  flex-direction: column;
+}
 
 .wrapper {
     width: 100px;
@@ -231,6 +235,24 @@ body{
     border-right: 0px;
     border-left: 0px;
     
+}
+
+.msError{
+  display: none;
+  text-align: left;
+  width: 300px;
+  word-wrap: break-word;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 12px;
+  color: red;
+}
+
+
+.inputError{
+  border-bottom: 1px solid rgba(255, 0, 0, 1);
 }
 
 .user-name_input, .password_input:focus{

@@ -71,23 +71,30 @@
 
     <div class="register_container">
         <h2 class="titleRegister">Register</h2>
+        
         <form id="registerForm" class="form_register">
-            <input class="name inputInfoUser" type="text" name="name" id="name" placeholder="Full name" required>
-            <input class="email inputInfoUser" type="email" name="email" id="email" placeholder="Email address" required>
-            <input class="password inputInfoUser" type="password" name="password" id="password" placeholder="Password"
-            required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$"
-            title = "The password must have at least 8 characters, include at least one capital letter, and at least one number.">
+            <span class="msError" id="Errortitle"></span>
+            <input class="name inputInfoUser " type="text" name="user" id="name"required placeholder="User name">
+            <span id="msErrorUser"  class="msError"></span>
+            <input class="email inputInfoUser" type="email" name="email" id="email" required placeholder="Email address">
+            <span class="msError"></span>
+            <input class="password inputInfoUser" type="password" name="password" id="password" required placeholder="Password"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$"
+            ><span id="msError" class="msError" ></span>
             <input class="confirmPassword inputInfoUser" type="password" name="confirmPassword"
-            id="confirmPassword" placeholder="Confirm password" required>
+            id="confirmPassword" placeholder="Confirm password" data-tipe="password" required>
+            <span id="msErrorConfirmpass"  class="msError"></span>
             <div class="checkContainer">
-                <input class="checkboxTerms" type="checkbox" name="checkboxTerms" id="checkboxTerms" required>
+                <input class="checkboxTerms" type="checkbox" name="checkboxTerms" id="checkboxTerms" data-tipe="ckeck" required>
                 <label class="checkboxTermsLabel" for="checkboxTerms"><p class="agreement">
                     I accept<a class="agreement" href="./termsAndConditions.html">terms and conditions</a></label>
             </div>
             <input class="createAccountButton" type="submit" value="Create Account">
-            <p class="loginText">Already have an account? <a class="loginLink" href="#">Login</a></p>
+            <p class="loginText">Already have an account? <a class="loginLink" href="./login.html">Login</a></p>
         </form>
     </div>
+    <script src="../scripts/validationFormRegister.js" type="module"></script>
     <script src="../scripts/register.js" type="module"></script>
+    
 </body>
 </html>
