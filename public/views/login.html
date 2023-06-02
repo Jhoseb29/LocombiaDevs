@@ -5,30 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log-in</title>
+  
     <link rel="stylesheet" href="../assets/css/reset.css">
     <link rel="stylesheet" href="../assets/css/login.css">
-
- 
+    <link rel="stylesheet" href="../assets/css/login-title-animation.css">
+    <link rel="stylesheet" href="../assets/css/login-background-animation.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
  
+
 </head>
 <body>
-    <div class="login_container">
-        <div class="wrapper">
-            <h1 class="glitch">Login</h1>
-        </div>
-        <form class="form_login" id="formId">
-            
-            <input class="user-name_input" id="userId" type="text" placeholder="Username" required/>
-            <input class="password_input" id="passId" type="password" placeholder="Password" required>
-            <button class="btn_login" id="submitId" type="submit">Sing in</button>
-            <p class="advice_label">New to LoComBia? <a href="#" class="link_label">Create an account</a></p>
-        </form>
-    </div>
 
+    <div id="particles-js">
+        <div class="login_container">
+            <div class="wrapper">
+                <h1 class="glitch">Login</h1>
+            </div>
+            <form class="form_login" id="formId">
+                
+                <input class="user-name_input" id="userId" type="text" placeholder="Username" required/>
+                <input class="password_input" id="passId" type="password" placeholder="Password" required>
+                <button class="btn_login" id="submitId" type="submit">Sing in</button>
+                <p class="advice_label">New to LoComBia?<a href="#" class="link_label">Create an account</a></p>
+            </form>
+        </div>
+    </div>
+    
+    <script src="../scripts/particles.min.js"></script>
+    <script src="../scripts/loginAnimation.js"></script>
     <script src="../scripts/login.js" type="module"></script>
+  
 
 </body>
 </html>
