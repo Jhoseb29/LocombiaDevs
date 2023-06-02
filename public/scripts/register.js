@@ -9,7 +9,6 @@ const registerForm = document.getElementById('registerForm');
 registerForm.addEventListener('submit', function (event){
     
     event.preventDefault();
-    console.log(registerForm.oninvalid)
     const username = document.getElementById('name')
     const email = document.getElementById('email')
     const password = document.getElementById('password')

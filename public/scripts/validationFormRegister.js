@@ -6,7 +6,6 @@ const inputs = document.querySelectorAll("input");
 inputs.forEach((input) => {
     if(input.type !== "submit" && input.type !== "checkbox"){
         input.addEventListener("blur", () => {
-            console.log(input.validity.valid)
             Validation(input)
         })
     }
@@ -14,7 +13,6 @@ inputs.forEach((input) => {
 
 
 function Validation (input) {
-    console.log(input)
     const ErrorSpan = input.nextElementSibling;
     if (input.validity.valid == false) {
         input.classList.add("inputError")

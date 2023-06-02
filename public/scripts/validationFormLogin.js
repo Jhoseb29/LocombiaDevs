@@ -5,7 +5,6 @@ const inputs = document.querySelectorAll("input");
 inputs.forEach((input) => {
     if(input.type !== "submit" && input.type !== "checkbox"){
         input.addEventListener("blur", () => {
-            console.log(input.validity.valid)
             Validation(input)
         })
     }
@@ -13,7 +12,6 @@ inputs.forEach((input) => {
 
 
 function Validation (input) {
-    console.log(input)
     const ErrorSpan = input.nextElementSibling;
     if (input.validity.valid == false) {
         input.classList.add("inputError")
@@ -29,7 +27,6 @@ function Validation (input) {
 
 export const ValidateLogin = (bolean) => {
     const Error = document.getElementById("ErorrMsTitle");
-    console.log(Error)
     if(bolean == true){
         Error.style.display = "inline"
         Error.textContent = MsErros.textLogin
