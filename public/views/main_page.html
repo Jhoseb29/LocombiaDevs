@@ -1,30 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/hamburgue_menu.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/reset.css" />
+    <link rel="stylesheet" href="../assets/css/hamburgue_menu.css" />
+    <link rel="stylesheet" href="../assets/css/main_page.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <title>Document</title>
-</head>
-<body>
-    <div class="hamburger">
+  </head>
+  <body>
+    <header>
+      <div class="hamburger">
         <div class="_layer -top"></div>
         <div class="_layer -mid"></div>
         <div class="_layer -bottom"></div>
-    </div>
-    <nav class="menuppal">
+      </div>
+      <nav class="menuppal">
         <div class="username">
+            <img src="../assets/images/avatar.jpg" alt="avatar">
             <p class="usernameContainer" id="usernameContainer"></p>
         </div>
-        <ul>
-          <li><a href="#">Category</a></li>
-          <li><a href="#">User Info</a></li>
-          <li><a href="./login.html" id="logout">Exit</a></li>
+        <ul class="HM_items_container">
+          <li>
+            <img
+              class="icon_Hmenu"
+              src="../assets/images/Arrorw.svg"
+              alt=""
+            /><a href="#">Category</a>
+          </li>
+          <li>
+            <img
+              class="icon_Hmenu"
+              src="../assets/images/Personperson.svg"
+              alt=""
+            /><a href="#">User Info</a>
+          </li>
+          <li>
+            <img
+              class="icon_Hmenu"
+              src="../assets/images/Arrorw.svg"
+              alt=""
+            /><a href="./login.html" id="logout">Exit</a>
+          </li>
         </ul>
-    </nav>
+      </nav>
+    </header>
     <script src="../scripts/hamburguerScript.js"></script>
     <script src="../scripts/showUsername.js"></script>
     <script src="../scripts/logOut.js"></script>
-</body>
+  </body>
 </html>

@@ -8,8 +8,9 @@ form.addEventListener('submit', function (event){
     const username = document.getElementById("userId").value
     const password = document.getElementById("passId").value
     LoginUser(username,password)
-    .then(()=>{
-        window.location.href= '../index.html'
+    .then((user)=>{
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        window.location.href= './main_page.html'
     })
     .catch((error)=> {
         document.getElementById("userId").value = ""
