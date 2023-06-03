@@ -1,40 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/hamburgue_menu.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/reset.css" />
+    <link rel="stylesheet" href="../assets/css/hamburgue_menu.css" />
+    <link rel="stylesheet" href="../assets/css/main_page.css" />
+    <link rel="stylesheet" href="../assets/css/section_soldproducts.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&family=Oxygen:wght@300;400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="hamburger">
-            <div class="_layer -top"></div>
-            <div class="_layer -mid"></div>
-            <div class="_layer -bottom"></div>
+      <div class="hamburger">
+        <div class="_layer -top"></div>
+        <div class="_layer -mid"></div>
+        <div class="_layer -bottom"></div>
+      </div>
+      <nav class="menuppal">
+        <div class="username">
+            <img src="../assets/images/avatar.jpg" alt="avatar">
+            <p class="usernameContainer" id="usernameContainer"></p>
         </div>
-        <nav class="menuppal">
-            <div class="username">
-                <p class="usernameContainer" id="usernameContainer"></p>
-            </div>
-            <ul>
-            <li><a href="#">All Products</a></li>
-            <li><a href="#">User Info</a></li>
-            <li><a href="./login.html" id="logout">Exit</a></li>
-            </ul>
-        </nav>
-        <script src="../scripts/hamburguerScript.js"></script>
-        <script src="../scripts/showUsername.js"></script>
-        <script src="../scripts/logOut.js"></script>
+        <ul class="HM_items_container">
+          <li>
+            <img
+              class="icon_Hmenu"
+              src="../assets/images/Arrorw.svg"
+              alt=""
+            /><a href="#">Category</a>
+          </li>
+          <li>
+            <img
+              class="icon_Hmenu"
+              src="../assets/images/Personperson.svg"
+              alt=""
+            /><a href="#">User Info</a>
+          </li>
+          <li>
+            <img
+              class="icon_Hmenu"
+              src="../assets/images/Arrorw.svg"
+              alt=""
+            /><a href="./login.html" id="logout">Exit</a>
+          </li>
+        </ul>
+      </nav>
     </header>
     <main>
-            <section></section>
-            <section></section>
-            <section></section>
+      <section class="tet"></section>
+      <section class="section_soldproducts">
+        <div class="titlesectioncontainer">
+          <p>Best Selling</p>
+          <div class="line"></div>
+        </div>
+        <div class="products_conatiner" >
+          <div class="prodcutsections" id="productBestselling">
+            <img alt="">
+            <p>nombre del producto</p>
+            <p class="price">4090$</p>
+          </div>
+          <div class="prodcutsections" id="productBestselling">
+            <img alt="">
+            <p>nombre del producto</p>
+            <p class="price">4090$</p>
+          </div>
+          <div class="prodcutsections" id="productBestselling">
+            <img alt="">
+            <p>nombre del producto</p>
+            <p class="price">4090$</p>
+          </div>
+          <div class="prodcutsections" id="productBestselling">
+            <img alt="">
+            <p>nombre del producto</p>
+            <p class="price">4090$</p>
+          </div>
+          <div class="prodcutsections" id="productBestselling">
+            <img>
+            <p>nombre del producto</p>
+            <p class="price">4090$</p>
+          </div>
+        </div>
+      </section>
+      <section class="section_bestsProducts">
+        <div class="titlesectioncontainer">
+          <p>Best Products</p>
+          <div class="line"></div>
+        </div>
+        <div class="products_conatiner">
+          <div class="prodcutsections" id="BestProduct">
+            <img alt="">
+            <p>nombre del producto</p>
+            <p class="price">4090$</p>
+          </div>
+          <div class="prodcutsections" id="BestProduct">
+            <img alt="">
+            <p>nombre del producto</p>
+            <p class="price">4090$</p>
+          </div>
+          <div class="prodcutsections" id="BestProduct">
+            <img alt="">
+            <p>nombre del producto</p>
+            <p class="price">4090$</p>
+          </div>
+          <div class="prodcutsections" id="BestProduct">
+            <img alt="">
+            <p>nombre del producto</p>
+            <p class="price">4090$</p>
+          </div>
+          <div class="prodcutsections" id="BestProduct">
+            <img alt="">
+            <p>nombre del producto</p>
+            <p class="price">4090$</p>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
-
+     
     </footer>
-    </body>
+
+    <script src="../scripts/hamburguerScript.js"></script>
+    <script src="../scripts/sectionsProductsBestsSeliing.js" type="module"></script>
+    <script src="../scripts/sectionsProductsBest.js" type="module"></script>
+    <script src="../scripts/showUsername.js"></script>
+    <script src="../scripts/logOut.js"></script>
+  </body>
 </html>
