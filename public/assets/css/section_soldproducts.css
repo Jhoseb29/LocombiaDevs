@@ -1,4 +1,13 @@
 
+.banner{
+    height: 400px;
+    
+}
+
+footer{
+    height: 400px;
+}
+
 .section_soldproducts,.section_bestsProducts{
     margin-top: 0.5rem;
     display: flex;
