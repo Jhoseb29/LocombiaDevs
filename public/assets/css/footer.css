@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+.footer{
+    width: 100%;
+}
+.footer .box{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 45px 0px;
+}
+.footer .box .form_footer h2{
+    color: #fff;
+    margin-left: 40px;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+.footer .box .form_footer p{
+    color: #efefef;
+    margin-bottom: 10px;
+}
+.footer .box .social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    text-align: center;
+    transition: all 300ms ease;
+    border-radius: 50%;
+}
+.footer .box .social a:hover{
+    color: #00CCFF;
+}
