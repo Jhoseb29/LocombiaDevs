@@ -132,9 +132,7 @@ body
     color: #FFFCFC;
 }
 
-.agreement a{
-    text-decoration: none;
-}
+
 
 .createAccountButton{
     background: #095458;
@@ -165,9 +163,28 @@ body
     /*backdrop-filter: blur(2px);*/
 }
 
+.msError{
+    display: none;
+    text-align: left;
+    width: 500px;
+    word-wrap: break-word;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 12px;
+    color: red;
+}
+
+.inputError{
+    border-bottom: 1px solid rgba(255, 0, 0, 1);
+}
+
+
 .loginLink{
     color: #ED63F2;
 }
+
 
 /* No sé para qué sirve esto xd
 .btn_login:hover{

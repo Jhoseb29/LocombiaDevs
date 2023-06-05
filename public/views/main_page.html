@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/reset.css" />
+    <link rel="stylesheet" href="../assets/css/hamburgue_menu.css" />
+    <link rel="stylesheet" href="../assets/css/main_page.css" />
+    <link rel="stylesheet" href="../assets/css/section_soldproducts.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&family=Oxygen:wght@300;400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/category_menu.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript"> emailjs.init('qKZ76P0MJTz18DK0e')</script>
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/carouse.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="hamburger">
+        <div class="_layer -top"></div>
+        <div class="_layer -mid"></div>
+        <div class="_layer -bottom"></div>
+      </div>
+      <nav class="menuppal">
+        <div class="username">
+            <img src="../assets/images/avatar.jpg" alt="avatar">
+            <p class="usernameContainer" id="usernameContainer"></p>
+        </div>
+        <ul class="HM_items_container">
+          <li id="category_li">
+            <div class="category_buttom">
+              <img
+              class="icon_Hmenu"
+              src="../assets/images/Arrorw.svg"
+              alt=""
+              />
+              <a href="#">Category</a>
+            </div>
+            <ul class="submenu">
+              <li><a href="#">Subelemento 1</a></li>
+              <li><a href="#">Subelemento 2</a></li>
+              <li><a href="#">Subelemento 3</a></li>
+            </ul>
+          </li>
+          <li>
+            <img
+              class="icon_Hmenu"
+              src="../assets/images/Personperson.svg"
+              alt=""
+            /><a href="#">User Info</a>
+          </li>
+          <li>
+            <img
+              class="icon_Hmenu"
+              src="../assets/images/Arrorw.svg"
+              alt=""
+            /><a href="./login.html" id="logout">Exit</a>
+          </li>
+        </ul>
+      </nav>
+      <h2>LocomBia Gaming</h2>
+      <form class="buscar_header">
+        <input type="text" placeholder="search" class="barra_busqueda">
+        <button type="submit" class="boton_buscar"><img src="../assets/images/Vectorlupa.svg" alt=""></button>
+      </form>
+      <div class="btns_header_container">
+        <button onclick="location.href='#seccion_contacto'">Contact Us</button>
+        <button><img src="../assets/images/Vectorpersona.svg" alt=""></button>
+        <button><img src="../assets/images/Vector.svg" alt=""></button>
+      </div>
+    </header>
+    <main>
+      <section class="carousel">
+        <div class="carousel-container">
+          <div class="carousel-item">
+            <img src="https://i0.wp.com/5ergiveaways.com/wp-content/uploads/2021/10/Facebook-Cover-1.png?fit=851%2C315&ssl=1" alt="Imagen 1">
+          </div>
+          <div class="carousel-item">
+            <img src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/4ce2dc45f5dcc0b44e0162f8dc4ea237.jpg" alt="Imagen 2">
+          </div>
+          <div class="carousel-item">
+            <img src="https://img.freepik.com/premium-vector/futuristic-light-red-blue-gaming-header-social-media-banner-template_136469-1321.jpg"alt="Imagen 3">
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button class="prev-button">Previous</button>
+          <button class="next-button">Next</button>
+        </div>
+      </section>
+      
+      <section class="section_soldproducts">
+        <div class="titlesectioncontainer">
+          <p>Best Selling</p>
+          <div class="line"></div>
+        </div>
+        <div class="products_conatiner" >
+          <div class="prodcutsections" id="productBestselling">
+            <img alt="">
+            <p>nombre del producto</p>
+            <p class="price">4090$</p>
+          </div>
+          <div class="prodcutsections" id="productBestselling">
+            <img alt="">
+            <p>nombre del producto</p>
+            <p class="price">4090$</p>
+          </div>
+          <div class="prodcutsections" id="productBestselling">
+            <img alt="">
+            <p>nombre del producto</p>
+            <p class="price">4090$</p>
+          </div>
+          <div class="prodcutsections" id="productBestselling">
+            <img alt="">
+            <p>nombre del producto</p>
+            <p class="price">4090$</p>
+          </div>
+          <div class="prodcutsections" id="productBestselling">
+            <img>
+            <p>nombre del producto</p>
+            <p class="price">4090$</p>
+          </div>
+        </div>
+      </section>
+      <section class="section_bestsProducts">
+        <div class="titlesectioncontainer">
+          <p>Best Products</p>
+          <div class="line"></div>
+        </div>
+        <div class="products_conatiner">
+          <div class="prodcutsections" id="BestProduct">
+            <img alt="">
+            <p>nombre del producto</p>
+            <p class="price">4090$</p>
+          </div>
+          <div class="prodcutsections" id="BestProduct">
+            <img alt="">
+            <p>nombre del producto</p>
+            <p class="price">4090$</p>
+          </div>
+          <div class="prodcutsections" id="BestProduct">
+            <img alt="">
+            <p>nombre del producto</p>
+            <p class="price">4090$</p>
+          </div>
+          <div class="prodcutsections" id="BestProduct">
+            <img alt="">
+            <p>nombre del producto</p>
+            <p class="price">4090$</p>
+          </div>
+          <div class="prodcutsections" id="BestProduct">
+            <img alt="">
+            <p>nombre del producto</p>
+            <p class="price">4090$</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer" id="seccion_contacto">
+      <h2 class="box">Contact</h2>
+      <form class="form_footer" id="form_footer">
+          <input class="input_contact_form" type="text" name="from_name" id="from_name" placeholder="Use Name">
+          <input class="input_contact_form" type="email" name="email_id" id="email_id" placeholder="User Email">
+          <input class="input_message"type="text" name="message" id="message" placeholder="Message">
+          <input class="send_button" type="submit" id="button_footer" value="Send">
+      </form>
+      <div class="social">
+        <a title="facebook" href="https://www.facebook.com" target="_blank" rel="noopener" class="fa fa-facebook"></a>
+        <a title="instagram" href="https://www.instagram.com" target="_blank" rel="noopener" class="fa fa-instagram"></a>
+        <a title="twitter" href="https://www.twitter.com" target="_blank" rel="noopener" class="fa fa-twitter"></a>
+        <a title="youtube " href="https://www.youtube.com" target="_blank" rel="noopener" class="fa fa-youtube"></a>
+      </div>
+    <script src="../scripts/sendEmail.js"></script>
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+  </footer>
+
+    <script src="../scripts/hamburguerScript.js"></script>
+    <script src="../scripts/sectionsProductsBestsSeliing.js" type="module"></script>
+    <script src="../scripts/sectionsProductsBest.js" type="module"></script>
+    <script src="../scripts/showUsername.js"></script>
+    <script src="../scripts/logOut.js"></script>
+    <script src="../scripts/caroucel.js"></script>
+  </body>
+</html>

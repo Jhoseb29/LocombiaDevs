@@ -4,19 +4,31 @@
       "id": 1,
       "username": "josemon",
       "email": "dycjh@example.com",
-      "password": "contraseña"
+      "password": "1kU6!F70"
     },
     {
       "id": 2,
       "username": "maria",
       "email": "dycjh@example.com",
-      "password": "contraseña"
+      "password": "1kU6!F70"
+    },
+    {
+      "id": 3,
+      "username": "mariano",
+      "email": "dycjh@example.com",
+      "password": "1kU6!F70"
+    },
+    {
+      "username": "jose",
+      "email": "montesotero58@gmail.com",
+      "password": "!A1v3HE7ml",
+      "id": 4
     }
   ],
   "products": [
     {
       "id": 1,
-      "name": "Producto1",
+      "name": "uncharted",
       "brand": "Marca1",
       "description": "Descripción del producto 1",
       "stock": 10,
@@ -25,14 +37,14 @@
       "genre": "RPG",
       "categoryId": 1,
       "developerId": 1,
-      "imgurl": "https://example.com/producto1.jpg",
+      "imgurl": "https://i.pinimg.com/564x/31/d7/07/31d707254d10d91193df42fc375066c9.jpg",
       "likes": [
         1
       ]
     },
     {
       "id": 2,
-      "name": "Producto2",
+      "name": "horizon forbiden west",
       "brand": "Marca2",
       "description": "Descripción del producto 2",
       "stock": 10,
@@ -41,7 +53,76 @@
       "genre": "survival",
       "categoryId": 2,
       "developerId": 2,
-      "imgurl": "https://example.com/producto2.jpg",
+      "imgurl": "https://i.pinimg.com/564x/f7/a5/29/f7a529cdfc6ecb9f2b2d6d7e622e406d.jpg",
+      "likes": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 3,
+      "name": "TMNT",
+      "brand": "Marca3",
+      "description": "Descripción del producto 3",
+      "stock": 10,
+      "soldUnits": 1,
+      "price": 19.99,
+      "genre": "RPG",
+      "categoryId": 1,
+      "developerId": 1,
+      "imgurl": "https://i.pinimg.com/564x/ff/f6/cd/fff6cde0a91a01b8674893642bb2c2a9.jpg",
+      "likes": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": 4,
+      "name": "GHOSTBUSTERS",
+      "brand": "Marca3",
+      "description": "Descripción del producto 3",
+      "stock": 10,
+      "soldUnits": 6,
+      "price": 10.99,
+      "genre": "RPG",
+      "categoryId": 1,
+      "developerId": 1,
+      "imgurl": "https://i.pinimg.com/564x/0a/b9/ab/0ab9ab85861c0f73c58b6d81a4ece4a1.jpg",
+      "likes": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 5,
+      "name": "DRAGIN BALL BUKAI TENKAICHI 3",
+      "brand": "Marca3",
+      "description": "Descripción del producto 3",
+      "stock": 10,
+      "soldUnits": 12,
+      "price": 19.79,
+      "genre": "RPG",
+      "categoryId": 1,
+      "developerId": 1,
+      "imgurl": "https://i.pinimg.com/564x/0e/57/68/0e57686878934966edba7499cd39ef3f.jpg",
+      "likes": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 6,
+      "name": "THE WHITCHER III",
+      "brand": "Marca3",
+      "description": "Descripción del producto 3",
+      "stock": 10,
+      "soldUnits": 12,
+      "price": 19.99,
+      "genre": "RPG",
+      "categoryId": 1,
+      "developerId": 1,
+      "imgurl": "https://i.pinimg.com/564x/14/3e/4e/143e4e9e7a8aa58c52fac80aa24a8b10.jpg",
       "likes": [
         1,
         2
