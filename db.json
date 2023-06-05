@@ -17,6 +17,12 @@
       "username": "mariano",
       "email": "dycjh@example.com",
       "password": "1kU6!F70"
+    },
+    {
+      "username": "jose",
+      "email": "montesotero58@gmail.com",
+      "password": "!A1v3HE7ml",
+      "id": 4
     }
   ],
   "products": [
@@ -86,7 +92,7 @@
       "likes": [
         1,
         2
-        ]
+      ]
     },
     {
       "id": 5,
@@ -103,7 +109,7 @@
       "likes": [
         1,
         2
-        ]
+      ]
     },
     {
       "id": 6,
@@ -120,7 +126,7 @@
       "likes": [
         1,
         2
-        ]
+      ]
     }
   ],
   "categories": [
