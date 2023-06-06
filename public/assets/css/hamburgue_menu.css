@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   padding: 1rem 1rem;
-  z-index: 99999999999;
+  z-index: 1001;
   transform: translate3d(0, 0, 0);
   transition: transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
   cursor: pointer;
@@ -43,7 +43,7 @@
 
 .is-active{
   position: fixed;
-  z-index: 99999999;
+  z-index: 1001;
   top: 5px;
   left: 6px;
   background: none;
