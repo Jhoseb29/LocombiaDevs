@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background-image: url('https://wallpaperaccess.com/full/16668.jpg');
+    min-height: 100vh;
+}
+
+.menu{
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    display: flex;
+    background-color: black;
+    margin-bottom: 50px;
+}
+
+.menu p {
+    margin-right: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-product{
+    background-color: black;
+    position: absolute;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 600px;
+    width: 350px;
+    border-color: black;
+    border-radius: 20px;
+}
+
+.form-product h1{
+    color: white;
+    margin-top: 13px;
+}
+
+.add-product{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inp{
+    margin: 12px;
+    width: 180px;
+    height: 30px;
+    border-radius:7px;
+}
+
+[data-content]{
+    display: none;
+}
+
+.active[data-content]{
+    display: block;
+}
+
+.historic h1{
+    color: white;
+}
