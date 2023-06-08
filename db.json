@@ -3,7 +3,7 @@
     {
       "id": 1,
       "username": "josemon",
-      "email": "dycjh@example.com",
+      "email": "montesotero8@gmail.com",
       "password": "1kU6!F70"
     },
     {
@@ -23,6 +23,18 @@
       "email": "montesotero58@gmail.com",
       "password": "!A1v3HE7ml",
       "id": 4
+    },
+    {
+      "username": "josemontes",
+      "email": "montesotero82@gmail.com",
+      "password": "1kU6!F70",
+      "id": 5
+    },
+    {
+      "id": 6,
+      "username": "admin",
+      "email": "dycjh@example.com",
+      "password": "root!70F"
     }
   ],
   "products": [
