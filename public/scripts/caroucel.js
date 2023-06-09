@@ -1,22 +1,28 @@
-const carouselContainer = document.querySelector('.carousel-container');
-const prevButton = document.querySelector('.prev-button');
-const nextButton = document.querySelector('.next-button');
-
+const carousel = document.querySelector('.carousel-container');
 let currentPosition = 0;
-const slideWidth = carouselContainer.offsetWidth;
+let timer;
 
-prevButton.addEventListener('click', () => {
-  currentPosition += slideWidth;
-  if (currentPosition > 0) {
-    currentPosition = -(slideWidth * (carouselContainer.children.length - 1));
-  }
-  carouselContainer.style.transform = `translateX(${currentPosition}px)`;
-});
-
-nextButton.addEventListener('click', () => {
+function moveNext() {
+  const carouselContainer = document.querySelector('.carousel-container');
+  const slideWidth = carouselContainer.offsetWidth;
   currentPosition -= slideWidth;
   if (currentPosition < -(slideWidth * (carouselContainer.children.length - 1))) {
     currentPosition = 0;
   }
   carouselContainer.style.transform = `translateX(${currentPosition}px)`;
-});
+  
+}
+
+function startTimer() {
+  timer = setInterval(moveNext, 10000); // Cambia de imagen cada 10 segundos
+}
+
+function stopTimer() {
+  clearInterval(timer);
+}
+
+startTimer(); // Comienza el temporizador al cargar la página
+
+// Opcional: Pausar el temporizador cuando el mouse pasa sobre el carrusel
+// carousel.addEventListener('mouseenter', stopTimer);
+// carousel.addEventListener('mouseleave', startTimer);

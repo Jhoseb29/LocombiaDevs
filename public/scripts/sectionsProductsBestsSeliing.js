@@ -1,4 +1,5 @@
 import { Get } from "../controller/UserApi.js";
+import { getidproductsaves } from "../controller/productseccionController.js";
 
 const products = document.querySelectorAll("#productBestselling")
 const btn = document.getElementById('btns')
@@ -15,22 +16,16 @@ Get("products?_sort=soldUnits&_order=desc").then((productsDB)=>{
         childrens[1].textContent = productname
         childrens[2].textContent = productprice + "$" 
         products[i].addEventListener("click",(event)=>{
-            localStorage.setItem(`producto-${productId}`, productId)
+            const cart = getidproductsaves();
+            const elemt = event.target;
+            if(cart.includes(productId.toString())){
+                localStorage.removeItem(`producto-${productId}`)
+                elemt.classList.toggle('agregado')
+            }
+            else{
+                localStorage.setItem(`producto-${productId}`, productId)
+                elemt.classList.toggle('agregado')
+            }
         })
     }
 })
-
-//? para el carrito obtener la id de los productos que el user dio click
-
-export const getidproductsaves = ()=>{
-    // Obtén todas las keys almacenadas en el local storage
-    const keys = Object.keys(localStorage);
-
-    // Filtra las keys que corresponden a las IDs de los productos
-    const ids = keys.filter(key => key.startsWith('producto-'));
-
-    // Obtén los valores correspondientes a las IDs filtradas
-    const idValues = ids.map(id => localStorage.getItem(id));
-
-    console.log(idValues);
-}

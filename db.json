@@ -1,10 +1,46 @@
 {
   "users": [
     {
-      "username": "kakas123",
-      "email": "jmoya396@gmail.com",
+      "id": 1,
+      "username": "josemon",
+      "email": "montesotero8@gmail.com",
+      "password": "1kU6!F70"
+    },
+    {
+      "id": 2,
+      "username": "maria",
+      "email": "dycjh@example.com",
+      "password": "1kU6!F70"
+    },
+    {
+      "id": 3,
+      "username": "mariano",
+      "email": "dycjh@example.com",
+      "password": "1kU6!F70"
+    },
+    {
+      "username": "jose",
+      "email": "montesotero58@gmail.com",
       "password": "!A1v3HE7ml",
       "id": 4
+    },
+    {
+      "username": "josemontes",
+      "email": "montesotero82@gmail.com",
+      "password": "1kU6!F70",
+      "id": 5
+    },
+    {
+      "id": 6,
+      "username": "admin",
+      "email": "dycjh@example.com",
+      "password": "root!70F"
+    },
+    {
+      "username": "kakas123",
+      "email": "tatianavegab@gmail.com",
+      "password": "1kU6!F70",
+      "id": 7
     }
   ],
   "products": [

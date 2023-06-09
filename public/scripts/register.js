@@ -1,4 +1,4 @@
-import { postUser } from "../controller/UserController.js";
+import { RegisterUser } from "../controller/UserController.js";
 import { validateConfirmPass } from "./validationFormRegister.js";
 const registerForm = document.getElementById('registerForm');
 
@@ -19,7 +19,7 @@ registerForm.addEventListener('submit', function (event){
         return; // Detener la ejecución si no coinciden
     }
     
-    postUser(username, email, password.value)
+    RegisterUser(username, email, password.value)
     .then(function () {
         // Realizar acciones adicionales después del registro exitoso
         window.location.href = '../views/login.html'

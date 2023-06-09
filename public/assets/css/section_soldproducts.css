@@ -46,7 +46,6 @@ footer{
     height: 300px;
     width: 80%;
     overflow: hidden;
-    
 }
 
 .products_conatiner:hover {
@@ -83,4 +82,8 @@ footer{
     font-size: 12px;
     line-height: 16px;
     color: #FFFFFF;
+}
+
+.agregado{
+    opacity: 0.3;
 }
