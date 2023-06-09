@@ -39,8 +39,8 @@ body{
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 600px;
-    width: 350px;
+    height: 480px;
+    width: 500px;
     border-color: black;
     border-radius: 20px;
 }
@@ -52,7 +52,7 @@ body{
 
 .add-product{
     margin-top: 20px;
-    display: flex;
+    display: flexbox;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
@@ -61,8 +61,23 @@ body{
 .inp{
     margin: 12px;
     width: 180px;
-    height: 30px;
+    height: 40px;
     border-radius:7px;
+}
+
+.add{
+    margin-top: 10px;
+    width: 80%;
+    height: 35px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.add :active{
+    transform: scale(0.6);
 }
 
 [data-content]{

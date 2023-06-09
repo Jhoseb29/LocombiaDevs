@@ -2,29 +2,35 @@ import { productData } from "./ProductData.js";
 
 const API_URL = "http://localhost:3000/"
 
-export const addPro = async (namePro, descriptionPro, brandPro, stockPro, pricePro, solidUnitsPro, genrePro, imagePro) =>{
+export const addPro = async (namePro, descriptionPro, brandPro, stockPro, pricePro, genrePro, categoryIdPro, developerIdPro, imagePro) =>{
     const name = namePro.value
     const brand = brandPro.value
     const description = descriptionPro.value
     const stock = stockPro.value
-    const solidUnits = solidUnitsPro.value
+    const soldUnits = 0
     const price = pricePro.value
     const genre = genrePro.value
+    const categoryId = categoryIdPro.value
+    const developerId = developerIdPro.value
     const image = imagePro.value
+    const likes = []
 
-    add(name, brand, description, stock, solidUnits, price, genre, image)
+    add(name, brand, description, stock, soldUnits, price, genre, categoryId, developerId, image, likes)
     
 }
 
-export const add = (name, brand, description, stock, solidUnits, price, genre, image) => {
+export const add = (name, brand, description, stock, soldUnits, price, genre,categoryId, developerId, image, likes) => {
   productData.name = name;
   productData.brand = brand;
   productData.description = description;
   productData.stock = stock;
-  productData.solidUnits = solidUnits;
+  productData.soldUnits = soldUnits;
   productData.price = price;
   productData.genre = genre;
+  productData.categoryId = categoryId;
+  productData.developerId = developerId;
   productData.imgurl = image;
+  productData.likes = likes;
 
   return fetch(API_URL + "products", {
       method: "POST",

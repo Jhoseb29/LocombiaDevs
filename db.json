@@ -1,6 +1,12 @@
 {
   "users": [
     {
+      "id": 0,
+      "username": "admin",
+      "email": "admin@insano.com",
+      "password": "admin"
+    },
+    {
       "id": 1,
       "username": "josemon",
       "email": "montesotero8@gmail.com",
