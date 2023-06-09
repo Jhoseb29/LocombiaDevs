@@ -1,4 +1,4 @@
-import { Delete } from "../controller/UserApi.js";
+import { Delete, Get } from "../controller/UserApi.js";
 
 const deleteUserButton = document.getElementById("deleteUserButton");
 

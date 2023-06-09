@@ -1,5 +1,7 @@
 // Funcion de registro 
 
+const API_URL = "http://localhost:3000/"
+
 import { CreateUser, FindExistingUser } from "./UserApi.js";
 import { ValidationUser } from "../scripts/validationFormRegister.js";
 import { ValidateLogin } from "../scripts/validationFormLogin.js";

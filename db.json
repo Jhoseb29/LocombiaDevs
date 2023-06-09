@@ -2,8 +2,8 @@
   "users": [
     {
       "id": 1,
-      "username": "josemon",
-      "email": "montesotero8@gmail.com",
+      "username": "kakas123",
+      "email": "tatianavegab@gmail.com",
       "password": "1kU6!F70"
     },
     {
@@ -167,7 +167,110 @@
       "name": "Fabricante2"
     }
   ],
-  "likes": [],
-  "carts": [],
-  "historic": []
+  "likes": [
+    {
+      "id": 1,
+      "productId": 1,
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "productId": 2,
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "productId": 2,
+      "userId": 2
+    }
+  ],
+  "carts": [
+    {
+      "id": 1,
+      "userId": 1,
+      "products": [
+        {
+          "productId": 1,
+          "quantity": 1,
+          "price": 19.99
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "products": [
+        {
+          "productId": 1,
+          "quantity": 2,
+          "price": 39.98
+        }
+      ]
+    }
+  ],
+  "historic": [
+    {
+      "id": 1,
+      "userId": 1,
+      "date": "2023-05-18",
+      "order": "123456789",
+      "card": "MasterCard",
+      "status": "pending",
+      "products": [
+        {
+          "productId": 1,
+          "img": "https://i0.wp.com/statefoxgames.com/wp-content/uploads/2022/07/Resident-evil-Triple-Pack.jpg?fit=991%2C1269&ssl=1",
+          "name": "Resident evil triple pack",
+          "quantity": 1,
+          "price": 19.99
+        },
+        {
+          "productId": 2,
+          "img": "https://image.api.playstation.com/cdn/UP1004/CUSA00419_00/bTNSe7ok8eFVGeQByA5qSzBQoKAAY32R.png",
+          "name": "Gta V",
+          "quantity": 1,
+          "price": 19.99
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "date": "2023-05-18",
+      "order": "123456789",
+      "card": "Visa",
+      "status": "pending",
+      "products": [
+        {
+          "productId": 1,
+          "name": "Producto2",
+          "quantity": 1,
+          "price": 10
+        },
+        {
+          "productId": 2,
+          "name": "Producto1",
+          "quantity": 1,
+          "price": 19.99
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "date": "2023-06-05",
+      "order": "123456789",
+      "card": "MasterCard",
+      "status": "pending",
+      "products": [
+        {
+          "productId": 1,
+          "img": "https://assets-prd.ignimgs.com/2022/01/07/fallout-3-goty-button-1641531190330.jpg?width=300&crop=1%3A1%2Csmart",
+          "name": "Fallout 3",
+          "quantity": 1,
+          "price": 19.99
+        }
+      ]
+    }
+  ]
 }

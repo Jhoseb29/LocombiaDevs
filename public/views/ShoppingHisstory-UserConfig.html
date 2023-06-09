@@ -4,15 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/reset.css" />
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/shoppingHistory.css">
     <link rel="stylesheet" href="../assets/css/asideUser-configuration.css">
-    <title>Document</title>
+    <title>shopping history</title>
+
 </head>
 <body>
     <header>
-        <p id="usernameContainer"></p>
+        <div class="user-container">
+            <img src="../assets/images/user-icon.png" alt="user-img" id="user-profile-img">
+            <p id="usernameContainer"></p>
+        </div>
+
+        <h2 class="section-title">Shopping History</h3>
+        
     </header>
-    <section>
+    <section class="leftside">
         <h2>User Configuration</h2>
         <h4>Update</h4>
         <form class="form-update" id="form-update">
@@ -30,7 +38,12 @@
         <h4>Delete Account</h4>
         <input class="delete-user" id="deleteUserButton" type="submit" value="Delete User">
     </section>
-    <aside></aside>
+    <section class="history-container" id="historyContainer">
+       
+        
+    </section>
+
+    <script type="module" src="../scripts/historySection.js"></script>
     <script src="../scripts/showUsername.js"></script>
     <script src="../scripts/deleteUser.js" type="module"></script>
     <script src="../scripts/updateUser.js" type="module"></script>
