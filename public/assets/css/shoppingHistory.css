@@ -7,7 +7,6 @@ header{
 }
 
 body{
-    overflow: hidden;
     background-color: #2D0C4F;
 }
 
@@ -36,6 +35,20 @@ body{
 }
 
 
+.img-div{
+    width: 80px;
+    height: 120px;
+    padding: 10px;
+}
+
+.game-img{
+    margin-right: 20px;
+    width: 80px;
+    height: 120px;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+
 .section-title{
     position: absolute;
     right: 10rem;
@@ -47,28 +60,92 @@ body{
 }
 
 .history-container{
+    display: flex;
+    flex-direction: column;
     width: 50%;
     height: 41pc;
     float: right;
+
+    
 }
 
 .product-container{
-    display: grid;
-    grid-template-columns: 130px 200px 370px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.game-info-div{
     background-color: #673897;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
     padding: 5px 0px;
     margin: 10px 10px;
     border-radius: 5px;
+    height: 100px;
+
 }
 
-.game-img{
-    margin-right: 20px;
-    width: 80px;
-    height: 120px;
-    border-radius: 3px;
+
+.title-div, .date-div{
+    color: white;
+
+}
+
+.game-title{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+}
+
+.game-order,.user-card{
+    margin-top: 7px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.title-div{
+    height: auto;
+    padding: 10px;
+    margin-left: 5px;
+}
+
+.date-div{
+    height: auto;
+}
+
+
+.game-title{
+    margin-bottom: 10px;
+}
+
+
+.game-date, .game-price{
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.game-date{
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+.game-price{
+    margin-top: 50px;
     margin-left: 10px;
 }
 
+
+
+
+/*
 .game-title{
     height: auto;
     color: white;
@@ -99,6 +176,7 @@ body{
     color: white;
     height: 30px;
 }
+
 
 
 

@@ -13,7 +13,6 @@ Get(`historic?userId=${userId}`).then(historic => {
         const cardType = `User card: ${entry.card}` 
         const orderNum = `Order Number: ${entry.order}`
 
-
         //iterar en los valores de los productos comprados por el usuario
 
         products.forEach(product =>{
@@ -24,111 +23,76 @@ Get(`historic?userId=${userId}`).then(historic => {
             //atributos de los productos
             const productImg = product.img
             const productName = product.name
-            const productPrice = ` $ ${product.price}`
+            const productPrice = `$ ${product.price}`
             const productDate = purchaseDate
             const userCardType = cardType
             const productOrder = orderNum
 
+            const productInfoDiv = document.createElement('div')
+            productInfoDiv.classList.add("game-info-div")
+            
+
             //creación de los elementos de los atributos
+            //imagen del producto
+            const imgDiv = document.createElement('div')
+            imgDiv.classList.add('img-div')
+
             const gameImg = document.createElement('img')
             gameImg.classList.add("game-img")
             gameImg.src = productImg
+
+            imgDiv.appendChild(gameImg)
+            productContainer.appendChild(imgDiv)
+
+            //Titulo, tipo de tarjeta, numero de orden
+            const titleDiv = document.createElement('div')
+            titleDiv.classList.add('title-div')
 
             const gameTitle = document.createElement('h2')
             gameTitle.classList.add("game-title")
             gameTitle.textContent = productName
 
-            const gameDate = document.createElement('p')
-            gameDate.classList.add("game-date")
-            gameDate.textContent =  productDate
-
             const userCard = document.createElement('p')
             userCard.classList.add("user-card")
             userCard.textContent =  userCardType
 
-            const gamerOrder = document.createElement('p')
-            gamerOrder.classList.add("game-order")
-            gamerOrder.textContent = productOrder
+            const gameOrder = document.createElement('p')
+            gameOrder.classList.add("game-order")
+            gameOrder.textContent = productOrder
 
-            const gamerPrice = document.createElement('p')
-            gamerPrice.classList.add("game-price")
-            gamerPrice.textContent = productPrice
-            // Agrega las etiquetas y componentes HTML al documento 
-            productContainer.appendChild(gameImg)
-            productContainer.appendChild(gameTitle)
-            productContainer.appendChild(gameDate)
-            productContainer.appendChild(gamerOrder)
-            productContainer.appendChild(userCard)
-            productContainer.appendChild(gamerPrice)
+
+            
+            titleDiv.appendChild(gameTitle)
+            titleDiv.appendChild(userCard)
+            titleDiv.appendChild(gameOrder)
+
+            productInfoDiv.appendChild(titleDiv)
+            
+
+            //fecha y precio del producto
+            const dateDiv = document.createElement('div')
+            dateDiv.classList.add('date-div')
+
+            const gameDate = document.createElement('p')
+            gameDate.classList.add("game-date")
+            gameDate.textContent =  productDate
+
+            const gamePrice = document.createElement('p')
+            gamePrice.classList.add("game-price")
+            gamePrice.textContent = productPrice
+
+            dateDiv.appendChild(gameDate)
+            dateDiv.appendChild(gamePrice)
+
+            
+            productInfoDiv.appendChild(dateDiv)
+            productContainer.appendChild(productInfoDiv)
             historyContainer.appendChild(productContainer)
-        
-
+            
         })
 
-
-
-
-        /*
-        //Imprimir imagen del juego
-        const productImg = products.map(product => product.img)
-        const gameImg = document.createElement("img")
-        gameImg.classList.add("game-img")
-        
-        productImg.forEach(img => gameImg.src = img)
-        gameImg.src = productImg
-        historyContainer.appendChild(gameImg)
-
-        console.log(productImg)
-
-
-        //Imprimir nombre del juego
-        const productName = products.map(product => product.name)
-        const gameTitle = document.createElement("h1")
-        productName.forEach(Name => gameTitle.textContent = Name)
-        historyContainer.appendChild(gameTitle)
-
-
-
-
-
-/*
-        const gameContainer= document.createElement("div")
-        gameContainer.classList.add("game-container")
-        /*
-
-        const dateElement = document.createElement("p")
-        entryContainer.classList.add("game-title")
-        dateElement.textContent = `Date: ${date}`
-        entryContainer.appendChild(dateElement)
-        /*
-        products.forEach(product =>{
-            const productId = product.id
-            const productName = product.name
-            const productImgUrl= product.imgurl
-        })
-
-        const productContainer = document.createElement("div")
-        productContainer.classList.add("product");
-
-        const productNameElement = document.createElement("p")
-        productNameElement.textContent = `Product: ${products.forEach(product => {product.name})}`
-
-        productContainer.appendChild(productNameElement);
-
-
-        const productImgElement = document.createElement("img")
-        productImgElement.classList.add("product-img")
-        productImgElement.src = products.forEach(product => {product.imgurl})
-        
-        productContainer.appendChild(productImgElement);
-
-        entryContainer.appendChild(productContainer);
-
-
-        */
 
     }) 
 })
-
 
 
