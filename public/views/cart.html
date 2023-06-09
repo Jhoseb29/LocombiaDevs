@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://js.stripe.com/v3/"></script>
     <link rel="stylesheet" href="../assets/css/reset.css">
     <link rel="stylesheet" href="../assets/css/cart.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,12 +13,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&family=Nunito:wght@300;400;500;600;700&family=Oxygen:wght@300;400;700&family=Poppins:wght@300;400;500;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&family=Nunito:wght@300;400;500;600;700&family=Oxygen:wght@300;400;700&family=Poppins:wght@300;400;500;600&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <title>cart</title>
 </head>
 <body>
     <section class="cart_products">
         <div class="title_shoping_cart_container">
-            <a><h2 class="titelcontinue">Shopping Continue</h2></a>
+            <a href="./main_page.html"><h2 class="titelcontinue">Shopping Continue</h2></a>
             <div class="line"></div>
             <h3 class="title_shoping_cart">shopping cart </h3>
             <div class="product_counter_container">
@@ -29,67 +33,66 @@
             </div>
             
         </div>
-        <div class="cart_products__container">
-            <div class="product">
-                <img src="" alt="img-product">
-                <p class="title">Resident Evil</p>
-                <p class="key-type">Key</p>
-                <div class="add-product">
-                    <p class="products-number">1</p>
-                    <div>
-                        <button class="add"></button>
-                        <button class="remove"></button>
-                    </div>
-                </div>
-                <p class="price">$681</p>
-                <button class="delete-product"></button>
-            </div>
+        <div class="cart_products__container" id="cart_products__container">
         </div>
     </section>
     <section class="cart_detail_purchase">
         <div class="cart_ditail_title_container">
-            <h2 class="title_cart_ditail"></h2>
-            <img src="" class="user_img" alt="user-img">
+            <h2 class="title_cart_ditail">Card Details</h2>
+            <img src="../assets/images/avatar.jpg" class="user_img" alt="user-img" id="avatar_user">
         </div>
-        <div class="type_card_container">
-            <img src="" class="card" alt="">
-            <img src="" class="visa" alt="">
-        </div>
-        <form class="purchase_form">
+        
+        <form class="purchase_form" id="payment-form">
+            <p class="card_type_form">Card type</p>
+            <div class="type_card_container">
+                <label>
+                    <!-- <input required type="radio" name="image" value="image1" class="type_card_radio"> -->
+                    <img src="../assets/images/Rectangle 9mastercard.svg" alt="Imagen 1" class="img_card">
+                </label>
+                
+                <label>
+                    <!-- <input required type="radio" name="image" value="image2" class="type_card_radio"> -->
+                    <img src="../assets/images/Rectangle 10visa.svg" alt="Imagen 2" class="img_card">
+                </label>
+            </div>
             <div class="inputs_container">
                 <div class="input_purchase_form_container">
                     <label for="usernme" class="title_input">Name on card</label>
-                    <input type="text" name="usernme" id="usernme" class="username_input_purchase" placeholder="Name">
+                    <input required type="text" name="usernme" id="usernme" class="username_input_purchase" placeholder="Name">
                 </div>
                 <div class="input_purchase_form_container">
-                    <label for="cardnumber">Card Number</label>
-                    <input type="number" name="cardnumber" id="cardnumber" class="cardnumber_input_pruchase" placeholder="1111 2222 3333 4444">
+                    <label for="card-element">Card number</label>
+                    <div id="card-number-element" required></div>
                 </div>
-                <div class="input_purchase_form_container_date_cvv">
-                    <div class="input_purchase_form_container">
-                        <label for="mesAnio">Expirate date</label>
-                        <input type="text" id="mesAnio" placeholder="MM/YY" maxlength="7" oninput="validarMesAnio(this)">
+                <div class=" input_purchase_form_container_details">
+                    <div>
+                        <label for="expirate-date">Expiration date</label>
+                        <div id="card-expiry-element" required></div>
                     </div>
-                    <div class="input_purchase_form_container">
-                        <label for="CVV">CVV</label>
-                        <input type="number" name="CVV" id="CVV" class="CVV_input_pruchase" placeholder="123">
+                
+                    <div>
+                        <label for="cvv">CVV</label>
+                        <div id="card-cvc-element" required></div>
                     </div>
                 </div>
             </div>
+            <div class="error-message" id="error-message"></div>
             <div class="line_from_purchase"></div>
             <div class="show_info_purchase">
-                <div class="info_purchase"><p class="text_info">Subtotal</p><p class="number_info">texto</p></div>
-                <div class="info_purchase"><p class="text_info">Shipping</p><p class="number_info">texto</p></div>
-                <div class="info_purchase"><p class="text_info">Total(Tax incl.)</p><p class="number_info">texto</p></div>
+                <div class="info_purchase"><p class="text_info">Subtotal</p><p class="number_info" id="Subtotal">texto</p></div>
+                <!-- <div class="info_purchase"><p class="text_info">Shipping</p><p class="number_info" >texto</p></div> -->
+                <div class="info_purchase"><p class="text_info">Total(Tax incl.)</p><p class="number_info" id="total">texto</p></div>
             </div>
             <button class="button_checkout">
-                <p class="total"></p>
+                <p class="total" id="totalbtn"></p>
                 <div class="text_checkout">
                     <p class="text_checkout">Checkout</p>
-                    <p class="arrow_icon"></p>
+                    <img src="../assets/images/Rightarrow-right.svg" >
                 </div>
             </button>
         </form>
     </section>
+    <script src="../scripts/cart.js" type="module"></script>
+    <script src="../scripts/shoppingform.js"></script>
 </body>
 </html>

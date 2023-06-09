@@ -3,7 +3,10 @@ import { getidproductsaves } from "../controller/productseccionController.js";
 const products = document.querySelectorAll("#BestProduct")
 
 
+
+
 Get("products?_sort=likes&_order=desc").then((productsDB)=>{
+    const productssave = getidproductsaves();
     for(var i = 0; i<5;i++){
         const childrens = products[i].children;
         const producturl = productsDB[i].imgurl;
@@ -14,7 +17,13 @@ Get("products?_sort=likes&_order=desc").then((productsDB)=>{
         childrens[1].textContent = productname
         childrens[2].textContent = productprice + "$" 
         let imgproducthtml = products[i].querySelector('img')
-        imgproducthtml.addEventListener("click",()=>{
+        // if(productssave.includes(productId.toString())){
+        //     imgproducthtml.classList.add('agregado')
+        // }
+        // if(!productssave.includes(productId.toString())){
+        //     imgproducthtml.classList.remove('agregado')
+        // }
+        imgproducthtml.addEventListener("click",(event)=>{
             const cart = getidproductsaves();
             const elemt = event.target
             if(cart.includes(productId.toString())){
@@ -25,6 +34,7 @@ Get("products?_sort=likes&_order=desc").then((productsDB)=>{
                 localStorage.setItem(`producto-${productId}`, productId)
                 elemt.classList.add('agregado')
             }
+            //location.reload()
         })
     }
 })

@@ -35,6 +35,12 @@
       "username": "admin",
       "email": "dycjh@example.com",
       "password": "root!70F"
+    },
+    {
+      "username": "sdgdfg",
+      "email": "montes@gmail.com",
+      "password": "1kU6!F70",
+      "id": 7
     }
   ],
   "products": [
