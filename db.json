@@ -195,28 +195,34 @@
       "id": 1,
       "userId": 1,
       "date": "2023-05-18",
+      "order": "123456789",
+      "card": "MasterCard",
+      "status": "pending",
       "products": [
         {
           "productId": 1,
-          "name": "Producto1",
+          "img": "https://i0.wp.com/statefoxgames.com/wp-content/uploads/2022/07/Resident-evil-Triple-Pack.jpg?fit=991%2C1269&ssl=1",
+          "name": "Resident evil triple pack",
           "quantity": 1,
           "price": 19.99
         },
         {
           "productId": 2,
-          "name": "Producto2",
+          "img": "https://image.api.playstation.com/cdn/UP1004/CUSA00419_00/bTNSe7ok8eFVGeQByA5qSzBQoKAAY32R.png",
+          "name": "Gta V",
           "quantity": 1,
-          "price": 10
+          "price": 19.99
         }
-      ],
-      "order": "123456789",
-      "card": "123456789",
-      "status": "pending"
+      ]
+      
     },
     {
       "id": 2,
       "userId": 2,
       "date": "2023-05-18",
+      "order": "123456789",
+      "card": "Visa",
+      "status": "pending",
       "products": [
         {
           "productId": 1,
@@ -230,26 +236,25 @@
           "quantity": 1,
           "price": 19.99
         }
-      ],
-      "order": "123456789",
-      "card": "123456789",
-      "status": "pending"
+      ]
     },
     {
       "id": 3,
       "userId": 1,
       "date": "2023-06-05",
+      "order": "123456789",
+      "card": "MasterCard",
+      "status": "pending",
       "products": [
         {
           "productId": 1,
-          "name": "Producto1",
+          "img": "https://assets-prd.ignimgs.com/2022/01/07/fallout-3-goty-button-1641531190330.jpg?width=300&crop=1%3A1%2Csmart",
+          "name": "Fallout 3",
           "quantity": 1,
           "price": 19.99
         }
-      ],
-      "order": "123456789",
-      "card": "123456789",
-      "status": "pending"
+      ]
+      
     }
   ]
 }
