@@ -5,4 +5,3 @@ const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 const usernameContainer = document.getElementById('usernameContainer');
 usernameContainer.textContent = `${currentUser.username}`;
 
-console.log(currentUser.username)

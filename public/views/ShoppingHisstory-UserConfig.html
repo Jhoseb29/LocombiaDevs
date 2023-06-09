@@ -4,16 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reset.css" />
+    <link rel="stylesheet" href="../assets/css/asideUser-configuration.css">
     <title>Document</title>
 </head>
 <body>
     <header>
         <p id="usernameContainer"></p>
     </header>
-    <aside>
-        <h3>Userconfig</h3>
-    </aside>
+    <section>
+        <h2>User Configuration</h2>
+        <h4>Update</h4>
+        <form class="form-update" id="form-update">
+            <input class="name inputInfoUser " type="text" name="user" id="username" placeholder="User name">
+            <input class="email inputInfoUser" type="email" name="email" id="email" placeholder="Email address">
+            <input class="password inputInfoUser" type="password" name="password" id="password" required placeholder="Password">
+            <input class="update-user" type="submit" value="Update User">
+        </form>
+        <h4>Profile Image</h4>
+        <form>
+            <label for="image">Upload Image:</label>
+            <input type="file" id="image">
+            <input type="submit" value="Upload">
+        </form>
+        <h4>Delete Account</h4>
+        <input class="delete-user" id="deleteUserButton" type="submit" value="Delete User">
+    </section>
     <aside></aside>
     <script src="../scripts/showUsername.js"></script>
+    <script src="../scripts/deleteUser.js" type="module"></script>
+    <script src="../scripts/updateUser.js" type="module"></script>
 </body>
 </html>

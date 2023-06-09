@@ -1,4 +1,4 @@
-import { LoginUser} from "../controller/UserController.js"
+import { loginValidation } from "../controller/UserController.js"
 
 const form = document.getElementById("formId")
 
@@ -7,7 +7,7 @@ form.addEventListener('submit', function (event){
     event.preventDefault(); 
     const username = document.getElementById("userId").value
     const password = document.getElementById("passId").value
-    LoginUser(username,password)
+    loginValidation(username,password)
     .then((user)=>{
         localStorage.setItem('currentUser', JSON.stringify(user));
         window.location.href= './main_page.html'

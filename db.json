@@ -1,26 +1,8 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "josemon",
-      "email": "dycjh@example.com",
-      "password": "1kU6!F70"
-    },
-    {
-      "id": 2,
-      "username": "maria",
-      "email": "dycjh@example.com",
-      "password": "1kU6!F70"
-    },
-    {
-      "id": 3,
-      "username": "mariano",
-      "email": "dycjh@example.com",
-      "password": "1kU6!F70"
-    },
-    {
-      "username": "jose",
-      "email": "montesotero58@gmail.com",
+      "username": "kakas123",
+      "email": "jmoya396@gmail.com",
       "password": "!A1v3HE7ml",
       "id": 4
     }
@@ -149,107 +131,7 @@
       "name": "Fabricante2"
     }
   ],
-  "likes": [
-    {
-      "id": 1,
-      "productId": 1,
-      "userId": 1
-    },
-    {
-      "id": 2,
-      "productId": 2,
-      "userId": 1
-    },
-    {
-      "id": 3,
-      "productId": 2,
-      "userId": 2
-    }
-  ],
-  "carts": [
-    {
-      "id": 1,
-      "userId": 1,
-      "products": [
-        {
-          "productId": 1,
-          "quantity": 1,
-          "price": 19.99
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "userId": 2,
-      "products": [
-        {
-          "productId": 1,
-          "quantity": 2,
-          "price": 39.98
-        }
-      ]
-    }
-  ],
-  "historic": [
-    {
-      "id": 1,
-      "userId": 1,
-      "date": "2023-05-18",
-      "products": [
-        {
-          "productId": 1,
-          "name": "Producto1",
-          "quantity": 1,
-          "price": 19.99
-        },
-        {
-          "productId": 2,
-          "name": "Producto2",
-          "quantity": 1,
-          "price": 10
-        }
-      ],
-      "order": "123456789",
-      "card": "123456789",
-      "status": "pending"
-    },
-    {
-      "id": 2,
-      "userId": 2,
-      "date": "2023-05-18",
-      "products": [
-        {
-          "productId": 1,
-          "name": "Producto2",
-          "quantity": 1,
-          "price": 10
-        },
-        {
-          "productId": 2,
-          "name": "Producto1",
-          "quantity": 1,
-          "price": 19.99
-        }
-      ],
-      "order": "123456789",
-      "card": "123456789",
-      "status": "pending"
-    },
-    {
-      "id": 3,
-      "userId": 1,
-      "date": "2023-06-05",
-      "products": [
-        {
-          "productId": 1,
-          "name": "Producto1",
-          "quantity": 1,
-          "price": 19.99
-        }
-      ],
-      "order": "123456789",
-      "card": "123456789",
-      "status": "pending"
-    }
-  ]
+  "likes": [],
+  "carts": [],
+  "historic": []
 }
