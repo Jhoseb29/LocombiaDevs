@@ -1,14 +1,25 @@
 import { Get } from "../controller/UserApi.js";
 import { producthtml } from "../controller/productTemplate.js";
 import { getidproductsaves } from "../controller/productseccionController.js";
+import { getCartByUserId, updateCartItemQuantity } from "../controller/shoppingCartController.js";
+import { removeFromCart } from "../controller/shoppingCartController.js";
 
 const cartproductscontainer = document.getElementById("cart_products__container");
 const userImg = document.getElementById("avatar_user");
 const Subtotal = document.getElementById("Subtotal");
 const totaltaxes = document.getElementById("total");
-const totalbtn = document.getElementById("totalbtn")
+const totalbtn = document.getElementById("totalbtn");
+const iduser = JSON.parse(localStorage.getItem("currentUser"));
+const productsavesincart = await getCartByUserId(iduser.id)
+console.log(productsavesincart)
+
 const Createproducthtml = async (productocontainer) => {
-    const idsaves = getidproductsaves();
+    const idsaves = [] ;
+    productsavesincart.forEach((producto)=>{
+        idsaves.push(producto.productId)
+    })
+
+    console.log(idsaves)
     let prices = [];
     let arrayElementhtml = []
     const productPromises = idsaves.map((id,index) =>
@@ -17,7 +28,7 @@ const Createproducthtml = async (productocontainer) => {
         let price = product[0].price;
         let gamename = product[0].name;
         prices.push(price);
-        productocontainer.insertAdjacentHTML("beforeend",producthtml(gameimgurl, gamename, price,id));
+        productocontainer.insertAdjacentHTML("beforeend",producthtml(gameimgurl, gamename, price,id,productsavesincart[index].quantity));
         arrayElementhtml.push(productocontainer.querySelector("#producto-"+(id)))
         
         }) 
@@ -25,8 +36,9 @@ const Createproducthtml = async (productocontainer) => {
     
     await Promise.all(productPromises); //** esperamos a que las promesas de el map se resuelvan */
     deleteProduct(arrayElementhtml)
-    addProduct(arrayElementhtml)
-    actualizarTotales(prices)
+    addProduct(arrayElementhtml,prices)
+    resduceProducts(arrayElementhtml,prices)
+    actualizarTotales(document.querySelectorAll('.price'))
 };
 
 function calcularTotal(prices) {
@@ -51,28 +63,87 @@ function deleteProduct (arrayElementhtml){
         let deletebtnelement = element.querySelector('.delete-product')
         deletebtnelement.addEventListener("click", (event) => {
             let producthtml =deletebtnelement.parentNode
-            localStorage.removeItem(producthtml.id)
+            let cartitemid = parseInt(producthtml.id.split("-")[1])
+            removeFromCart(iduser.id,cartitemid)
             producthtml.remove()
             const priceshtml = document.querySelectorAll('.price')
-            let arrayprices = []
-            priceshtml.forEach((element)=>{
-                let string = element.textContent
-                let numericString = string.replace("$", "").replace(",", ".");
-                arrayprices.push(parseFloat(numericString))
-            })
+            let arrayprices = document.querySelectorAll('.price')
+            // priceshtml.forEach((element)=>{
+            //     let string = element.textContent
+            //     let numericString = string.replace("$", "").replace(",", ".");
+            //     arrayprices.push(parseFloat(numericString))
+            // })
             actualizarTotales(arrayprices)
         })
     })
 }
 
-function addProduct(arrayhtmlelements){
-    arrayhtmlelements.forEach((element) => {
+function addProduct(arrayhtmlelements,productsprices){
+    
+    arrayhtmlelements.forEach((element,index) => {
+        
         let addbutton = element.querySelectorAll('.add')
+        
+        addbutton.forEach((element)=>{
+            let productquantity = element.parentElement.previousElementSibling;
+            let productpricehtml = productquantity.parentElement.nextElementSibling
+            const productprice = productsprices[index]
+            
+            
+            element.addEventListener("click",(event)=>{
+                let newpriceproduct = document.querySelectorAll('.price')
+                let quantity = parseInt(productquantity.textContent)
+                productquantity.textContent = quantity+1
+                productpricehtml.textContent = "$"+(productprice*(quantity+1)).toFixed(2)
+                
+                actualizarTotales(newpriceproduct)
+                let cartitemid = parseInt(productquantity.parentElement.parentElement.id.split("-")[1])
+                let newQuantity = quantity+1
+                updateCartItemQuantity(iduser.id,cartitemid,newQuantity)
+            })
+        })
+        
+    })
+}
+
+function resduceProducts (arrayhtmlelements,productsprices){
+
+    arrayhtmlelements.forEach((element,index) => {
+        
+        let addbutton = element.querySelectorAll('.remove')
+        
+        addbutton.forEach((element)=>{
+            let productquantity = element.parentElement.previousElementSibling;
+            let productpricehtml = productquantity.parentElement.nextElementSibling
+            const productprice = productsprices[index]
+            
+            
+            element.addEventListener("click",(event)=>{
+                let newpriceproduct = document.querySelectorAll('.price')
+                let quantity = parseInt(productquantity.textContent)
+                if(quantity-1>=0){
+                    productquantity.textContent = quantity-1
+                    productpricehtml.textContent = "$"+(productprice*(quantity-1)).toFixed(2)
+                    actualizarTotales(newpriceproduct)
+                    let cartitemid = parseInt(productquantity.parentElement.parentElement.id.split("-")[1])
+                    let newQuantity = quantity-1
+                    updateCartItemQuantity(iduser.id,cartitemid,newQuantity)
+                }
+            })
+        })
+        
     })
 }
 
         
-function actualizarTotales(prices) {
+function actualizarTotales(lista) {
+    let prices = []
+    
+    lista.forEach((price)=>{
+        
+        prices.push(parseFloat(price.textContent.replace("$", "").replace(",", ".")))
+    })
+    
     const subtotal = calcularTotal(prices);
     const total = calcularTotaltax(subtotal);
     
@@ -82,3 +153,4 @@ function actualizarTotales(prices) {
 }
   
 Createproducthtml(cartproductscontainer);
+

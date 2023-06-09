@@ -1,11 +1,11 @@
-export const producthtml = (gameimgurl,gamename,gameprice,num) =>{ let template = `<div class="product" id="producto-${num}">
+export const producthtml = (gameimgurl,gamename,gameprice,num,quantity) =>{ let template = `<div class="product" id="producto-${num}">
 <img src="${gameimgurl}" alt="img-product">
 <div class="product_infot_container">
     <p class="title">${gamename}</p>
     <p class="key-type">Key</p>
 </div>
 <div class="add-product">
-    <p class="products-number">1</p>
+    <p class="products-number" id="products-number">${quantity}</p>
     <div>
         <button class="add">
             <svg width="47" height="20" viewBox="0 0 47 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -19,7 +19,7 @@ export const producthtml = (gameimgurl,gamename,gameprice,num) =>{ let template 
         </button>
     </div>
 </div>
-<p class="price">$${gameprice}</p>
+<p class="price">$${(gameprice*quantity).toFixed(2)}</p>
 <button class="delete-product">
     <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <rect x="0.644531" y="0.225769" width="57.2581" height="57.2581" fill="url(#pattern0)"/>

@@ -9,3 +9,4 @@ export const getidproductsaves = ()=>{
     const idValues = ids.map(id => localStorage.getItem(id));
     return idValues
 }
+

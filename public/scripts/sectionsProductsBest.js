@@ -1,7 +1,8 @@
 import { Get } from "../controller/UserApi.js";
 import { getidproductsaves } from "../controller/productseccionController.js";
+import { addToCart, removeFromCart, isProductInCart } from "../controller/shoppingCartController.js";
 const products = document.querySelectorAll("#BestProduct")
-
+const iduser = JSON.parse(localStorage.getItem("currentUser"));
 
 
 
@@ -26,14 +27,18 @@ Get("products?_sort=likes&_order=desc").then((productsDB)=>{
         imgproducthtml.addEventListener("click",(event)=>{
             const cart = getidproductsaves();
             const elemt = event.target
-            if(cart.includes(productId.toString())){
-                localStorage.removeItem(`producto-${productId}`)
-                elemt.classList.remove('agregado')
-            }
-            else{
-                localStorage.setItem(`producto-${productId}`, productId)
-                elemt.classList.add('agregado')
-            }
+
+            isProductInCart(iduser.id,productId).then((response)=>{
+                console.log(response)
+                if(response == true){
+                    removeFromCart(iduser.id,productId)
+                    elemt.classList.remove('agregado')
+                }
+                else{
+                    addToCart(iduser.id,productId,1)
+                    elemt.classList.add('agregado')
+                }
+            })
             //location.reload()
         })
     }

@@ -67,7 +67,7 @@
       "description": "Descripción del producto 2",
       "stock": 10,
       "soldUnits": 2,
-      "price": 19.99,
+      "price": 20.99,
       "genre": "survival",
       "categoryId": 2,
       "developerId": 2,
@@ -190,9 +190,16 @@
       "userId": 1,
       "products": [
         {
+          "productId": 6,
+          "quantity": 1
+        },
+        {
+          "productId": 2,
+          "quantity": 1
+        },
+        {
           "productId": 1,
-          "quantity": 1,
-          "price": 19.99
+          "quantity": 1
         }
       ]
     },
@@ -202,8 +209,7 @@
       "products": [
         {
           "productId": 1,
-          "quantity": 2,
-          "price": 39.98
+          "quantity": 2
         }
       ]
     }
