@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/admin.css">
-    <script src="../scripts/adminPage.js" defer></script>
     <title>Admin</title>
 </head>
 <body>
@@ -13,12 +12,13 @@
     <div id="menu" class="menu">
         <p data-target="#historic">Historic</p>
         <p data-target="#form">Products</p>
+        <p data-target="#list">List</p>
+        <p data-target=""></p>
     </div>
 
     <div id="content" class="content">
-
         <div class="form-product" data-content id="form">
-            <h1 class="title-product">Ingrese el producto</h1>
+            <h1 class="title-product">Input the product</h1>
             <form class="add-product" id="add-product">
                 <input type="text" class="inp" id="name" placeholder="Name">
                 <input type="text" class="inp" id="description" placeholder="Description">
@@ -31,12 +31,22 @@
                 <input type="submit" class="add" value="Add Product">
             </form>
         </div>
-
         <div class="historic" data-content id="historic">
-            <h1>Aqui va la parte de Alejandro</h1>
+            <h1 class="title-product">Historic</h1>
+            <hr>
+        </div>
+        <div class="list" data-content id="list">
+            <h1 class="title-product">List of products</h1>
+            <hr>
+        </div>
+        <div class="active" data-content id="welcome">
+            <h1 class="title-product">Welcome Admin arrecho</h1>
         </div>
     </div>
-        
+    
     <script src="../scripts/addProduct.js" type="module"></script>
+    <script src="../scripts/adminHistoric.js" type="module"></script>
+    <script src="../scripts/adminList.js" type="module"></script>
+    <script src="../scripts/adminPage.js" defer></script>
 </body>
 </html>
