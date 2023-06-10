@@ -12,6 +12,5 @@ targets.forEach(target =>{
 
         const t = document.querySelector(target.dataset.target)
         t.classList.add('active')
-        
     })
 })
