@@ -1,6 +1,6 @@
 import { Get } from "../controller/UserApi.js";
 import { getidproductsaves } from "../controller/productseccionController.js";
-import { addToCart, isProductInCart, removeFromCart} from "../controller/shoppingCartController.js";
+import { addToCart, isProductInCart, createCart ,removeFromCart,  getStock} from "../controller/shoppingCartController.js";
 
 const products = document.querySelectorAll("#productBestselling")
 const btn = document.getElementById('btns')
@@ -25,25 +25,35 @@ Get("products?_sort=soldUnits&_order=desc").then((productsDB)=>{
         // if(!productssave.includes(productId.toString())){
         //     imgproducthtml.classList.remove('agregado')
         // }
-        imgproducthtml.addEventListener("click",(event)=>{
+        imgproducthtml.addEventListener("click",async(event)=>{
             const cart = getidproductsaves();
             const elemt = event.target;
-            isProductInCart(iduser.id,productId).then((response)=>{
-                console.log(response)
-                if(response == true){
-                    removeFromCart(iduser.id,productId)
-                    elemt.classList.remove('agregado')
-                }
-                else{
-                    addToCart(iduser.id,productId,1)
-                    elemt.classList.add('agregado')
-                }
-                
-            })
-
             
+            if(await createCart(iduser.id) == false){ 
+                productvalidate(productId,elemt)
+            }
+            else{ //* en caso de que el usuario no tenga carrito
+                createCart(iduser.id)
+                productvalidate(productId,elemt)
+            }
 
             //location.reload()
         })
     }
 })
+function productvalidate (productId,elemt) {
+    isProductInCart(iduser.id,productId).then(async(response)=>{
+        if(response == true){
+            removeFromCart(iduser.id,productId)
+            elemt.classList.remove('agregado')
+        }
+        else{
+            const stockproduct = await getStock(productId)
+            if(stockproduct > 0){
+                addToCart(iduser.id,productId,1)
+                elemt.classList.add('agregado')
+            }
+        }
+        
+    })
+}

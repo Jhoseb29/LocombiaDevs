@@ -26,7 +26,7 @@
     },
     {
       "username": "josemontes",
-      "email": "montesotero82@gmail.com",
+      "email": "montesotero8@gmail.com",
       "password": "1kU6!F70",
       "id": 5
     },
@@ -49,8 +49,8 @@
       "name": "uncharted",
       "brand": "Marca1",
       "description": "Descripción del producto 1",
-      "stock": 10,
-      "soldUnits": 2,
+      "stock": 6,
+      "soldUnits": 6,
       "price": 19.99,
       "genre": "RPG",
       "categoryId": 1,
@@ -65,8 +65,8 @@
       "name": "horizon forbiden west",
       "brand": "Marca2",
       "description": "Descripción del producto 2",
-      "stock": 10,
-      "soldUnits": 2,
+      "stock": 0,
+      "soldUnits": 12,
       "price": 20.99,
       "genre": "survival",
       "categoryId": 2,
@@ -82,8 +82,8 @@
       "name": "TMNT",
       "brand": "Marca3",
       "description": "Descripción del producto 3",
-      "stock": 10,
-      "soldUnits": 1,
+      "stock": 8,
+      "soldUnits": 3,
       "price": 19.99,
       "genre": "RPG",
       "categoryId": 1,
@@ -100,8 +100,8 @@
       "name": "GHOSTBUSTERS",
       "brand": "Marca3",
       "description": "Descripción del producto 3",
-      "stock": 15,
-      "soldUnits": 5,
+      "stock": 14,
+      "soldUnits": 6,
       "price": 10.99,
       "genre": "RPG",
       "categoryId": 1,
@@ -117,8 +117,8 @@
       "name": "DRAGIN BALL BUKAI TENKAICHI 3",
       "brand": "Marca3",
       "description": "Descripción del producto 3",
-      "stock": 8,
-      "soldUnits": 4,
+      "stock": 3,
+      "soldUnits": 9,
       "price": 19.79,
       "genre": "RPG",
       "categoryId": 1,
@@ -134,8 +134,8 @@
       "name": "THE WHITCHER III",
       "brand": "Marca3",
       "description": "Descripción del producto 3",
-      "stock": 7,
-      "soldUnits": 5,
+      "stock": 6,
+      "soldUnits": 6,
       "price": 19.99,
       "genre": "RPG",
       "categoryId": 1,
@@ -199,6 +199,11 @@
           "quantity": 1
         }
       ]
+    },
+    {
+      "userId": 5,
+      "products": [],
+      "id": 3
     }
   ],
   "historic": [
@@ -263,119 +268,42 @@
       "status": "pending"
     },
     {
-      "userId": 1,
-      "date": "2023-06-09",
+      "userId": 5,
+      "date": "2023-06-10",
       "products": [
         {
-          "productId": 6,
-          "name": "THE WHITCHER III",
+          "productId": 1,
+          "name": "uncharted",
           "quantity": 2,
           "price": 39.98
         },
         {
-          "productId": 5,
-          "name": "DRAGIN BALL BUKAI TENKAICHI 3",
-          "quantity": 3,
-          "price": 59.37
+          "productId": 6,
+          "name": "THE WHITCHER III",
+          "quantity": 1,
+          "price": 19.99
         },
         {
-          "productId": 2,
-          "name": "horizon forbiden west",
-          "quantity": 4,
-          "price": 83.96
+          "productId": 4,
+          "name": "GHOSTBUSTERS",
+          "quantity": 1,
+          "price": 10.99
+        },
+        {
+          "productId": 5,
+          "name": "DRAGIN BALL BUKAI TENKAICHI 3",
+          "quantity": 1,
+          "price": 19.79
         }
       ],
-      "order": "984393624",
+      "order": "746939472",
+      "card": "**** **** **** 4444 mastercard",
       "status": "pendiente",
       "id": 4
     },
     {
-      "userId": 1,
-      "date": "2023-06-09",
-      "products": [
-        {
-          "productId": 6,
-          "name": "THE WHITCHER III",
-          "quantity": 2,
-          "price": 39.98
-        },
-        {
-          "productId": 5,
-          "name": "DRAGIN BALL BUKAI TENKAICHI 3",
-          "quantity": 3,
-          "price": 59.37
-        }
-      ],
-      "order": "546023495",
-      "status": "reclamo",
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "date": "2023-06-09",
-      "products": [
-        {
-          "productId": 6,
-          "name": "THE WHITCHER III",
-          "quantity": 2,
-          "price": 39.98
-        },
-        {
-          "productId": 5,
-          "name": "DRAGIN BALL BUKAI TENKAICHI 3",
-          "quantity": 3,
-          "price": 59.37
-        }
-      ],
-      "order": "138903169",
-      "status": "exitoso",
-      "id": 6
-    },
-    {
-      "userId": 1,
-      "date": "2023-06-09",
-      "products": [
-        {
-          "productId": 6,
-          "name": "THE WHITCHER III",
-          "quantity": 2,
-          "price": 39.98
-        },
-        {
-          "productId": 5,
-          "name": "DRAGIN BALL BUKAI TENKAICHI 3",
-          "quantity": 3,
-          "price": 59.37
-        }
-      ],
-      "order": "885592075",
-      "status": "pendiente",
-      "id": 7
-    },
-    {
-      "userId": 1,
-      "date": "2023-06-09",
-      "products": [
-        {
-          "productId": 6,
-          "name": "THE WHITCHER III",
-          "quantity": 2,
-          "price": 39.98
-        },
-        {
-          "productId": 5,
-          "name": "DRAGIN BALL BUKAI TENKAICHI 3",
-          "quantity": 3,
-          "price": 59.37
-        }
-      ],
-      "order": "104047249",
-      "status": "pendiente",
-      "id": 8
-    },
-    {
-      "userId": 1,
-      "date": "2023-06-09",
+      "userId": 5,
+      "date": "2023-06-10",
       "products": [
         {
           "productId": 5,
@@ -384,15 +312,16 @@
           "price": 39.58
         },
         {
-          "productId": 6,
-          "name": "THE WHITCHER III",
-          "quantity": 3,
-          "price": 59.97
+          "productId": 3,
+          "name": "TMNT",
+          "quantity": 2,
+          "price": 39.98
         }
       ],
-      "order": "626509417",
-      "status": "pendiente",
-      "id": 9
+      "order": "456682752",
+      "card": "**** **** **** 4444 mastercard",
+      "status": "exitoso",
+      "id": 5
     }
   ]
 }

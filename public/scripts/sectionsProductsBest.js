@@ -1,6 +1,6 @@
 import { Get } from "../controller/UserApi.js";
 import { getidproductsaves } from "../controller/productseccionController.js";
-import { addToCart, removeFromCart, isProductInCart } from "../controller/shoppingCartController.js";
+import { addToCart, removeFromCart, isProductInCart, getStock, createCart } from "../controller/shoppingCartController.js";
 const products = document.querySelectorAll("#BestProduct")
 const iduser = JSON.parse(localStorage.getItem("currentUser"));
 
@@ -24,22 +24,36 @@ Get("products?_sort=likes&_order=desc").then((productsDB)=>{
         // if(!productssave.includes(productId.toString())){
         //     imgproducthtml.classList.remove('agregado')
         // }
-        imgproducthtml.addEventListener("click",(event)=>{
+        imgproducthtml.addEventListener("click",async(event)=>{
             const cart = getidproductsaves();
             const elemt = event.target
-
-            isProductInCart(iduser.id,productId).then((response)=>{
-                console.log(response)
-                if(response == true){
-                    removeFromCart(iduser.id,productId)
-                    elemt.classList.remove('agregado')
-                }
-                else{
-                    addToCart(iduser.id,productId,1)
-                    elemt.classList.add('agregado')
-                }
-            })
+            
+            if(await createCart(iduser.id) == false){ //* SI NO tiene carrrito , se crea el carrito y me retorna algo diferente de false
+                productvalidate(productId,elemt)
+            }
+            else{ //* en caso de que el usuario no tenga carrito
+                createCart(iduser.id)
+                productvalidate(productId,elemt)
+            }
+            
             //location.reload()
         })
     }
 })
+
+function productvalidate (productId,elemt) {
+    isProductInCart(iduser.id,productId).then(async (response)=>{
+        if(response == true){
+            removeFromCart(iduser.id,productId)
+            elemt.classList.remove('agregado')
+        }
+        else{
+            const stockproduct = await getStock(productId)
+            if(stockproduct > 0){
+                addToCart(iduser.id,productId,1)
+                elemt.classList.add('agregado')
+            }
+            
+        }
+    })
+}

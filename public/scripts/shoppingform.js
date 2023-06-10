@@ -30,6 +30,7 @@ const errorElement = document.getElementById("error-message");
 
 form.addEventListener("submit", async function (event) {
   event.preventDefault();
+
   
   const cartProducts = await getCartProductsByUserId(iduser.id);
   if (cartProducts.length === 0) {
@@ -65,14 +66,15 @@ function stripeTokenHandler(paymentMethod, event) {
   hiddenInput.setAttribute("name", "paymentMethod");
   hiddenInput.setAttribute("value", paymentMethod.id);
   form.appendChild(hiddenInput);
-  console.log("sd", paymentMethod);
-  console.log(event);
+  const last4card = paymentMethod.card.last4
+  const cardbrand = paymentMethod.card.brand
   const arrow = document.getElementById("img_arrow_right");
   const circle = document.querySelector(".icon_container");
   arrow.style.display = "none";
   circle.style.display = "initial";
   showCircleAndCheckmark();
-  createhistoric();
+  
+  createhistoric(last4card,cardbrand);
   clearCart(iduser.id);
   setTimeout(() => {
     window.location.href = './main_page.html'
@@ -85,7 +87,7 @@ function stripeTokenHandler(paymentMethod, event) {
   // Redirect to index.html
 }
 
-async function createhistoric() {
+async function createhistoric(last4card,cardbrand) {
   //* sacar fecha
   const currentDate = new Date();
   const year = currentDate.getFullYear();
@@ -100,7 +102,7 @@ async function createhistoric() {
   
   const productsarrayhtml = Array.from(document.querySelectorAll(".product"));
   console.log("productsArrrrray",productsarrayhtml)
-
+  
   
  //*
   let namesproducts = productsarrayhtml.map((element)=>{
@@ -110,9 +112,10 @@ async function createhistoric() {
     const data = {productId:id, name:name, price:price}
     return data
   })
-
+  
   //* acrualizar las unidades vendidas y el stock
   updateProductsDatastockandsoldunits(productsarrayhtml);
+  
   //* creamos array de productos
 
   const productsArray = cartuserproducts.map((item1) => {
@@ -120,12 +123,14 @@ async function createhistoric() {
     return { productId: item1.productId, name: item2.name, quantity: item1.quantity, price: item2.price };
   });
   console.log("productsArray:",productsArray)
+  
   //* organisar los datos en la estrucuta correcta
   const data = {
     userId : cartuser.userId,
     date: formattedDate,
     products:productsArray,
     order: generarNumeroAleatorio().toString(),
+    card: `**** **** **** ${last4card} ${cardbrand}`,
     status: generarEstadoAleatorio(),
   }
   //* llamamos a addHistoric para añadir ala base de datos
@@ -134,7 +139,7 @@ async function createhistoric() {
 
 function showCircleAndCheckmark() {
   setTimeout(function () {
-    var iconContainer = document.querySelector(".circle");
+    let iconContainer = document.querySelector(".circle");
     let check = document.querySelector(".checkmark");
     iconContainer.classList.add("active");
     check.classList.add("active");
@@ -142,7 +147,7 @@ function showCircleAndCheckmark() {
 }
 
 function hideCircleAndCheckmark() {
-  var iconContainer = document.querySelector(".icon_container");
+  let iconContainer = document.querySelector(".icon_container");
   iconContainer.classList.remove("active");
   iconContainer.style.display = "none";
 }
@@ -157,3 +162,4 @@ function generarEstadoAleatorio() {
   const indiceAleatorio = Math.floor(Math.random() * estados.length);
   return estados[indiceAleatorio];
 }
+

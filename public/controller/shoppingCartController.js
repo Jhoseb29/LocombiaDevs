@@ -297,7 +297,7 @@ function getSoldUnits(productId) {
     });
 }
 
-async function getStock(productId) {
+export async function getStock(productId) {
   return fetch(`http://localhost:3000/products/${productId}`)
     .then(response => response.json())
     .then(data => {
@@ -308,4 +308,43 @@ async function getStock(productId) {
       console.error('Error al obtener las unidades vendidas:', error);
       throw new Error("error al obtener las unidades vendidas"); // En caso de error, se retorna un valor predeterminado (0 en este caso)
     });
+}
+
+export async function createCart(userId) {
+  try {
+    // Obtener la lista de carritos
+    const response = await fetch('http://localhost:3000/carts');
+    const carts = await response.json();
+
+    // Verificar si ya existe un carrito para el userId especificado
+    const existingCart = carts.find((cart) => cart.userId === userId);
+
+    if (existingCart) {
+      console.log('Ya existe un carrito para el userId:', userId);
+      return false;
+    }
+
+    // Crear el nuevo carrito
+    const newCart = {
+      userId: userId,
+      products: [],
+    };
+
+    // Enviar la solicitud para crear el carrito
+    const createResponse = await fetch('http://localhost:3000/carts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newCart),
+    });
+
+    if (createResponse.ok) {
+      console.log('Carrito creado exitosamente para el userId:', userId);
+    } else {
+      console.log('Hubo un error al crear el carrito');
+    }
+  } catch (error) {
+    console.log('Ocurrió un error:', error);
+  }
 }
