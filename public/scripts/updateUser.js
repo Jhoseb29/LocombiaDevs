@@ -18,10 +18,6 @@ updateForm.addEventListener('submit', function (event) {
       return;
     }
 
-    if (!password) {
-        alert('Debes ingresar la contraseña para realizar los cambios');
-        return;
-    }
 
     UpdateUserForm(userId, username, email, password)
       .then(updatedUser => {

@@ -36,9 +36,14 @@ export const LoginUser = async(username, password) =>{
 
 
 export const UpdateUserForm = async (userId, username, email, password) => {
+  const existingUser = await FindExistingUser(username, { email: email });
+  if (existingUser != null) {
+    throw new Error('El nombre de usuario o el correo electrónico ya están en uso');
+  }
+
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   if (currentUser.password !== password) {
-    return Promise.reject(new Error('Contraseña incorrecta. No se pueden realizar los cambios'));
+    throw new Error('Contraseña incorrecta. No se pueden realizar los cambios');
   }
 
   // Obtener la información actual del usuario desde el archivo db.json
@@ -57,6 +62,7 @@ export const UpdateUserForm = async (userId, username, email, password) => {
   if (password !== '') {
     userData.password = password;
   }
+
   const response_1 = await fetch(API_URL + "users/" + userId, {
     method: "PUT",
     headers: {

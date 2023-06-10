@@ -1,5 +1,26 @@
 import { Delete, Get } from "../controller/UserApi.js";
 
+
+Get('historic').then(historic => {
+  historic.forEach(entry => {
+    const products = entry.products;
+    const userId = entry.userId; // Obtiene el ID del usuario
+
+
+    products.forEach(product => {
+
+      const productId = product.productId;
+      const productName = product.name;
+      const productPrice = product.price;
+
+      console.log(productName, productId, productPrice, userId)
+    
+    });
+  });
+});
+
+
+
 const deleteUserButton = document.getElementById("deleteUserButton");
 
 deleteUserButton.addEventListener("click", () => {
