@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/admin.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../scripts/adminPage.js" defer></script>
     <title>Admin</title>
 </head>
 <body>
@@ -14,20 +16,23 @@
         <p data-target="#form">Products</p>
         <p data-target="#list">List</p>
         <p data-target=""></p>
+        <p data-target="#update">Update product</p>
     </div>
 
     <div id="content" class="content">
         <div class="form-product" data-content id="form">
-            <h1 class="title-product">Input the product</h1>
+            <h1 class="title-product">Enter the product</h1>
             <form class="add-product" id="add-product">
-                <input type="text" class="inp" id="name" placeholder="Name">
-                <input type="text" class="inp" id="description" placeholder="Description">
-                <input type="text" class="inp" id="brand" placeholder="Brand">
-                <input type="number" class="inp" id="stock" placeholder="Stock">
-                <input type="number" class="inp" id="solidUnits" placeholder="Solid Units">
-                <input type="text" class="inp" id="price" placeholder="Price">
-                <input type="text" class="inp" id="genre" placeholder="Genre">
-                <input type="url" class="inp" id="image" placeholder="Image">
+                <input type="text" class="inp" id="name" placeholder="Name" required>
+                <input type="text" class="inp" id="description" placeholder="Description" required>
+                <input type="text" class="inp" id="brand" placeholder="Brand" required>
+                <input type="number" class="inp" id="stock" placeholder="Stock" required>
+                <input type="text" class="inp" id="price" placeholder="Price" required>
+                <input type="text" class="inp" id="genre" placeholder="Genre" required>
+                <input type="text" class="inp" id="categoryId" placeholder="ID of category" required>
+                <input type="text" class="inp" id="developerId" placeholder="ID of developer" required>
+                <input type="url" class="inp" id="image" placeholder="Image" required>
+                
                 <input type="submit" class="add" value="Add Product">
             </form>
         </div>
@@ -40,7 +45,12 @@
             <hr>
         </div>
         <div class="active" data-content id="welcome">
-            <h1 class="title-product">Welcome Admin arrecho</h1>
+            <h1 class="title-product">Welcome Admin</h1>
+        </div>
+
+        <div class="update" data-content id="update">
+            <h1>Esta pestana es para actualizar los productos</h1>
+            <a href="./main_page.html">aqui perrito</a>
         </div>
     </div>
     

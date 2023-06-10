@@ -2,12 +2,12 @@ import { Get } from "../controller/UserApi.js"
 
 const totalHistoric = document.getElementById('list')
 
-Get('historic').then(historic => {
-    historic.forEach(entry => {
-        const products = entry.products;
-        const price = products[0].price; // Obtains the price of the first product
-        const gameName = products[0].name; // Obtains the name of the first game
-        const status = entry.status; // Obtains status of the purchase
+Get('products').then(products => {
+    products.forEach(entry => {
+        const price = entry.price; // Obtains the price of the first product
+        const gameName = entry.name; // Obtains the name of the first game
+        const stock = entry.stock; // Obtains the stock xde
+        const brand = entry.brand;
 
         const historicContainer = document.createElement('div')
 
@@ -15,15 +15,18 @@ Get('historic').then(historic => {
         productName.textContent = gameName
         const productPrice = document.createElement('p')
         productPrice.textContent = price
-        const productStatus = document.createElement('p')
-        productStatus.textContent = status
+        const productStock = document.createElement('p')
+        productStock.textContent = stock
+        const productBrand = document.createElement('p')
+        productBrand.textContent = brand
 
         const productLine = document.createElement('hr')
 
         historicContainer.appendChild(productName)
         historicContainer.appendChild(productPrice)
-        historicContainer.appendChild(productStatus)
         historicContainer.appendChild(productLine)
+        historicContainer.appendChild(productStock)
+        historicContainer.appendChild(productBrand)
         totalHistoric.appendChild(historicContainer)
 
     });

@@ -1,6 +1,12 @@
 {
   "users": [
     {
+      "id": 0,
+      "username": "admin",
+      "email": "admin@insano.com",
+      "password": "admin"
+    },
+    {
       "id": 1,
       "username": "josemon",
       "email": "montesotero8@gmail.com",
@@ -108,7 +114,7 @@
     },
     {
       "id": 5,
-      "name": "DRAGIN BALL BUKAI TENKAICHI 3",
+      "name": "DRAG0N BALL BUKAI TENKAICHI 3",
       "brand": "Marca3",
       "description": "Descripción del producto 3",
       "stock": 10,
