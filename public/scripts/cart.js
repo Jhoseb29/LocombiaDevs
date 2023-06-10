@@ -1,7 +1,7 @@
 import { Get } from "../controller/UserApi.js";
 import { producthtml } from "../controller/productTemplate.js";
 import { getidproductsaves } from "../controller/productseccionController.js";
-import { getCartByUserId, updateCartItemQuantity } from "../controller/shoppingCartController.js";
+import { getCartProductsByUserId, updateCartItemQuantity, getStockProductById } from "../controller/shoppingCartController.js";
 import { removeFromCart } from "../controller/shoppingCartController.js";
 
 const cartproductscontainer = document.getElementById("cart_products__container");
@@ -10,16 +10,15 @@ const Subtotal = document.getElementById("Subtotal");
 const totaltaxes = document.getElementById("total");
 const totalbtn = document.getElementById("totalbtn");
 const iduser = JSON.parse(localStorage.getItem("currentUser"));
-const productsavesincart = await getCartByUserId(iduser.id)
-console.log(productsavesincart)
+const productsavesincart = await getCartProductsByUserId(iduser.id);
+
 
 const Createproducthtml = async (productocontainer) => {
     const idsaves = [] ;
     productsavesincart.forEach((producto)=>{
-        idsaves.push(producto.productId)
+        idsaves.push(producto.productId);
     })
 
-    console.log(idsaves)
     let prices = [];
     let arrayElementhtml = []
     const productPromises = idsaves.map((id,index) =>
@@ -30,15 +29,15 @@ const Createproducthtml = async (productocontainer) => {
         prices.push(price);
         productocontainer.insertAdjacentHTML("beforeend",producthtml(gameimgurl, gamename, price,id,productsavesincart[index].quantity));
         arrayElementhtml.push(productocontainer.querySelector("#producto-"+(id)))
-        
+         
         }) 
     );
     
     await Promise.all(productPromises); //** esperamos a que las promesas de el map se resuelvan */
-    deleteProduct(arrayElementhtml)
-    addProduct(arrayElementhtml,prices)
-    resduceProducts(arrayElementhtml,prices)
-    actualizarTotales(document.querySelectorAll('.price'))
+    deleteProduct(arrayElementhtml);
+    addProduct(arrayElementhtml,prices);
+    resduceProducts(arrayElementhtml,prices);
+    actualizarTotales(document.querySelectorAll('.price'));
 };
 
 function calcularTotal(prices) {
@@ -90,21 +89,26 @@ function addProduct(arrayhtmlelements,productsprices){
             const productprice = productsprices[index]
             
             
-            element.addEventListener("click",(event)=>{
-                let newpriceproduct = document.querySelectorAll('.price')
+            element.addEventListener("click",async (event)=>{
+                const product = await getStockProductById(productquantity.parentElement.parentElement.id.split("-")[1]);
+                const prodoctstock = product[0].stock;
+                
+                let newpriceproduct = document.querySelectorAll('.price');
                 let quantity = parseInt(productquantity.textContent)
+                if(quantity <= prodoctstock-1){
                 productquantity.textContent = quantity+1
                 productpricehtml.textContent = "$"+(productprice*(quantity+1)).toFixed(2)
                 
                 actualizarTotales(newpriceproduct)
                 let cartitemid = parseInt(productquantity.parentElement.parentElement.id.split("-")[1])
                 let newQuantity = quantity+1
-                updateCartItemQuantity(iduser.id,cartitemid,newQuantity)
+                updateCartItemQuantity(cartitemid,iduser.id,newQuantity)}
             })
         })
         
     })
 }
+
 
 function resduceProducts (arrayhtmlelements,productsprices){
 
@@ -121,13 +125,19 @@ function resduceProducts (arrayhtmlelements,productsprices){
             element.addEventListener("click",(event)=>{
                 let newpriceproduct = document.querySelectorAll('.price')
                 let quantity = parseInt(productquantity.textContent)
-                if(quantity-1>=0){
+                if(quantity-1>=1){
                     productquantity.textContent = quantity-1
                     productpricehtml.textContent = "$"+(productprice*(quantity-1)).toFixed(2)
                     actualizarTotales(newpriceproduct)
                     let cartitemid = parseInt(productquantity.parentElement.parentElement.id.split("-")[1])
                     let newQuantity = quantity-1
-                    updateCartItemQuantity(iduser.id,cartitemid,newQuantity)
+                    updateCartItemQuantity(cartitemid,iduser.id,newQuantity)
+                }else if (quantity-1==0){
+                    productquantity.textContent = quantity-1
+                    productpricehtml.textContent = "$"+(productprice*(quantity-1)).toFixed(2)
+                    actualizarTotales(newpriceproduct)
+                    let cartitemid = parseInt(productquantity.parentElement.parentElement.id.split("-")[1])
+                    removeFromCart(iduser.id,cartitemid)
                 }
             })
         })

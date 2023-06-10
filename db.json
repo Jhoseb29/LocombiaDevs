@@ -50,7 +50,7 @@
       "brand": "Marca1",
       "description": "Descripción del producto 1",
       "stock": 10,
-      "soldUnits": 3,
+      "soldUnits": 2,
       "price": 19.99,
       "genre": "RPG",
       "categoryId": 1,
@@ -100,8 +100,8 @@
       "name": "GHOSTBUSTERS",
       "brand": "Marca3",
       "description": "Descripción del producto 3",
-      "stock": 10,
-      "soldUnits": 6,
+      "stock": 15,
+      "soldUnits": 5,
       "price": 10.99,
       "genre": "RPG",
       "categoryId": 1,
@@ -117,8 +117,8 @@
       "name": "DRAGIN BALL BUKAI TENKAICHI 3",
       "brand": "Marca3",
       "description": "Descripción del producto 3",
-      "stock": 10,
-      "soldUnits": 12,
+      "stock": 8,
+      "soldUnits": 4,
       "price": 19.79,
       "genre": "RPG",
       "categoryId": 1,
@@ -134,8 +134,8 @@
       "name": "THE WHITCHER III",
       "brand": "Marca3",
       "description": "Descripción del producto 3",
-      "stock": 10,
-      "soldUnits": 12,
+      "stock": 7,
+      "soldUnits": 5,
       "price": 19.99,
       "genre": "RPG",
       "categoryId": 1,
@@ -186,22 +186,9 @@
   ],
   "carts": [
     {
-      "id": 1,
       "userId": 1,
-      "products": [
-        {
-          "productId": 6,
-          "quantity": 1
-        },
-        {
-          "productId": 2,
-          "quantity": 1
-        },
-        {
-          "productId": 1,
-          "quantity": 1
-        }
-      ]
+      "products": [],
+      "id": 1
     },
     {
       "id": 2,
@@ -209,7 +196,7 @@
       "products": [
         {
           "productId": 1,
-          "quantity": 2
+          "quantity": 1
         }
       ]
     }
@@ -274,6 +261,138 @@
       "order": "123456789",
       "card": "123456789",
       "status": "pending"
+    },
+    {
+      "userId": 1,
+      "date": "2023-06-09",
+      "products": [
+        {
+          "productId": 6,
+          "name": "THE WHITCHER III",
+          "quantity": 2,
+          "price": 39.98
+        },
+        {
+          "productId": 5,
+          "name": "DRAGIN BALL BUKAI TENKAICHI 3",
+          "quantity": 3,
+          "price": 59.37
+        },
+        {
+          "productId": 2,
+          "name": "horizon forbiden west",
+          "quantity": 4,
+          "price": 83.96
+        }
+      ],
+      "order": "984393624",
+      "status": "pendiente",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "date": "2023-06-09",
+      "products": [
+        {
+          "productId": 6,
+          "name": "THE WHITCHER III",
+          "quantity": 2,
+          "price": 39.98
+        },
+        {
+          "productId": 5,
+          "name": "DRAGIN BALL BUKAI TENKAICHI 3",
+          "quantity": 3,
+          "price": 59.37
+        }
+      ],
+      "order": "546023495",
+      "status": "reclamo",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "date": "2023-06-09",
+      "products": [
+        {
+          "productId": 6,
+          "name": "THE WHITCHER III",
+          "quantity": 2,
+          "price": 39.98
+        },
+        {
+          "productId": 5,
+          "name": "DRAGIN BALL BUKAI TENKAICHI 3",
+          "quantity": 3,
+          "price": 59.37
+        }
+      ],
+      "order": "138903169",
+      "status": "exitoso",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "date": "2023-06-09",
+      "products": [
+        {
+          "productId": 6,
+          "name": "THE WHITCHER III",
+          "quantity": 2,
+          "price": 39.98
+        },
+        {
+          "productId": 5,
+          "name": "DRAGIN BALL BUKAI TENKAICHI 3",
+          "quantity": 3,
+          "price": 59.37
+        }
+      ],
+      "order": "885592075",
+      "status": "pendiente",
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "date": "2023-06-09",
+      "products": [
+        {
+          "productId": 6,
+          "name": "THE WHITCHER III",
+          "quantity": 2,
+          "price": 39.98
+        },
+        {
+          "productId": 5,
+          "name": "DRAGIN BALL BUKAI TENKAICHI 3",
+          "quantity": 3,
+          "price": 59.37
+        }
+      ],
+      "order": "104047249",
+      "status": "pendiente",
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "date": "2023-06-09",
+      "products": [
+        {
+          "productId": 5,
+          "name": "DRAGIN BALL BUKAI TENKAICHI 3",
+          "quantity": 2,
+          "price": 39.58
+        },
+        {
+          "productId": 6,
+          "name": "THE WHITCHER III",
+          "quantity": 3,
+          "price": 59.97
+        }
+      ],
+      "order": "626509417",
+      "status": "pendiente",
+      "id": 9
     }
   ]
 }

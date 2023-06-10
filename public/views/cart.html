@@ -23,13 +23,13 @@
         <div class="title_shoping_cart_container">
             <a href="./main_page.html"><h2 class="titelcontinue">Shopping Continue</h2></a>
             <div class="line"></div>
-            <h3 class="title_shoping_cart">shopping cart </h3>
+            <h3 class="title_shoping_cart" style="margin-bottom: 30px;">shopping cart </h3>
             <div class="product_counter_container">
-                <p class="product_counter">You have</p> 
+                <!--<p class="product_counter">You have</p> 
                 <p class="number_products">34</p>
                 <p class="product_counter">
                     item in your cart
-                </p>
+                </p>-->
             </div>
             
         </div>
@@ -55,9 +55,9 @@
                     <img src="../assets/images/Rectangle 10visa.svg" alt="Imagen 2" class="img_card">
                 </label>
             </div>
-            <div class="inputs_container">
+            <div class="inputs_container" >
                 <div class="input_purchase_form_container">
-                    <label for="usernme" class="title_input">Name on card</label>
+                    <label for="usernme" class="title_input" >Name on card</label>
                     <input required type="text" name="usernme" id="usernme" class="username_input_purchase" placeholder="Name">
                 </div>
                 <div class="input_purchase_form_container">
@@ -87,7 +87,11 @@
                 <p class="total" id="totalbtn"></p>
                 <div class="text_checkout">
                     <p class="text_checkout">Checkout</p>
-                    <img src="../assets/images/Rightarrow-right.svg" >
+                    <img src="../assets/images/Rightarrow-right.svg" id="img_arrow_right" >
+                    <span class="icon_container" style="display: none;">
+                        <span class="circle"></span>
+                        <span class="checkmark" ></span>
+                    </span>
                 </div>
             </button>
         </form>
@@ -95,6 +99,6 @@
 
     </section>
     <script src="../scripts/cart.js" type="module"></script>
-    <script src="../scripts/shoppingform.js"></script>
+    <script src="../scripts/shoppingform.js" type="module"></script>
 </body>
 </html>
