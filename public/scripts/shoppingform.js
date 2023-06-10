@@ -58,10 +58,10 @@ form.addEventListener("submit", async function (event) {
     });
 });
 
-function stripeTokenHandler(paymentMethod, event) {
+async function stripeTokenHandler(paymentMethod, event) {
   // Insert the payment method ID into the form so it gets submitted to the server
-  var form = document.getElementById("payment-form");
-  var hiddenInput = document.createElement("input");
+  let form = document.getElementById("payment-form");
+  let hiddenInput = document.createElement("input");
   hiddenInput.setAttribute("type", "hidden");
   hiddenInput.setAttribute("name", "paymentMethod");
   hiddenInput.setAttribute("value", paymentMethod.id);
@@ -74,12 +74,17 @@ function stripeTokenHandler(paymentMethod, event) {
   circle.style.display = "initial";
   showCircleAndCheckmark();
   
-  createhistoric(last4card,cardbrand);
+  
+  
+  let datainvoice = await createhistoric(last4card,cardbrand);
   clearCart(iduser.id);
+  console.log("datainvoice",datainvoice)
+  generarFacturaPDF(datainvoice)
+  
   setTimeout(() => {
     window.location.href = './main_page.html'
-  }, 2000);
-
+  }, 3000);
+  //location.reload()
   event.preventDefault();
   // Submit the form
   //form.submit();
@@ -114,7 +119,7 @@ async function createhistoric(last4card,cardbrand) {
   })
   
   //* acrualizar las unidades vendidas y el stock
-  updateProductsDatastockandsoldunits(productsarrayhtml);
+  const updatestock = await updateProductsDatastockandsoldunits(productsarrayhtml);
   
   //* creamos array de productos
 
@@ -133,8 +138,20 @@ async function createhistoric(last4card,cardbrand) {
     card: `**** **** **** ${last4card} ${cardbrand}`,
     status: generarEstadoAleatorio(),
   }
+
+  //* crear estrutura de dato para la factura 
+  const datainvoice ={
+    username: iduser.username,
+    email:iduser.email,
+    date: formattedDate,
+    products:productsArray,
+    order: generarNumeroAleatorio().toString(),
+    card:`**** **** **** ${last4card} ${cardbrand}`,
+  }
   //* llamamos a addHistoric para añadir ala base de datos
   addHistoric(data)
+  //* generamos la factura
+  return datainvoice
 }
 
 function showCircleAndCheckmark() {
@@ -158,8 +175,54 @@ function generarNumeroAleatorio() {
 }
 
 function generarEstadoAleatorio() {
-  const estados = ["exitoso", "pendiente", "reclamo"];
+  const estados = ["exitoso", "pendiente","fracaso"];
   const indiceAleatorio = Math.floor(Math.random() * estados.length);
   return estados[indiceAleatorio];
 }
 
+function generarFacturaPDF(data) {
+  const doc = new jsPDF();
+
+  // Logo de la tienda
+  const logoImg = new Image();
+  logoImg.src = '../assets/images/logo.png';
+  logoImg.onload = function () {
+      doc.addImage(logoImg, 'PNG', 10, 10, 50, 20);
+
+      // Información de la tienda
+      doc.setFontSize(12);
+      doc.text("LoCombia Gaming", 10, 40);
+      doc.text(`correo electronico: ${data.email}`, 10, 50);
+
+      // Título de la factura
+      doc.setFontSize(18);
+      doc.text("Factura", 10, 70);
+
+      // Información del usuario
+      doc.setFontSize(12);
+      doc.text(`Cliente: ${data.username}`, 10, 90);
+      doc.text(`Fecha: ${data.date}`, 10, 100);
+
+      // Información de los productos
+      doc.setFontSize(14);
+      doc.text("Productos:", 10, 120);
+      let y = 130;
+
+      data.products.forEach((product, index) => {
+        const productNameLines = doc.splitTextToSize((product.name).toUpperCase(), 60);
+        doc.text(productNameLines, 10, y);
+        doc.text(`Precio: ${(product.price / product.quantity).toFixed(2)}`, 80, y);
+        doc.text(`Cantidad: ${product.quantity}`, 120, y);
+        doc.text(`Total: ${product.price}`, 160, y);
+        y += (productNameLines.length * 10) + 10;
+    });
+
+      // Información del pedido y tarjeta
+      doc.setFontSize(12);
+      doc.text(`Número de pedido: ${data.order}`, 10, y + 10);
+      doc.text(`Tarjeta: ${data.card}`, 10, y + 20);
+
+      // Guardar el PDF
+      doc.save("factura.pdf");
+  };
+}

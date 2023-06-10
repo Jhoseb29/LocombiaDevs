@@ -1,8 +1,9 @@
 import { Get } from "../controller/UserApi.js";
 
+const API_URL = "http://localhost:3000/";
 // Función para obtener el carrito de un usuario por su ID
 export function getCartProductsByUserId(userId) {
-  return fetch(`http://localhost:3000/carts?userId=${userId}`)
+  return fetch(`${API_URL}carts?userId=${userId}`)
     .then((response) => response.json())
     .then((data) => {
       console.log("Carrito del usuario:", data);
@@ -15,7 +16,7 @@ export function getCartProductsByUserId(userId) {
 }
 
 export function getCartByUserId(userId) {
-  return fetch(`http://localhost:3000/carts?userId=${userId}`)
+  return fetch(`${API_URL}carts?userId=${userId}`)
     .then((response) => response.json())
     .then((data) => {
       console.log("Carrito del usuario:", data);
@@ -29,7 +30,7 @@ export function getCartByUserId(userId) {
 
 
 export function addToCart(userId, productId, quantity) {
-  fetch("http://localhost:3000/carts")
+  fetch(API_URL+"carts")
     .then((response) => response.json())
     .then((carts) => {
       // Buscar el carrito del usuario en la base de datos
@@ -61,7 +62,7 @@ export function addToCart(userId, productId, quantity) {
       }
 
       // Actualizar el carrito en la base de datos
-      return fetch(`http://localhost:3000/carts/${cart.id}`, {
+      return fetch(`${API_URL}carts/${cart.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -78,7 +79,7 @@ export function addToCart(userId, productId, quantity) {
 }
 
 export function removeFromCart(userId, productId) {
-  fetch("http://localhost:3000/carts")
+  fetch(API_URL+"carts")
     .then((response) => response.json())
     .then((carts) => {
       // Buscar el carrito del usuario en la base de datos
@@ -97,7 +98,7 @@ export function removeFromCart(userId, productId) {
           cart.products.splice(index, 1);
 
           // Actualizar el carrito en la base de datos
-          return fetch(`http://localhost:3000/carts/${cart.id}`, {
+          return fetch(`${API_URL}carts/${cart.id}`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",
@@ -121,7 +122,7 @@ export function removeFromCart(userId, productId) {
 
 //** */
 export async function updateCartItemQuantity(productId, userId, newQuantity) {
-  const cartUrl = `http://localhost:3000/carts?userId=${userId}`;
+  const cartUrl = `${API_URL}carts?userId=${userId}`;
   const response = await fetch(cartUrl);
   const cartData = await response.json();
 
@@ -139,7 +140,7 @@ export async function updateCartItemQuantity(productId, userId, newQuantity) {
       userCart.products[productIndex].quantity = newQuantity;
 
       // Realizar la petición PUT para actualizar el carrito en la base de datos
-      const updateUrl = `http://localhost:3000/carts/${userCart.id}`;
+      const updateUrl = `${API_URL}carts/${userCart.id}`;
       await fetch(updateUrl, {
         method: "PUT",
         headers: {
@@ -158,7 +159,7 @@ export async function updateCartItemQuantity(productId, userId, newQuantity) {
 }
 
 export async function isProductInCart(userId, productId) {
-  return fetch(`http://localhost:3000/carts?userId=${userId}`)
+  return fetch(`${API_URL}carts?userId=${userId}`)
     .then((response) => response.json())
     .then((cart) => {
         let listaproductos = cart[0].products
@@ -179,7 +180,7 @@ export async function isProductInCart(userId, productId) {
 //* crear historico */
 
 export function addHistoric(data) {
-  return fetch('http://localhost:3000/historic', {
+  return fetch(API_URL+'historic', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -201,7 +202,7 @@ export function addHistoric(data) {
 
 export function clearCart(userId) {
   // Primero, realizamos una solicitud GET para obtener el carrito del usuario específico
-  fetch(`http://localhost:3000/carts?userId=${userId}`)
+  fetch(`${API_URL}carts?userId=${userId}`)
     .then(response => response.json())
     .then(carts => {
       // Verificamos si se encontró un carrito para el usuario
@@ -215,7 +216,7 @@ export function clearCart(userId) {
           products: [] };
         
         // Realizamos una solicitud PUT para actualizar el carrito con el objeto 'updatedCart'
-        fetch(`http://localhost:3000/carts/${cartId}`, {
+        fetch(`${API_URL}carts/${cartId}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json'
@@ -265,7 +266,7 @@ export async function updateProductsDatastockandsoldunits(products) {
 
 function updateProductstockandsoldunits(productId, soldUnits, stock) {
   // Realiza una solicitud HTTP PATCH a la API para actualizar las propiedades específicas del producto
-  fetch(`http://localhost:3000/products/${productId}`, {
+  fetch(`${API_URL}products/${productId}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -284,8 +285,9 @@ function updateProductstockandsoldunits(productId, soldUnits, stock) {
     });
 }
 
-function getSoldUnits(productId) {
-  return fetch(`http://localhost:3000/products/${productId}`)
+async function getSoldUnits(productId) {
+  console.log(productId)
+  return fetch(`${API_URL}products/${productId}`)
     .then(response => response.json())
     .then(data => {
       const soldUnits = data.soldUnits;
@@ -298,7 +300,7 @@ function getSoldUnits(productId) {
 }
 
 export async function getStock(productId) {
-  return fetch(`http://localhost:3000/products/${productId}`)
+  return fetch(`${API_URL}products/${productId}`)
     .then(response => response.json())
     .then(data => {
       const stock = data.stock;
@@ -313,7 +315,7 @@ export async function getStock(productId) {
 export async function createCart(userId) {
   try {
     // Obtener la lista de carritos
-    const response = await fetch('http://localhost:3000/carts');
+    const response = await fetch(API_URL+'carts');
     const carts = await response.json();
 
     // Verificar si ya existe un carrito para el userId especificado
@@ -331,7 +333,7 @@ export async function createCart(userId) {
     };
 
     // Enviar la solicitud para crear el carrito
-    const createResponse = await fetch('http://localhost:3000/carts', {
+    const createResponse = await fetch(API_URL+'carts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

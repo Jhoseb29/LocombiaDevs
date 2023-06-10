@@ -49,8 +49,8 @@
       "name": "uncharted",
       "brand": "Marca1",
       "description": "Descripción del producto 1",
-      "stock": 6,
-      "soldUnits": 6,
+      "stock": 7,
+      "soldUnits": 38,
       "price": 19.99,
       "genre": "RPG",
       "categoryId": 1,
@@ -65,8 +65,8 @@
       "name": "horizon forbiden west",
       "brand": "Marca2",
       "description": "Descripción del producto 2",
-      "stock": 0,
-      "soldUnits": 12,
+      "stock": 8,
+      "soldUnits": 45,
       "price": 20.99,
       "genre": "survival",
       "categoryId": 2,
@@ -82,8 +82,8 @@
       "name": "TMNT",
       "brand": "Marca3",
       "description": "Descripción del producto 3",
-      "stock": 8,
-      "soldUnits": 3,
+      "stock": 10,
+      "soldUnits": 31,
       "price": 19.99,
       "genre": "RPG",
       "categoryId": 1,
@@ -100,8 +100,8 @@
       "name": "GHOSTBUSTERS",
       "brand": "Marca3",
       "description": "Descripción del producto 3",
-      "stock": 14,
-      "soldUnits": 6,
+      "stock": 13,
+      "soldUnits": 37,
       "price": 10.99,
       "genre": "RPG",
       "categoryId": 1,
@@ -117,8 +117,8 @@
       "name": "DRAGIN BALL BUKAI TENKAICHI 3",
       "brand": "Marca3",
       "description": "Descripción del producto 3",
-      "stock": 3,
-      "soldUnits": 9,
+      "stock": 6,
+      "soldUnits": 46,
       "price": 19.79,
       "genre": "RPG",
       "categoryId": 1,
@@ -134,8 +134,8 @@
       "name": "THE WHITCHER III",
       "brand": "Marca3",
       "description": "Descripción del producto 3",
-      "stock": 6,
-      "soldUnits": 6,
+      "stock": 7,
+      "soldUnits": 35,
       "price": 19.99,
       "genre": "RPG",
       "categoryId": 1,
@@ -186,24 +186,24 @@
   ],
   "carts": [
     {
-      "userId": 1,
+      "userId": 3,
       "products": [],
       "id": 1
     },
     {
-      "id": 2,
       "userId": 2,
-      "products": [
-        {
-          "productId": 1,
-          "quantity": 1
-        }
-      ]
+      "products": [],
+      "id": 2
     },
     {
       "userId": 5,
       "products": [],
       "id": 3
+    },
+    {
+      "userId": 1,
+      "products": [],
+      "id": 4
     }
   ],
   "historic": [
@@ -300,28 +300,6 @@
       "card": "**** **** **** 4444 mastercard",
       "status": "pendiente",
       "id": 4
-    },
-    {
-      "userId": 5,
-      "date": "2023-06-10",
-      "products": [
-        {
-          "productId": 5,
-          "name": "DRAGIN BALL BUKAI TENKAICHI 3",
-          "quantity": 2,
-          "price": 39.58
-        },
-        {
-          "productId": 3,
-          "name": "TMNT",
-          "quantity": 2,
-          "price": 39.98
-        }
-      ],
-      "order": "456682752",
-      "card": "**** **** **** 4444 mastercard",
-      "status": "exitoso",
-      "id": 5
     }
   ]
 }
