@@ -1,0 +1,168 @@
+input {
+  display: initial !important;
+}
+
+
+.leftside {
+    width: 45%;
+    height: 46pc;
+    float: left;
+    padding: 5px 0px;
+    margin: 10px 10px;
+    background: linear-gradient(90deg, rgba(83,59,30,1) 0%, rgba(103,56,151,1) 99%);
+    border-radius: 5px;
+}
+
+.form-update{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 40%;
+  margin-top: 30%;
+  padding: 5px 0px;
+  margin: 10px 10px;
+}
+
+.inputInfoUser{
+  height: 30px;
+  width: 500px;
+  background-color: transparent;
+  border-width: 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--font-size);
+  line-height: 29px;
+  color: #FFFCFC;
+}
+
+
+
+.inputInfoUser::placeholder{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--font-size);
+  line-height: 29px;
+  color: #FFFCFC;
+}
+
+.inputInfoUser:focus{
+  outline: none;
+}
+
+.update-user{
+  background: #095458;
+  border-radius: 5px;
+  height: 45px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-size: var(--font-size);
+  font-weight: 500;
+  background-color:#095458;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  width: 200px;
+}
+
+.update-user:hover{
+  transform: scale(0.9);
+}
+
+input {
+  display: initial !important;
+}
+
+h4{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 200;
+  font-size: 15px;
+  line-height: 39px;
+  color: #FFFFFF;
+  padding-left: 20px;
+
+}
+
+.configuration-title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 200;
+  font-size: 20px;
+  line-height: 39px;
+  color: #FFFFFF;
+  padding-left: 10px;
+
+  padding-bottom: 30px;
+}
+
+.updateImgContainer{
+  padding: 5px 0px;
+  margin: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.upload-box{
+  font-size: 16px;
+  background: #FFF;
+  border-radius: 50px;
+  width: 350px;
+  outline: none;
+}
+
+::-webkit-file-upload-button{
+  color: #FFF;
+  background: #095458;
+  padding: 20px;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 1px 1px #6b4559;
+  outline: none;
+}
+
+::-webkit-file-upload-button:hover{
+  background: #3E0064;
+  transform: scale(0.9);
+}
+
+.upload-btn{
+  background: #095458;
+  border-radius: 5px;
+  height: 45px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-size: var(--font-size);
+  background-color:#095458;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  width: 200px;
+  margin-top: 20px;
+}
+
+.upload-btn:hover{
+  transform: scale(0.9);
+}
+
+.delete-user{
+  background: #db0202;
+  border-radius: 5px;
+  height: 45px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-size: var(--font-size);
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  width: 200px;
+  padding: 5px 0px;
+  margin: 10px 10px;
+}
+
+.delete-user:hover{
+  transform: scale(0.9);
+}

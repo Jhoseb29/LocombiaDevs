@@ -1,5 +1,7 @@
 // Funcion de registro 
 
+const API_URL = "http://localhost:3000/"
+
 import { CreateUser, FindExistingUser } from "./UserApi.js";
 import { ValidationUser } from "../scripts/validationFormRegister.js";
 import { ValidateLogin } from "../scripts/validationFormLogin.js";
@@ -31,5 +33,48 @@ export const LoginUser = async(username, password) =>{
 
 
 
+
+
+export const UpdateUserForm = async (userId, username, email, password) => {
+  const existingUser = await FindExistingUser(username, { email: email });
+  if (existingUser != null) {
+    throw new Error('El nombre de usuario o el correo electrónico ya están en uso');
+  }
+
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  if (currentUser.password !== password) {
+    throw new Error('Contraseña incorrecta. No se pueden realizar los cambios');
+  }
+
+  // Obtener la información actual del usuario desde el archivo db.json
+  const response = await fetch(API_URL + "users/" + userId);
+  if (!response.ok) {
+    throw new Error("Error al obtener la información del usuario");
+  }
+  const userData = await response.json();
+  // Actualizar los campos solo si se proporcionaron valores en el formulario
+  if (username !== '') {
+    userData.username = username;
+  }
+  if (email !== '') {
+    userData.email = email;
+  }
+  if (password !== '') {
+    userData.password = password;
+  }
+
+  const response_1 = await fetch(API_URL + "users/" + userId, {
+    method: "PUT",
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(userData),
+  });
+  if (!response_1.ok) {
+    throw new Error("Error al actualizar el usuario");
+  }
+};
+
+  
 
 

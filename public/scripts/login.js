@@ -1,4 +1,4 @@
-import { LoginUser} from "../controller/UserController.js"
+import { LoginUser } from "../controller/UserController.js"
 
 const form = document.getElementById("formId")
 

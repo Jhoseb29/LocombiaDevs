@@ -50,3 +50,13 @@ export const FindExistingUser = (username, { email = null, password = null } = {
         throw new Error("estamos trabajando");;
     }
 }
+
+export const Delete = async (id) => {
+    const response = await fetch(`${API_URL}users/${id}`, {
+          method: "DELETE",
+      })
+      if (!response.ok) {
+          throw new Error("Error al eliminar el usuario")
+      }
+  };
+

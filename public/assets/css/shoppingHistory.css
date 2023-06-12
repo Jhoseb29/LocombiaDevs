@@ -1,0 +1,183 @@
+header{
+    background-color: #3E0064;
+    width: 100%; 
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+body{
+    background-color: #2D0C4F;
+}
+
+.user-container{
+    width: 130px;
+    height: 60px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+
+
+.img-profile{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+#usernameContainer{
+    color: white;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+
+.img-div{
+    width: 80px;
+    height: 120px;
+    padding: 10px;
+}
+
+.game-img{
+    margin-right: 20px;
+    width: 80px;
+    height: 120px;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+
+.section-title{
+    position: absolute;
+    right: 10rem;
+    color: white;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+
+
+.history-container{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 41pc;
+    float: right;
+
+    
+}
+
+.product-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.game-info-div{
+    background-color: #673897;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px 0px;
+    margin: 10px 10px;
+    border-radius: 5px;
+    height: 100px;
+
+}
+
+
+.title-div, .date-div{
+    color: white;
+
+}
+
+.game-title{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+}
+
+.game-order,.user-card{
+    margin-top: 7px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.title-div{
+    height: auto;
+    padding: 10px;
+    margin-left: 5px;
+}
+
+.date-div{
+    height: auto;
+}
+
+
+.game-title{
+    margin-bottom: 10px;
+}
+
+
+.game-date, .game-price{
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.game-date{
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+.game-price{
+    margin-top: 50px;
+    margin-left: 10px;
+}
+
+
+
+
+/*
+.game-title{
+    height: auto;
+    color: white;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-bottom: 0px;
+}
+
+.game-date{
+    margin-left: 240px;
+    color: white; 
+}
+
+.user-card{ 
+    color: white;    
+
+}
+
+.game-price{
+    margin-left: 250px;
+    color: white;
+}
+
+.game-order{
+    color: white;
+    height: 30px;
+}
+
