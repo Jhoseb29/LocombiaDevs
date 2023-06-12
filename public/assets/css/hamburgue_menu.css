@@ -59,18 +59,17 @@
 }
 
 .menuppal.is_active {
-  transform: translate3d(300px, 0px, 0px); /* Modificado */
+  transform: translate3d(20vw, 0px, 0px); /* Modificado */
 }
 
 
 .menuppal {
   background: linear-gradient(180deg, #000000 0%, #603091 100%);
   bottom: 0;
-  left: -20%; /* Modificado */
+  left: -20vw; 
   overflow: hidden;
   position: fixed; /* Modificado */
   top: 0;
-  transform: translate3d(0px, 0%, 0px);
   transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
   width: 15%;
   z-index: 1001;

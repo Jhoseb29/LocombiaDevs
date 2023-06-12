@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../scripts/adminPage.js" defer></script>
+    <title>Admin</title>
+</head>
+<body>
+    <div id="menu" class="menu">
+        <p data-target="#historic">Historic</p>
+        <p data-target="#form">Products</p>
+        <p data-target="#list">List</p>
+    </div>
+    <div id="content" class="content">
+        <div class="form-product" data-content id="form">
+            <h1 class="title-product">Enter the product</h1>
+            <form class="add-product" id="add-product">
+                <input type="text" class="inp" id="name" placeholder="Name" required>
+                <input type="text" class="inp" id="description" placeholder="Description" required>
+                <input type="text" class="inp" id="brand" placeholder="Brand" required>
+                <input type="number" class="inp" id="stock" placeholder="Stock" required>
+                <input type="text" class="inp" id="price" placeholder="Price" required>
+                <input type="text" class="inp" id="genre" placeholder="Genre" required>
+                <input type="text" class="inp" id="categoryId" placeholder="ID of category" required>
+                <input type="text" class="inp" id="developerId" placeholder="ID of developer" required>
+                <input type="url" class="inp" id="image" placeholder="Image" required>
+                <input type="submit" class="add" value="Add Product">
+            </form>
+        </div>
+        <div class="historic" data-content id="historic">
+            <h1 class="title-product">Historic</h1>
+            <hr>
+        </div>
+        <div class="list" data-content id="list">
+            <h1 class="title-product">List of products</h1>
+            <hr>
+        </div>
+        <div class="active" data-content id="welcome">
+            <h1 class="title-product">Welcome Admin</h1>
+        </div>
+        <div class="update" data-content id="update">
+            <input type="text" class="bar">
+            <input type="submit" class="search">
+        </div>
+    </div>
+    <script src="../scripts/addProduct.js" type="module"></script>
+    <script src="../scripts/adminHistoric.js" type="module"></script>
+    <script src="../scripts/adminList.js" type="module"></script>
+    <script src="../scripts/adminPage.js" defer></script>
+</body>
+</html>
