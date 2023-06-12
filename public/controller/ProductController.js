@@ -6,12 +6,12 @@ export const addPro = async (namePro, descriptionPro, brandPro, stockPro, priceP
     const name = namePro.value
     const brand = brandPro.value
     const description = descriptionPro.value
-    const stock = stockPro.value
+    const stock = parseInt(stockPro.value)
     const soldUnits = 0
-    const price = pricePro.value
+    const price = parseFloat(pricePro.value) 
     const genre = genrePro.value
-    const categoryId = categoryIdPro.value
-    const developerId = developerIdPro.value
+    const categoryId = parseInt(categoryIdPro.value)
+    const developerId = parseInt(developerIdPro.value)
     const image = imagePro.value
     const likes = []
 
