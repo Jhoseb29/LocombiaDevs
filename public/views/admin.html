@@ -10,15 +10,11 @@
     <title>Admin</title>
 </head>
 <body>
-
     <div id="menu" class="menu">
         <p data-target="#historic">Historic</p>
         <p data-target="#form">Products</p>
         <p data-target="#list">List</p>
-        <p data-target=""></p>
-        <p data-target="#update">Update product</p>
     </div>
-
     <div id="content" class="content">
         <div class="form-product" data-content id="form">
             <h1 class="title-product">Enter the product</h1>
@@ -32,7 +28,6 @@
                 <input type="text" class="inp" id="categoryId" placeholder="ID of category" required>
                 <input type="text" class="inp" id="developerId" placeholder="ID of developer" required>
                 <input type="url" class="inp" id="image" placeholder="Image" required>
-                
                 <input type="submit" class="add" value="Add Product">
             </form>
         </div>
@@ -47,13 +42,11 @@
         <div class="active" data-content id="welcome">
             <h1 class="title-product">Welcome Admin</h1>
         </div>
-
         <div class="update" data-content id="update">
             <input type="text" class="bar">
             <input type="submit" class="search">
         </div>
     </div>
-    
     <script src="../scripts/addProduct.js" type="module"></script>
     <script src="../scripts/adminHistoric.js" type="module"></script>
     <script src="../scripts/adminList.js" type="module"></script>
