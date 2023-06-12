@@ -9,8 +9,14 @@ form.addEventListener('submit', function (event){
     const password = document.getElementById("passId").value
     LoginUser(username,password)
     .then((user)=>{
-        localStorage.setItem('currentUser', JSON.stringify(user));
-        window.location.href= './main_page.html'
+        if(username == 'admin' && password == 'admin'){
+            localStorage.setItem('currentUser', JSON.stringify(user));
+            window.location.href= './admin.html'
+        }else{
+            localStorage.setItem('currentUser', JSON.stringify(user));
+            window.location.href= './main_page.html'
+        }
+        
     })
     .catch((error)=> {
         document.getElementById("userId").value = ""
