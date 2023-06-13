@@ -1,5 +1,5 @@
 export const producthtml = (gameimgurl,gamename,gameprice,num,quantity) =>{ let template = `<div class="product" id="producto-${num}">
-<img src="${gameimgurl}" alt="img-product">
+<img src="${gameimgurl}" alt="img-product" id="product_imgurl">
 <div class="product_infot_container">
     <p class="title">${gamename}</p>
     <p class="key-type">Key</p>

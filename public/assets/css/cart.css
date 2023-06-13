@@ -64,9 +64,22 @@ section {
 }
 
 .cart_products__container {
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   width: 100%;
+  overflow: auto;
+  height: 530px;
+  
+}
+
+.cart_products__container::-webkit-scrollbar {
+  width: 6px;
+  background-color: rgba(224, 14, 14, 0.05);
+}
+
+.cart_products__container::-webkit-scrollbar-thumb {
+  background-color: rgba(207, 13, 233, 0.671);
 }
 
 .product {

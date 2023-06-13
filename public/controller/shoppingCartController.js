@@ -1,6 +1,6 @@
 import { Get } from "../controller/UserApi.js";
 
-const API_URL = "http://localhost:3000/";
+export const API_URL = "http://localhost:3000/";
 // Función para obtener el carrito de un usuario por su ID
 export function getCartProductsByUserId(userId) {
   return fetch(`${API_URL}carts?userId=${userId}`)
@@ -165,6 +165,7 @@ export async function isProductInCart(userId, productId) {
         let listaproductos = cart[0].products
         //busco el producto en la lista de productos
         let retorno = listaproductos.some(objeto => objeto.productId === productId);
+        console.log("retorno:",retorno)
         return retorno
     })
     .catch((error) => {
@@ -179,7 +180,7 @@ export async function isProductInCart(userId, productId) {
 
 //* crear historico */
 
-export function addHistoric(data) {
+export async function addHistoric(data) {
   return fetch(API_URL+'historic', {
     method: 'POST',
     headers: {
@@ -190,58 +191,57 @@ export function addHistoric(data) {
   .then(response => response.json())
   .then(result => {
     console.log('Nuevo objeto agregado:', result);
+    
     return result; // Puedes retornar el resultado si lo necesitas en otro lugar del código
   })
   .catch(error => {
     console.error('Error:', error);
     throw error; // Puedes lanzar el error si deseas manejarlo en el contexto que llame a esta función
   });
+  
 }
 
 //* limpiar carrito
-
-export function clearCart(userId) {
-  // Primero, realizamos una solicitud GET para obtener el carrito del usuario específico
-  fetch(`${API_URL}carts?userId=${userId}`)
-    .then(response => response.json())
-    .then(carts => {
-      // Verificamos si se encontró un carrito para el usuario
-      if (carts.length > 0) {
-        // Obtenemos el ID del carrito del primer elemento del array 'carts'
-        const cartId = carts[0].id;
-        
-        // Creamos un objeto 'updatedCart' con el campo 'products' establecido como un array vacío
-        const updatedCart = { 
-          userId:userId,
-          products: [] };
-        
-        // Realizamos una solicitud PUT para actualizar el carrito con el objeto 'updatedCart'
-        fetch(`${API_URL}carts/${cartId}`, {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(updatedCart)
-        })
-          .then(response => {
-            // Verificamos si la respuesta tiene un estado 'ok' para determinar si la actualización fue exitosa
-            if (response.ok) {
-              console.log(`Se borraron los productos del carrito del usuario ${userId}`);
-            } else {
-              console.error(`Error al borrar los productos del carrito del usuario ${userId}`);
-            }
-          })
-          .catch(error => {
-            console.error(`Error al realizar la solicitud PUT:`, error);
-          });
+export async function clearCart(userId) {
+  try {
+    // Primero, realizamos una solicitud GET para obtener el carrito del usuario específico
+    const response = await fetch(`${API_URL}carts?userId=${userId}`);
+    const carts = await response.json();
+    
+    // Verificamos si se encontró un carrito para el usuario
+    if (carts.length > 0) {
+      // Obtenemos el ID del carrito del primer elemento del array 'carts'
+      const cartId = carts[0].id;
+      
+      // Creamos un objeto 'updatedCart' con el campo 'products' establecido como un array vacío
+      const updatedCart = { 
+        userId: userId,
+        products: []
+      };
+      
+      // Realizamos una solicitud PUT para actualizar el carrito con el objeto 'updatedCart'
+      const putResponse = await fetch(`${API_URL}carts/${cartId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(updatedCart)
+      });
+      
+      // Verificamos si la respuesta tiene un estado 'ok' para determinar si la actualización fue exitosa
+      if (putResponse.ok) {
+        console.log(`Se borraron los productos del carrito del usuario ${userId}`);
       } else {
-        console.log(`No se encontró un carrito para el usuario ${userId}`);
+        console.error(`Error al borrar los productos del carrito del usuario ${userId}`);
       }
-    })
-    .catch(error => {
-      console.error(`Error al obtener el carrito del usuario ${userId}:`, error);
-    });
+    } else {
+      console.log(`No se encontró un carrito para el usuario ${userId}`);
+    }
+  } catch (error) {
+    console.error(`Error al obtener el carrito del usuario ${userId}:`, error);
+  }
 }
+
 
 export async function getStockProductById(productId){
   const product = await Get("products?id=" + productId)
@@ -260,11 +260,11 @@ export async function updateProductsDatastockandsoldunits(products) {
     let soldUnits = await getSoldUnits(productId)
     let newstock = stock-quantity;
     let newsoldUnits = soldUnits+quantity;
-    updateProductstockandsoldunits(productId,newsoldUnits,newstock)
+    await updateProductstockandsoldunits(productId,newsoldUnits,newstock)
   }
 }
 
-function updateProductstockandsoldunits(productId, soldUnits, stock) {
+async function updateProductstockandsoldunits(productId, soldUnits, stock) {
   // Realiza una solicitud HTTP PATCH a la API para actualizar las propiedades específicas del producto
   fetch(`${API_URL}products/${productId}`, {
     method: 'PATCH',

@@ -1,5 +1,5 @@
 import { Get } from "../controller/UserApi.js";
-import { producthtml } from "../controller/productTemplate.js";
+import { producthtml } from "../controller/productcartTemplate.js";
 import { getidproductsaves } from "../controller/productseccionController.js";
 import { getCartProductsByUserId, updateCartItemQuantity, getStockProductById } from "../controller/shoppingCartController.js";
 import { removeFromCart } from "../controller/shoppingCartController.js";
