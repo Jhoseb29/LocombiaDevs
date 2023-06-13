@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "json-server --watch db.json --port 4000",
+    "server": "PowerShell -ExecutionPolicy Bypass -Command 'json-server --watch db.json --port 3000'",
     "start": "json-server --watch db.json"
   },
   "keywords": [],

@@ -6,8 +6,9 @@ const userId = currentUser.id
 
 
 
-Get(`historic?userId=${userId}`).then(historic => { 
-    historic.forEach(entry => {
+Get(`historic?userId=${userId}`).then(historic => {
+    const historicoordenado = historic.reverse(); //? para que se muestren las ultimas compras de primero
+    historicoordenado.forEach(entry => {
         const products = entry.products
         const purchaseDate = entry.date
         const cardType = `User card: ${entry.card}` 
@@ -21,7 +22,7 @@ Get(`historic?userId=${userId}`).then(historic => {
             productContainer.classList.add('product-container')
             
             //atributos de los productos
-            const productImg = product.img
+            const productImg = product.imgurl
             const productName = product.name
             const productPrice = `$ ${product.price}`
             const productDate = purchaseDate

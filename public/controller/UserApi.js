@@ -1,7 +1,7 @@
 
 import { UserData } from "./UserData.js"
+import { API_URL } from "./shoppingCartController.js"
 
-const API_URL = "http://localhost:3000/"
 
 export const Get = (ruta) =>{
     return fetch(API_URL + ruta).then( response =>{

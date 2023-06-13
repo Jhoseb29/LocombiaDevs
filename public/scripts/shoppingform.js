@@ -47,13 +47,23 @@ form.addEventListener("submit", async function (event) {
         name: document.getElementById("usernme").value,
       },
     })
-    .then(function (result) {
+    .then(async function (result) {
       if (result.error) {
         errorElement.textContent = result.error.message;
       } else {
         // Send the payment method ID to your server
-        console.log(result);
-        stripeTokenHandler(result.paymentMethod, event);
+        let cards = await stripeTokenHandler(result.paymentMethod, event);
+        let datainvoice = await createhistoric(cards[0],cards[1]);
+        setTimeout(()=>{
+          clearCart(iduser.id)
+        },100)
+        
+        console.log("datainvoice",datainvoice)
+        generarFacturaPDF(datainvoice)
+        
+        setTimeout(() => {
+          window.location.href = './main_page.html'
+        }, 1000);
       }
     });
 });
@@ -73,23 +83,8 @@ async function stripeTokenHandler(paymentMethod, event) {
   arrow.style.display = "none";
   circle.style.display = "initial";
   showCircleAndCheckmark();
-  
-  
-  
-  let datainvoice = await createhistoric(last4card,cardbrand);
-  clearCart(iduser.id);
-  console.log("datainvoice",datainvoice)
-  generarFacturaPDF(datainvoice)
-  
-  setTimeout(() => {
-    window.location.href = './main_page.html'
-  }, 3000);
-  //location.reload()
+  return [last4card,cardbrand]
   event.preventDefault();
-  // Submit the form
-  //form.submit();
-
-  // Redirect to index.html
 }
 
 async function createhistoric(last4card,cardbrand) {
@@ -114,18 +109,19 @@ async function createhistoric(last4card,cardbrand) {
     const name = element.querySelector('.title').textContent
     const id = parseInt(element.id.split("-")[1])
     const price = parseFloat(element.querySelector('.price').textContent.replace(/[^0-9.-]+/g,""))
-    const data = {productId:id, name:name, price:price}
+    const imgurl = element.querySelector("#product_imgurl").src
+    const data = {productId:id, name:name, price:price, imgurl:imgurl}
     return data
   })
   
   //* acrualizar las unidades vendidas y el stock
-  const updatestock = await updateProductsDatastockandsoldunits(productsarrayhtml);
+  await updateProductsDatastockandsoldunits(productsarrayhtml);
   
   //* creamos array de productos
 
   const productsArray = cartuserproducts.map((item1) => {
     const item2 = namesproducts.find((item2) => item2.productId === item1.productId);
-    return { productId: item1.productId, name: item2.name, quantity: item1.quantity, price: item2.price };
+    return { productId: item1.productId, name: item2.name, quantity: item1.quantity, price: item2.price, imgurl:item2.imgurl };
   });
   console.log("productsArray:",productsArray)
   
@@ -149,7 +145,8 @@ async function createhistoric(last4card,cardbrand) {
     card:`**** **** **** ${last4card} ${cardbrand}`,
   }
   //* llamamos a addHistoric para añadir ala base de datos
-  addHistoric(data)
+  await addHistoric(data)
+  
   //* generamos la factura
   return datainvoice
 }
@@ -207,16 +204,17 @@ function generarFacturaPDF(data) {
       doc.setFontSize(14);
       doc.text("Productos:", 10, 120);
       let y = 130;
-
+      let subtotal = 0;
       data.products.forEach((product, index) => {
         const productNameLines = doc.splitTextToSize((product.name).toUpperCase(), 60);
         doc.text(productNameLines, 10, y);
         doc.text(`Precio: ${(product.price / product.quantity).toFixed(2)}`, 80, y);
         doc.text(`Cantidad: ${product.quantity}`, 120, y);
         doc.text(`Total: ${product.price}`, 160, y);
+        subtotal += product.price;
         y += (productNameLines.length * 10) + 10;
     });
-
+      doc.text(`pagototal: ${subtotal.toFixed(2)}`,160,y);
       // Información del pedido y tarjeta
       doc.setFontSize(12);
       doc.text(`Número de pedido: ${data.order}`, 10, y + 10);
