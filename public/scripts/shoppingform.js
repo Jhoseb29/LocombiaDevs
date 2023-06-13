@@ -62,7 +62,7 @@ form.addEventListener("submit", async function (event) {
         generarFacturaPDF(datainvoice)
         
         setTimeout(() => {
-          //window.location.href = './main_page.html'
+          window.location.href = './main_page.html'
         }, 1000);
       }
     });

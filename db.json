@@ -37,8 +37,8 @@
       "name": "horizon forbiden west",
       "brand": "Marca2",
       "description": "Descripción del producto 2",
-      "stock": 55,
-      "soldUnits": 128,
+      "stock": 54,
+      "soldUnits": 129,
       "price": 20.99,
       "genre": "survival",
       "categoryId": 2,
@@ -109,8 +109,8 @@
       "name": "Jhoseb ",
       "brand": "asdf",
       "description": "Gaming 4000 Dpi Usb",
-      "stock": 89,
-      "soldUnits": 121,
+      "stock": 88,
+      "soldUnits": 122,
       "price": 225.5,
       "genre": "Accion",
       "categoryId": 1,
@@ -254,24 +254,7 @@
     },
     {
       "userId": 1,
-      "products": [
-        {
-          "productId": 5,
-          "quantity": 6
-        },
-        {
-          "productId": 1,
-          "quantity": 6
-        },
-        {
-          "productId": 6,
-          "quantity": 4
-        },
-        {
-          "productId": 8,
-          "quantity": 4
-        }
-      ],
+      "products": [],
       "id": 4
     },
     {
@@ -652,6 +635,40 @@
       "card": "**** **** **** 4444 mastercard",
       "status": "fracaso",
       "id": 15
+    },
+    {
+      "userId": 1,
+      "date": "2023-06-13",
+      "products": [
+        {
+          "productId": 8,
+          "name": "Jhoseb ",
+          "quantity": 1,
+          "price": 225.5,
+          "imgurl": "https://i.pinimg.com/550x/74/bb/34/74bb340ffe87e31837a04a538f1bbc10.jpg"
+        }
+      ],
+      "order": "537549879",
+      "card": "**** **** **** 4444 mastercard",
+      "status": "exitoso",
+      "id": 16
+    },
+    {
+      "userId": 1,
+      "date": "2023-06-13",
+      "products": [
+        {
+          "productId": 2,
+          "name": "horizon forbiden west",
+          "quantity": 1,
+          "price": 20.99,
+          "imgurl": "https://i.pinimg.com/564x/f7/a5/29/f7a529cdfc6ecb9f2b2d6d7e622e406d.jpg"
+        }
+      ],
+      "order": "729372277",
+      "card": "**** **** **** 4444 mastercard",
+      "status": "exitoso",
+      "id": 17
     }
   ]
 }
