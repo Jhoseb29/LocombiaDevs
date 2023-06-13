@@ -1,8 +1,8 @@
 .HM_items_containe {
-  list-style: none;
+    list-style: none;
 }
 
-.HM_items_container #category_li{
+.HM_items_container #category_li {
     display: flex;
     flex-direction: column;
     height: auto;
@@ -10,25 +10,24 @@
 }
 
 .HM_items_container .submenu {
-  border: none;
-  overflow: hidden;
-  height: 0;
-  transition: height 2s ease;
+    border: none;
+    overflow: hidden;
+    height: 0;
+    transition: height 1s ease;
 }
-
 
 .HM_items_container .submenu li {
     border: none;
 }
 
-.HM_items_container .submenu li a{
+.HM_items_container .submenu li a {
     transition: color 0.6s ease;
 }
 
-.HM_items_container .submenu li:hover a{
+.HM_items_container .submenu li:hover a {
     color: aqua;
 }
 
 .HM_items_container li:hover .submenu {
-    height: 9em;
+    height: 15em;
 }
