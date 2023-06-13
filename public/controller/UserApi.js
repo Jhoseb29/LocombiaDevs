@@ -13,25 +13,26 @@ export const Get = (ruta) =>{
     })
 }
 
-export const CreateUser = (username, email, password) => {
+export const CreateUser = (username, email, password, firstname, lastname, document) => {
     UserData.username = username;
     UserData.email = email;
     UserData.password = password;
+    UserData.firstname = firstname;
+    UserData.lastname = lastname;
+    UserData.document = document;
     return fetch(API_URL + "users", {
-        method: "POST",
-        headers:{
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(UserData),
+      method: "POST",
+      headers:{
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(UserData),
     })
     .then(response => {
-        if(!response.ok){
-            
-            throw new Error("Error al guardar datos")
-        }
-    })
-} 
-
+      if(!response.ok){
+        throw new Error("Error al guardar datos")
+      }
+    });
+  };
 export const FindExistingUser = (username, { email = null, password = null } = {}) => { //! el username es obligatorio , pero el email o password son obcionales , no se pueden pasar los tres parametros 
     const Users = Get('users');
     if(email!=null){ //? verificar si el usuario con el mismo email ó username || para registros
@@ -60,3 +61,6 @@ export const Delete = async (id) => {
       }
   };
 
+  export const getAllProducts = () => {
+    return Get('products');
+  };

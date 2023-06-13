@@ -254,24 +254,7 @@
     },
     {
       "userId": 1,
-      "products": [
-        {
-          "productId": 5,
-          "quantity": 6
-        },
-        {
-          "productId": 1,
-          "quantity": 6
-        },
-        {
-          "productId": 6,
-          "quantity": 4
-        },
-        {
-          "productId": 8,
-          "quantity": 4
-        }
-      ],
+      "products": [],
       "id": 4
     },
     {

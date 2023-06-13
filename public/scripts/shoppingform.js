@@ -62,7 +62,7 @@ form.addEventListener("submit", async function (event) {
         generarFacturaPDF(datainvoice)
         
         setTimeout(() => {
-          window.location.href = './main_page.html'
+          //window.location.href = './main_page.html'
         }, 1000);
       }
     });
@@ -137,6 +137,9 @@ async function createhistoric(last4card,cardbrand) {
 
   //* crear estrutura de dato para la factura 
   const datainvoice ={
+    firstname:iduser.firstname,
+    lastname:iduser.lastname,
+    cc:iduser.document,
     username: iduser.username,
     email:iduser.email,
     date: formattedDate,
@@ -178,6 +181,7 @@ function generarEstadoAleatorio() {
 }
 
 function generarFacturaPDF(data) {
+  console.log("infofactura",data)
   const doc = new jsPDF();
 
   // Logo de la tienda
@@ -197,8 +201,10 @@ function generarFacturaPDF(data) {
 
       // Información del usuario
       doc.setFontSize(12);
-      doc.text(`Cliente: ${data.username}`, 10, 90);
+      doc.text(`Cliente: ${data.firstname} ${data.lastname}`, 10, 80);
+      doc.text(`document: ${data.cc}`, 10, 90);
       doc.text(`Fecha: ${data.date}`, 10, 100);
+      
 
       // Información de los productos
       doc.setFontSize(14);
@@ -220,7 +226,36 @@ function generarFacturaPDF(data) {
       doc.text(`Número de pedido: ${data.order}`, 10, y + 10);
       doc.text(`Tarjeta: ${data.card}`, 10, y + 20);
 
+      // lista de claves 
+      doc.addPage();
+      let y2=50;
+      doc.setFontSize(14);
+      doc.text("Keys:", 10, 30);
+      data.products.forEach((product)=>{
+        for(let i = 0; i<product.quantity;i++){
+          if(y2>200){
+            doc.addPage();
+            y2=30;
+          }
+          doc.text(`${product.name} key${i+1} ${generateSteamKey()}`, 10, y2 );
+          y2 = y2 +10
+        }
+      })
+
       // Guardar el PDF
       doc.save("factura.pdf");
   };
+}
+
+function generateSteamKey() {
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  const keyLength = 10;
+  let key = '';
+
+  for (let i = 0; i < keyLength; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    key += characters[randomIndex];
+  }
+
+  return key;
 }

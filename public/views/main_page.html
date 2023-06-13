@@ -72,12 +72,13 @@
       </nav>
       <h2>LocomBia Gaming</h2>
       <form class="buscar_header">
-        <input type="text" placeholder="search" class="barra_busqueda">
+        <input id="searchInput" type="text" placeholder="search" class="barra_busqueda">
+        <div id="resultsContainer"></div>
         <button type="submit" class="boton_buscar"><img src="../assets/images/Vectorlupa.svg" alt=""></button>
       </form>
       <div class="btns_header_container">
         <button onclick="location.href='#seccion_contacto'">Contact Us</button>
-        <button><img src="../assets/images/Vectorpersona.svg" alt=""></button>
+        <a href="https://wa.me/573117592121"><img src="../assets/images/Vectorpersona.svg" alt=""></a>
         <button onclick="location.href='./cart.html'"><img src="../assets/images/Vector.svg" alt="carrito"></button>
       </div>
     </header>
@@ -190,5 +191,6 @@
     <script src="../scripts/logOut.js"></script>
     <script src="../scripts/caroucel.js"></script>
     <script src="../scripts/uploadImage.js" type="module"></script>
+    <script src="../scripts/searchInput.js" type="module"></script>
   </body>
 </html>

@@ -6,7 +6,7 @@ import { CreateUser, FindExistingUser } from "./UserApi.js";
 import { ValidationUser } from "../scripts/validationFormRegister.js";
 import { ValidateLogin } from "../scripts/validationFormLogin.js";
 
-export const RegisterUser = async (user, emailhtml, password) =>{
+export const RegisterUser = async (user, emailhtml, password, firstname, lastname, document) => {
   const username = user.value
   const email = emailhtml.value
   const existingUser = await FindExistingUser(username, {email:email});
@@ -15,10 +15,9 @@ export const RegisterUser = async (user, emailhtml, password) =>{
     throw new Error('El nombre de usuario o el correo electrónico ya están en uso');
   }
   else{
-    CreateUser(username, email, password)
+    CreateUser(username, email, password, firstname, lastname, document)
   }
-}
-
+};
 export const LoginUser = async(username, password) =>{
   const existingUser = await FindExistingUser(username, {password:password});
   if(existingUser == null){
