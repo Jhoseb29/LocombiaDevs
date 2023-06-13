@@ -1,9 +1,10 @@
-import { getAllProducts } from "../controller/UserApi.js";
+import { Get, getAllProducts } from "../controller/UserApi.js";
+import { saveinfogameview } from "../controller/gameviewcontroller.js"
 
 // Obtener referencia a los elementos HTML
 const searchInput = document.getElementById('searchInput');
 const resultsContainer = document.getElementById('resultsContainer');
-
+const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 // Obtener todos los productos
 let productsData = [];
 
@@ -25,10 +26,15 @@ function renderProducts(products) {
   
     products.forEach(product => {
       const productElement = document.createElement('div');
+      productElement.classList.add('search-div')
       productElement.textContent = product.name;
-      productElement.addEventListener('click', () => {
-        const gameId = product.id; // Obtener el ID del juego o cualquier otra información necesaria
-        window.location.href = `http://localhost:3000/products/${gameId}`; // Redirigir a la página personalizada con el ID del juego
+      console.log(product)
+      productElement.addEventListener('click', async () => {
+        console.log(product)
+        //await saveinfogameview(product.id,product.name,product.brand,product.description,product.stock,product.solidUnits,product.price,product.genre, product.categoryId, product.developerId, product.imgurl, product.likes)
+        await saveinfogameview(currentUser.id, product.name ,product.price, product.imgurl, product.id, product.description, product.genre, product.developerId)
+        window.location.href = "../views/gameview.html";
+        
       });
       fragment.appendChild(productElement);
     });
@@ -40,6 +46,7 @@ function renderProducts(products) {
 function filterProducts(searchTerm) {
   const filteredProducts = productsData.filter(product =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
+    
   );
 
   renderProducts(filteredProducts);
@@ -47,7 +54,14 @@ function filterProducts(searchTerm) {
 
 // Función para manejar el evento de entrada en la barra de búsqueda
 function handleSearchInput() {
+
   const searchValue = searchInput.value;
+
+  if(searchValue > -1){
+    resultsContainer.style.display = "none"
+  }else{
+    resultsContainer.style.display = ""
+  }
   filterProducts(searchValue);
 }
 
