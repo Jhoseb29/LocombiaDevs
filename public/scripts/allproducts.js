@@ -1,7 +1,7 @@
 import { Get } from "../controller/UserApi.js";
 import { saveinfogameview } from "../controller/gameviewcontroller.js";
 
-const productsPerPage = 9; // Número de productos por página
+const productsPerPage = 14; // Número de productos por página
 let currentPage = 1; // Página actual
 
 // Obtener todos los productos (debe reemplazarlo con su base de datos o API)

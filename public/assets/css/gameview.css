@@ -193,3 +193,11 @@ button:hover {
   margin-top: 20px;
   
 }
+
+svg:hover{
+  cursor: pointer;
+}
+
+svg{
+  margin-right: 10px;
+}
