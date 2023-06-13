@@ -13,14 +13,9 @@ header h2{
     font-weight: 500;
     font-size: 22px;
     line-height: 28px;
-    /* identical to box height */
-
-
     color: #FFFFFF;
-    -webkit-text-stroke: 0.5px black; /* Para navegadores basados en WebKit */
+    -webkit-text-stroke: 0.5px black; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    /* Inside auto layout */
-
     flex: none;
     order: 0;
     flex-grow: 0;
@@ -42,15 +37,40 @@ header h2{
     border-bottom-left-radius: 8px;
     border: none;
     outline: none;
-
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
-
     color: rgba(68, 68, 68, 0.62);
 }
+
+.search-div{
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    background-color: #ffffff;
+    position: absolute;
+    display: block;
+    width: 33.70%;
+    height: auto;
+    top: 69px;
+    left: 50%;
+    transform: translateX(-52%);
+    z-index: 8;
+    overflow: hidden;
+    border-radius: 0px 0px 5px 5px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    border-top: 1px solid gray;
+    cursor: pointer;
+}
+
+.search-div:hover{
+    background-color: #b1a7a7;
+}
+
+
 
 .barra_busqueda::placeholder{
     opacity: 0.5;

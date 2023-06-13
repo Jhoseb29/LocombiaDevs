@@ -39,7 +39,7 @@
       "genre": "RPG",
       "developerId": 1,
       "imgurl": "https://i.pinimg.com/564x/31/d7/07/31d707254d10d91193df42fc375066c9.jpg",
-      "likes": []
+      "likes": [1]
     },
     {
       "id": 2,
@@ -282,7 +282,16 @@
     },
     {
       "userId": 1,
-      "products": [],
+      "products": [
+        {
+          "productId": 6,
+          "quantity": 1
+        },
+        {
+          "productId": 2,
+          "quantity": 27
+        }
+      ],
       "id": 4
     },
     {
