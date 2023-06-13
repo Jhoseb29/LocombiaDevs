@@ -61,3 +61,6 @@ export const Delete = async (id) => {
       }
   };
 
+  export const getAllProducts = () => {
+    return Get('products');
+  };
