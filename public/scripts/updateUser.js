@@ -14,14 +14,14 @@ updateForm.addEventListener('submit', function (event) {
   
     // Verificar si se proporcionó un nombre de usuario o correo electrónico no vacío
     if (!username && !email) {
-      alert('Debes ingresar al menos un campo para actualizar');
+      alert('You must enter at least one field to update.');
       return;
     }
 
 
     UpdateUserForm(userId, username, email, password)
       .then(updatedUser => {
-        alert('Usuario actualizado exitosamente');
+        alert('User updated successfully.');
         window.location.href = '../views/login.html'
       })
       .catch(error => {
