@@ -5,29 +5,44 @@
       "username": "admin",
       "email": "admin@insano.com",
       "password": "admin"
-    },
+    }
+  ],
+  "products": [
     {
-      "username": "Jhoseb",
-      "email": "jhoseb29@gmail.com",
-      "password": "2123478Pp@",
-      "firstname": "Jose",
-      "lastname": "Moya",
-      "document": "1007155706",
-      "img": "https://images7.memedroid.com/images/UPLOADED430/6075afd2d51ec.jpeg",
+      "name": "Minecraft",
+      "brand": "Microsoft",
+      "description": "Minecraft is a sandbox type video game, its literal translation would be \"sandbox\" and it is what represents the gaming experience. Players can shape the world to their liking, destroy and build, just as if they were playing in a sandbox.",
+      "stock": 20,
+      "soldUnits": 0,
+      "price": 15.47,
+      "genre": "Adventure",
+      "developerId": 1,
+      "imgurl": "https://cdn-products.eneba.com/resized-products/Dbdx7ihzJk48bASi_G0jHEgx2obfGYE_tNyWsjtJ4a4_350x200_1x-0.png",
+      "likes": [],
       "id": 1
     }
   ],
-  "products": [],
   "developers": [
     {
       "id": 1,
-      "name": "Fabricante1"
+      "name": "Microsoft"
     },
     {
       "id": 2,
       "name": "Fabricante2"
     }
   ],
-  "carts": [],
+  "carts": [
+    {
+      "userId": 0,
+      "products": [
+        {
+          "productId": 1,
+          "quantity": 1
+        }
+      ],
+      "id": 1
+    }
+  ],
   "historic": []
 }

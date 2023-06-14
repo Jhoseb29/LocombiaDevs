@@ -26,15 +26,24 @@ header h2{
     display: flex;
 }
 
+.busquedas_container{
+    display: flex;
+    flex-direction: column;
+    width: 87%;
+    position: relative;
+    
+    
+}
+
 .barra_busqueda{
     height: 50px;
-    width: 87%;
+    width: calc(100%-20px);
     padding-left: 20px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
     background: #FAFAFA;
     border: 1px solid #4D4D4D;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
     border: none;
     outline: none;
     font-family: 'Roboto';
@@ -45,26 +54,30 @@ header h2{
     color: rgba(68, 68, 68, 0.62);
 }
 
+.resultsContainer{
+    position: absolute;
+    top: 52px;
+    right: 0px;
+    height: 36.8px;
+    z-index:8;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    width: 99%;
+}
+
 .search-div{
+    display: block;
     color: rgb(0, 0, 0);
     padding: 10px;
     background-color: #ffffff;
-    position: absolute;
-    display: block;
-    width: 33.70%;
-    height: auto;
-    top: 69px;
-    left: 50%;
-    transform: translateX(-52%);
-    z-index: 8;
-    overflow: hidden;
+    width: 100%;
     border-radius: 0px 0px 5px 5px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     border-top: 1px solid gray;
     cursor: pointer;
-}
+} 
 
 .search-div:hover{
     background-color: #b1a7a7;

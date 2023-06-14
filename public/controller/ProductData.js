@@ -6,7 +6,6 @@ export const productData = {
     soldUnits: 'soldUnits',
     price: 'price',
     genre: 'genre',
-    categoryId: 'categoryId',
     developerId: 'developerId',
     imgurl:'imgurl',
     likes:'likes'
