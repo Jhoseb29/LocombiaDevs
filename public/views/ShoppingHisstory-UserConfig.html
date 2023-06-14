@@ -1,197 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../assets/images/1-04_icon-icons.com_69203.png">
-    <link rel="stylesheet" href="../assets/css/reset.css" />
-    <link rel="stylesheet" href="../assets/css/hamburgue_menu.css" />
-    <link rel="stylesheet" href="../assets/css/main_page.css" />
-    <link rel="stylesheet" href="../assets/css/section_soldproducts.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&family=Oxygen:wght@300;400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/category_menu.css">
-    <link rel="stylesheet" href="../assets/css/header.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript"> emailjs.init('qKZ76P0MJTz18DK0e')</script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/footer.css">
-    <link rel="stylesheet" href="../assets/css/carouse.css">
-    <title>User Configuration</title>
-  </head>
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/shoppingHistory.css">
+    <link rel="stylesheet" href="../assets/css/asideUser-configuration.css">
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Shopping History</title>
+</head>
   <body>
     <header>
-      <div class="hamburger">
-        <div class="_layer -top"></div>
-        <div class="_layer -mid"></div>
-        <div class="_layer -bottom"></div>
-      </div>
-      <nav class="menuppal">
-        <div class="username">
-            <img id="profile-image" src="" alt="avatar">
-            <p class="usernameContainer" id="usernameContainer"></p>
+      <div class="user-container" id="profile">
+          <img class="img-profile" id="profile-image" src="" alt="Profile Image">
+          <p id="usernameContainer"></p>
         </div>
-        <ul class="HM_items_container">
-          <li id="category_li">
-            <div class="category_buttom">
-              <img
-              class="icon_Hmenu"
-              src="../assets/images/Arrorw.svg"
-              alt=""
-              />
-              <a href="#">Category</a>
-            </div>
-            <ul class="submenu">
-              <li><a href="#">Subelemento 1</a></li>
-              <li><a href="#">Subelemento 2</a></li>
-              <li><a href="#">Subelemento 3</a></li>
-            </ul>
-          </li>
-          <li>
-            <img
-              class="icon_Hmenu"
-              src="../assets/images/Personperson.svg"
-              alt=""
-            /><a href="../views/ShoppingHisstory-UserConfig.html">User Info</a>
-          </li>
-          <li>
-            <img
-              class="icon_Hmenu"
-              src="../assets/images/Arrorw.svg"
-              alt=""
-            /><a href="./login.html" id="logout">Exit</a>
-          </li>
-        </ul>
-      </nav>
-      <h2>LocomBia Gaming</h2>
-      <form class="buscar_header">
-        <input id="searchInput" type="text" placeholder="search" class="barra_busqueda" autocomplete="off">
-        <div id="resultsContainer"></div>
-        <button type="submit" class="boton_buscar"><img src="../assets/images/Vectorlupa.svg" alt=""></button>
-      </form>
-      <div class="btns_header_container">
-        <button onclick="location.href='#seccion_contacto'">Contact Us</button>
-        <a href="https://wa.me/573117592121"><img src="../assets/images/Vectorpersona.svg" alt=""></a>
-        <button onclick="location.href='./cart.html'"><img src="../assets/images/Vector.svg" alt="carrito"></button>
-      </div>
-    </header>
-    <main>
-      <section class="carousel">
-        <div class="carousel-container">
-          <div class="carousel-item">
-            <img src="https://i0.wp.com/5ergiveaways.com/wp-content/uploads/2021/10/Facebook-Cover-1.png?fit=851%2C315&ssl=1" alt="Imagen 1">
-          </div>
-          <div class="carousel-item">
-            <img src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/4ce2dc45f5dcc0b44e0162f8dc4ea237.jpg" alt="Imagen 2">
-          </div>
-          <div class="carousel-item">
-            <img src="https://img.freepik.com/premium-vector/futuristic-light-red-blue-gaming-header-social-media-banner-template_136469-1321.jpg"alt="Imagen 3">
-          </div>
-        </div>
-        
-      </section>
-      
-      <section class="section_soldproducts">
-        <div class="titlesectioncontainer">
-          <p>Best Selling</p>
-          <div class="line"></div>
-        </div>
-        <div class="products_conatiner" >
-          <div class="prodcutsections" id="productBestselling" >
-            <img alt="">
-            <p>nombre del producto</p>
-            <p class="price">4090$</p>
-          </div>
-          <div class="prodcutsections" id="productBestselling">
-            <img alt="">
-            <p>nombre del producto</p>
-            <p class="price">4090$</p>
-          </div>
-          <div class="prodcutsections" id="productBestselling">
-            <img alt="">
-            <p>nombre del producto</p>
-            <p class="price">4090$</p>
-          </div>
-          <div class="prodcutsections" id="productBestselling">
-            <img alt="">
-            <p>nombre del producto</p>
-            <p class="price">4090$</p>
-          </div>
-          <div class="prodcutsections" id="productBestselling">
-            <img>
-            <p>nombre del producto</p>
-            <p class="price">4090$</p>
-          </div>
-        </div>
-      </section>
-      <section class="section_bestsProducts">
-        <div class="titlesectioncontainer">
-          <p>Best Products</p>
-          <div class="line"></div>
-        </div>
-        <div class="products_conatiner">
-          <div class="prodcutsections" id="BestProduct">
-            <img alt="">
-            <p>nombre del producto</p>
-            <p class="price">4090$</p>
-          </div>
-          <div class="prodcutsections" id="BestProduct">
-            <img alt="">
-            <p>nombre del producto</p>
-            <p class="price">4090$</p>
-          </div>
-          <div class="prodcutsections" id="BestProduct">
-            <img alt="">
-            <p>nombre del producto</p>
-            <p class="price">4090$</p>
-          </div>
-          <div class="prodcutsections" id="BestProduct">
-            <img alt="">
-            <p>nombre del producto</p>
-            <p class="price">4090$</p>
-          </div>
-          <div class="prodcutsections" id="BestProduct">
-            <img alt="">
-            <p>nombre del producto</p>
-            <p class="price">4090$</p>
-          </div>
-        </div>
-      </section>
-    </main>
-  <footer class="footer" id="seccion_contacto">
-      <h2 class="contact_title">Contact</h2>
-      <div class="social_footer_form">
-        <form class="form_footer" id="form_footer">
-          <input class="input_contact_form" type="text" name="from_name" id="from_name" placeholder="Use Name">
-          <input class="input_contact_form" type="email" name="email_id" id="email_id" placeholder="User Email">
-          <textarea class="input_message" name="message" id="message" placeholder="Message" cols="30" rows="10" style="resize: none;"></textarea>
-          <input class="send_button" type="submit" id="button_footer" value="Send">
-        </form>
-        <div class="social">
-          <a title="facebook" href="https://www.facebook.com" target="_blank" rel="noopener" class="fa fa-facebook"></a>
-          <a title="twitter" href="https://www.twitter.com" target="_blank" rel="noopener" class="fa fa-twitter"></a>
-          <a title="instagram" href="https://www.instagram.com" target="_blank" rel="noopener" class="fa fa-instagram"></a>
-          <a title="youtube" href="https://co.linkedin.com/" target="_blank" rel="noopener" class="fa fa-linkedin"></a>
-        </div>
-      </div>
-    <script src="../scripts/sendEmail.js"></script>
-    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
-  </footer>
-    <script src="../scripts/hamburguerScript.js"></script>
-    <script src="../scripts/sectionsProductsBestsSeliing.js" type="module"></script>
-    <script src="../scripts/sectionsProductsBest.js" type="module"></script>
-    <script src="../scripts/showUsername.js"></script>
-    <script src="../scripts/logOut.js"></script>
-    <script src="../scripts/caroucel.js"></script>
+        <h2 class="section-title">Shopping History</h3>
+          </header>
+          <section class="leftside">
+            <h2 class="configuration-title">User Configuration</h2>
+            <h4>Update:</h4>
+            <form class="form-update" id="form-update">
+                <input class="name inputInfoUser " type="text" name="user" id="username" placeholder="User name">
+                <input class="email inputInfoUser" type="email" name="email" id="email" placeholder="Email address">
+                <input class="password inputInfoUser" type="password" name="password" id="password" required placeholder="Password">
+                <input class="update-user" type="submit" value="Update User">
+            </form>
+            <h4>Profile Image:</h4>
+            <form class="updateImgContainer" id="profile-form">
+                <input class="upload-box" type="file" id="image" accept="image/*">
+                <input class="upload-btn" type="submit" value="Upload">
+            </form>
+            <h4>Delete Account:</h4>
+            <input class="delete-user" id="deleteUserButton" type="submit" value="Delete User">
+        </section>
+        <section class="history-container" id="historyContainer"></section>
+    <script type="module" src="../scripts/historySection.js"></script>
+    <script src="../scripts/deleteUser.js" type="module"></script>
+    <script src="../scripts/updateUser.js" type="module"></script>
     <script src="../scripts/uploadImage.js" type="module"></script>
-    <script src="../scripts/searchInput.js" type="module"></script>
+    <script src="../scripts/showUsername.js"></script>
   </body>
 </html>
