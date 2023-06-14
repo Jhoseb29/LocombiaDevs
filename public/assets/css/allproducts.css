@@ -1,8 +1,13 @@
 #product-grid {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 20px; */
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
 }
 
 .product-card {
@@ -87,15 +92,15 @@ header button {
   margin-left: 40px;
 }
 
-button:hover{
-    cursor: pointer;
+button:hover {
+  cursor: pointer;
 }
-article{
-    display: flex;
-    align-items: center;
+article {
+  display: flex;
+  align-items: center;
 }
 
-article img{
-    width: 20px;
-    transform: scalex(-1);
+article img {
+  width: 20px;
+  transform: scalex(-1);
 }
