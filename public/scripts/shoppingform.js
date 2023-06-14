@@ -175,7 +175,7 @@ function generarNumeroAleatorio() {
 }
 
 function generarEstadoAleatorio() {
-  const estados = ["exitoso", "pendiente","fracaso"];
+  const estados = ["Success", "Failed"];
   const indiceAleatorio = Math.floor(Math.random() * estados.length);
   return estados[indiceAleatorio];
 }

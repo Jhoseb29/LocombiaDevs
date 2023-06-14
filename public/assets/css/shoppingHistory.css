@@ -69,8 +69,8 @@ body{
     width: 50%;
     height: 41pc;
     float: right;
-
-    
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 .product-container{
