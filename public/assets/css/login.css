@@ -1,9 +1,8 @@
-
-body{
+body {
 
     background-image: url(../images/new-login-background.jpg);
-    
-    
+
+
     overflow: hidden;
 
     background-color: #160324;
@@ -13,10 +12,10 @@ body{
     background-attachment: fixed;
 }
 
-.login_container{
+.login_container {
     position: absolute;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
     right: 0;
     background-color: rgba(148, 137, 141, 0.584);
@@ -25,38 +24,39 @@ body{
     height: 100vh;
 }
 
-.form_login{
+.form_login {
     display: flex;
     flex-direction: column;
     margin-top: 133px;
-    justify-content:space-between;
+    justify-content: space-between;
     height: 300px;
 
 }
 
-.inputContainer{
-  display: flex;
-  flex-direction: column;
+.inputContainer {
+    display: flex;
+    flex-direction: column;
 }
 
-.login_title{
+.login_title {
     width: 241px;
     height: 45px;
     left: 284px;
     top: 133px;
-    
+
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
     font-size: 32px;
     line-height: 39px;
     text-align: center;
-    
+
     color: #FFFFFF;
-    
+
 }
 
-.user-name_input, .password_input{
+.user-name_input,
+.password_input {
     color: #FFFFFF;
     background-color: transparent;
     border: 1px solid #FFFFFF;
@@ -65,43 +65,43 @@ body{
     border-left: 0px;
 }
 
-.msError{
-  display: none;
-  text-align: left;
-  width: 300px;
-  word-wrap: break-word;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 12px;
-  color: red;
+.msError {
+    display: none;
+    text-align: left;
+    width: 300px;
+    word-wrap: break-word;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 12px;
+    color: red;
 }
 
-
-.inputError{
-  border-bottom: 1px solid rgba(255, 0, 0, 1);
+.inputError {
+    border-bottom: 1px solid rgba(255, 0, 0, 1);
 }
 
-.user-name_input, .password_input:focus{
+.user-name_input,
+.password_input:focus {
     outline: none;
 }
 
-.user-name_input::placeholder, .password_input::placeholder{ 
+.user-name_input::placeholder,
+.password_input::placeholder {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     line-height: 29px;
-    color:#ffffff;
+    color: #ffffff;
     opacity: 1;
 }
 
-
-.btn_login{
+.btn_login {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    background-color:#095458;
+    background-color: #095458;
     color: #FFFFFF;
     border: none;
     height: 28px;
@@ -110,31 +110,26 @@ body{
     transition: transform 0.5s ease;
 }
 
-.btn_login:hover{
+.btn_login:hover {
     transform: scale(1.1);
-
 }
 
-.btn_login:focus{
-
+.btn_login:focus {
     background-color: #108a90
 }
 
-.link_label{ 
+.link_label {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     text-decoration: none;
     color: #f573ac;
- 
+    cursor: pointer;
 }
 
-.advice_label{
+.advice_label {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     color: #FFFFFF;
 }
-
-/* #160324 */
-

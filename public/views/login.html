@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log-in</title>
-  
+    <title>Login</title>
+    <link rel="icon" href="../assets/images/1-04_icon-icons.com_69203.png">
     <link rel="stylesheet" href="../assets/css/reset.css">
     <link rel="stylesheet" href="../assets/css/login.css">
     <link rel="stylesheet" href="../assets/css/login-title-animation.css">
@@ -13,36 +14,37 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
- 
 
 </head>
-<body>
-   <div id="particles-js">
-    <div class="login_container">
-        <div class="wrapper">
-            <h1 class="glitch">Login</h1>
-        </div>
-        <form class="form_login" id="formId">
-            <span class="msError" id="ErorrMsTitle"></span>
-            <div class="inputContainer">
-                <input class="user-name_input" id="userId" type="text" name="user" placeholder="Username" required/>
-                <span class="msError mslogin"></span>
-            </div>
-            <div class="inputContainer">
-                <input class="password_input" id="passId" type="password" name="password" placeholder="Password" required>
-                <span class="msError mslogin"></span>
-            </div>
-            <button class="btn_login" id="submitId" type="submit">Sing in</button>
-            <p class="advice_label">New to LoComBia? <a href="./register.html" class="link_label">Create an account</a></p>
-        </form>
-    </div>
- </div>
 
-    <script src="../scripts/validationFormLogin.js" type="module"></script>   
+<body>
+    <div id="particles-js">
+        <div class="login_container">
+            <div class="wrapper">
+                <h1 class="glitch">Login</h1>
+            </div>
+            <form class="form_login" id="formId">
+                <span class="msError" id="ErorrMsTitle"></span>
+                <div class="inputContainer">
+                    <input class="user-name_input" id="userId" type="text" name="user" placeholder="Username" required />
+                    <span class="msError mslogin"></span>
+                </div>
+                <div class="inputContainer">
+                    <input class="password_input" id="passId" type="password" name="password" placeholder="Password" required>
+                    <span class="msError mslogin"></span>
+                </div>
+                <button class="btn_login" id="submitId" type="submit">Sing in</button>
+                <p class="advice_label">New to LoComBia? <a href="./register.html" class="link_label">Create an account!</a></p>
+                <p class="advice_label">Did you forget your password?<a class="link_label"
+                    onclick="window.open('https://wa.me/573117592121', '_blank')">Contacts us!</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="../scripts/validationFormLogin.js" type="module"></script>
     <script src="../scripts/particles.min.js"></script>
     <script src="../scripts/loginAnimation.js"></script>
     <script src="../scripts/login.js" type="module"></script>
-  
 
 </body>
 </html>

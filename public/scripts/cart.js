@@ -1,6 +1,5 @@
 import { Get } from "../controller/UserApi.js";
 import { producthtml } from "../controller/productcartTemplate.js";
-import { getidproductsaves } from "../controller/productseccionController.js";
 import { getCartProductsByUserId, updateCartItemQuantity, getStockProductById } from "../controller/shoppingCartController.js";
 import { removeFromCart } from "../controller/shoppingCartController.js";
 
@@ -51,9 +50,7 @@ function calcularTotal(prices) {
     return sumatoria;
 }
 
-function calcularTotaltax (subtotal){
-    return (subtotal+(subtotal*0.19))
-}
+
 
 
 function deleteProduct (arrayElementhtml){
@@ -65,7 +62,6 @@ function deleteProduct (arrayElementhtml){
             let cartitemid = parseInt(producthtml.id.split("-")[1])
             removeFromCart(iduser.id,cartitemid)
             producthtml.remove()
-            const priceshtml = document.querySelectorAll('.price')
             let arrayprices = document.querySelectorAll('.price')
             // priceshtml.forEach((element)=>{
             //     let string = element.textContent
@@ -155,11 +151,11 @@ function actualizarTotales(lista) {
     })
     
     const subtotal = calcularTotal(prices);
-    const total = calcularTotaltax(subtotal);
+    const total = subtotal;
     
-    Subtotal.textContent = "$" + subtotal.toFixed(4);
-    totaltaxes.textContent = "$" + total.toFixed(4);
-    totalbtn.textContent = "$" + total.toFixed(4);
+    Subtotal.textContent = "$" + subtotal.toFixed(2);
+    totaltaxes.textContent = "$" + total.toFixed(2);
+    totalbtn.textContent = "$" + total.toFixed(2);
 }
   
 Createproducthtml(cartproductscontainer);

@@ -28,7 +28,7 @@ input{
 }
 
 .menu{
-    align-items: center;
+    align-itlems: center;
     justify-content: center;
     height: 50px;
     display: flex;
@@ -103,7 +103,6 @@ input{
 .active[data-content]{
     display: block;
 }
-
 
 .historic{
     display: flexbox;

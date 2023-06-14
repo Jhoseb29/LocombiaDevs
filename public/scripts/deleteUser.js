@@ -1,11 +1,9 @@
 import { Delete, Get } from "../controller/UserApi.js";
 
-
 Get('historic').then(historic => {
   historic.forEach(entry => {
     const products = entry.products;
     const userId = entry.userId; // Obtiene el ID del usuario
-
 
     products.forEach(product => {
 
@@ -19,12 +17,10 @@ Get('historic').then(historic => {
   });
 });
 
-
-
 const deleteUserButton = document.getElementById("deleteUserButton");
 
 deleteUserButton.addEventListener("click", () => {
-  const confirmDelete = confirm("¿Estás seguro de eliminar tu cuenta? Esta acción no se puede deshacer.");
+  const confirmDelete = confirm("Are you sure to delete your account? This action can not be undone.");
 
   if (confirmDelete) {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -33,14 +29,14 @@ deleteUserButton.addEventListener("click", () => {
     Delete(userId)
       .then(() => {
         // Eliminación exitosa, puedes realizar acciones adicionales después de eliminar el usuario
-        alert("Tu cuenta ha sido eliminada correctamente.");
+        alert("Your account has been successfully deleted.");
         window.location.href = '../views/login.html'
         localStorage.removeItem('currentUser');
         // Redirigir al usuario a una página diferente o realizar otras acciones necesarias
       })
       .catch((error) => {
         // Manejar el error en caso de que ocurra algún problema durante la eliminación del usuario
-        alert("Error al eliminar la cuenta. Por favor, inténtalo nuevamente más tarde.");
+        alert("Failed to delete account. Please try again later.");
         console.log(error);
       });
   }
