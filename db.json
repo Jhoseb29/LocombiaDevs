@@ -30,15 +30,17 @@
       "categoryId": 1,
       "developerId": 1,
       "imgurl": "https://i.pinimg.com/564x/31/d7/07/31d707254d10d91193df42fc375066c9.jpg",
-      "likes": [1]
+      "likes": [
+        1
+      ]
     },
     {
       "id": 2,
       "name": "horizon forbiden west",
       "brand": "Marca2",
       "description": "Descripción del producto 2",
-      "stock": 54,
-      "soldUnits": 129,
+      "stock": 27,
+      "soldUnits": 156,
       "price": 20.99,
       "genre": "survival",
       "categoryId": 2,
@@ -93,8 +95,8 @@
       "name": "THE WHITCHER III",
       "brand": "Marca3",
       "description": "Descripción del producto 3",
-      "stock": 92,
-      "soldUnits": 67,
+      "stock": 91,
+      "soldUnits": 68,
       "price": 19.99,
       "genre": "RPG",
       "categoryId": 1,
@@ -109,8 +111,8 @@
       "name": "Jhoseb ",
       "brand": "asdf",
       "description": "Gaming 4000 Dpi Usb",
-      "stock": 88,
-      "soldUnits": 122,
+      "stock": 87,
+      "soldUnits": 123,
       "price": 225.5,
       "genre": "Accion",
       "categoryId": 1,
@@ -256,12 +258,8 @@
       "userId": 1,
       "products": [
         {
-          "productId": 6,
-          "quantity": 1
-        },
-        {
           "productId": 2,
-          "quantity": 27
+          "quantity": 13
         }
       ],
       "id": 4
@@ -678,6 +676,37 @@
       "card": "**** **** **** 4444 mastercard",
       "status": "exitoso",
       "id": 17
+    },
+    {
+      "userId": 1,
+      "date": "2023-06-13",
+      "products": [
+        {
+          "productId": 6,
+          "name": "THE WHITCHER III",
+          "quantity": 1,
+          "price": 19.99,
+          "imgurl": "https://i.pinimg.com/564x/14/3e/4e/143e4e9e7a8aa58c52fac80aa24a8b10.jpg"
+        },
+        {
+          "productId": 2,
+          "name": "horizon forbiden west",
+          "quantity": 27,
+          "price": 566.73,
+          "imgurl": "https://i.pinimg.com/564x/f7/a5/29/f7a529cdfc6ecb9f2b2d6d7e622e406d.jpg"
+        },
+        {
+          "productId": 8,
+          "name": "Jhoseb ",
+          "quantity": 1,
+          "price": 225.5,
+          "imgurl": "https://i.pinimg.com/550x/74/bb/34/74bb340ffe87e31837a04a538f1bbc10.jpg"
+        }
+      ],
+      "order": "503562008",
+      "card": "**** **** **** 4444 mastercard",
+      "status": "exitoso",
+      "id": 18
     }
   ]
 }
