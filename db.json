@@ -36,10 +36,12 @@
       "stock": 110,
       "soldUnits": 45,
       "price": 19.99,
-      "genre": "RPG",
+      "genre": "Adventure",
       "developerId": 1,
       "imgurl": "https://i.pinimg.com/564x/31/d7/07/31d707254d10d91193df42fc375066c9.jpg",
-      "likes": [1]
+      "likes": [
+        1
+      ]
     },
     {
       "id": 2,
@@ -49,7 +51,7 @@
       "stock": 54,
       "soldUnits": 129,
       "price": 20.99,
-      "genre": "survival",
+      "genre": "Rol",
       "developerId": 2,
       "imgurl": "https://i.pinimg.com/564x/f7/a5/29/f7a529cdfc6ecb9f2b2d6d7e622e406d.jpg",
       "likes": [
@@ -66,7 +68,7 @@
       "stock": 63,
       "soldUnits": 118,
       "price": 19.99,
-      "genre": "RPG",
+      "genre": "Adventure",
       "developerId": 1,
       "imgurl": "https://i.pinimg.com/564x/ff/f6/cd/fff6cde0a91a01b8674893642bb2c2a9.jpg",
       "likes": [
@@ -82,7 +84,7 @@
       "stock": 0,
       "soldUnits": 180,
       "price": 10.99,
-      "genre": "RPG",
+      "genre": "Adventure",
       "developerId": 1,
       "imgurl": "https://i.pinimg.com/564x/0a/b9/ab/0ab9ab85861c0f73c58b6d81a4ece4a1.jpg",
       "likes": [
@@ -97,7 +99,7 @@
       "stock": 86,
       "soldUnits": 131,
       "price": 19.79,
-      "genre": "RPG",
+      "genre": "Strategy",
       "developerId": 1,
       "imgurl": "https://i.pinimg.com/564x/0e/57/68/0e57686878934966edba7499cd39ef3f.jpg",
       "likes": [
@@ -113,7 +115,7 @@
       "stock": 92,
       "soldUnits": 67,
       "price": 19.99,
-      "genre": "RPG",
+      "genre": "Adventure",
       "developerId": 1,
       "imgurl": "https://i.pinimg.com/564x/14/3e/4e/143e4e9e7a8aa58c52fac80aa24a8b10.jpg",
       "likes": [
@@ -144,7 +146,7 @@
       "stock": 116,
       "soldUnits": 39,
       "price": 19.99,
-      "genre": "RPG",
+      "genre": "Adventure",
       "developerId": 1,
       "imgurl": "https://i.pinimg.com/564x/31/d7/07/31d707254d10d91193df42fc375066c9.jpg",
       "likes": []
@@ -157,7 +159,7 @@
       "stock": 116,
       "soldUnits": 39,
       "price": 19.99,
-      "genre": "RPG",
+      "genre": "Adventure",
       "developerId": 1,
       "imgurl": "https://i.pinimg.com/564x/31/d7/07/31d707254d10d91193df42fc375066c9.jpg",
       "likes": []
@@ -170,7 +172,7 @@
       "stock": 116,
       "soldUnits": 39,
       "price": 19.99,
-      "genre": "RPG",
+      "genre": "Adventure",
       "developerId": 1,
       "imgurl": "https://i.pinimg.com/564x/31/d7/07/31d707254d10d91193df42fc375066c9.jpg",
       "likes": []
@@ -303,6 +305,16 @@
       "userId": 8,
       "products": [],
       "id": 6
+    },
+    {
+      "userId": 0,
+      "products": [
+        {
+          "productId": 5,
+          "quantity": 1
+        }
+      ],
+      "id": 7
     }
   ],
   "historic": [
@@ -610,7 +622,7 @@
       "products": [
         {
           "productId": 5,
-          "name": "DRAG0N BALL BUDOKAI TENKAICHI 3",
+          "name": "DRAGON BALL BUDOKAI TENKAICHI 3",
           "quantity": 5,
           "price": 98.95,
           "imgurl": "https://i.pinimg.com/564x/0e/57/68/0e57686878934966edba7499cd39ef3f.jpg"

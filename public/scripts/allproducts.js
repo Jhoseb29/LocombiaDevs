@@ -8,7 +8,7 @@ let currentPage = 1; // Página actual
 const products = await Get('products')
 
 // Función para renderizar los productos en la página actual
-function renderProducts() {
+export function renderProducts(productsPerPage, products, currentPage) {
   const productGrid = document.getElementById('product-grid');
   productGrid.innerHTML = '';
 
@@ -50,7 +50,7 @@ function renderProducts() {
 }
 
 // Función para generar la paginación
-function generatePagination() {
+export function generatePagination(productsPerPage, products, currentPage) {
   const pagination = document.getElementById('pagination');
   pagination.innerHTML = '';
 
@@ -63,13 +63,13 @@ function generatePagination() {
     button.textContent = i;
     button.addEventListener('click', () => {
       currentPage = i;
-      renderProducts();
-      generatePagination();
+      renderProducts(productsPerPage, products, currentPage);
+      generatePagination(productsPerPage, products, currentPage);
     });
     pagination.appendChild(button);
   }
 }
 
 // Renderizar los productos en la página actual y generar la paginación
-renderProducts();
-generatePagination();
+renderProducts(productsPerPage, products, currentPage);
+generatePagination(productsPerPage, products, currentPage);
