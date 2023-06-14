@@ -6,7 +6,6 @@ export function getCartProductsByUserId(userId) {
   return fetch(`${API_URL}carts?userId=${userId}`)
     .then((response) => response.json())
     .then((data) => {
-      console.log("Carrito del usuario:", data);
       return data[0].products; // Devuelve los productos dentro de el carrito del usuario
     })
     .catch((error) => {
@@ -19,7 +18,6 @@ export function getCartByUserId(userId) {
   return fetch(`${API_URL}carts?userId=${userId}`)
     .then((response) => response.json())
     .then((data) => {
-      console.log("Carrito del usuario:", data);
       return data[0]; // Devuelve  el carrito del usuario
     })
     .catch((error) => {

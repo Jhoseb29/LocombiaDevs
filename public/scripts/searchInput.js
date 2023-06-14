@@ -28,9 +28,7 @@ function renderProducts(products) {
       const productElement = document.createElement('div');
       productElement.classList.add('search-div')
       productElement.textContent = product.name;
-      console.log(product)
       productElement.addEventListener('click', async () => {
-        console.log(product)
         //await saveinfogameview(product.id,product.name,product.brand,product.description,product.stock,product.solidUnits,product.price,product.genre, product.categoryId, product.developerId, product.imgurl, product.likes)
         await saveinfogameview(currentUser.id, product.name ,product.price, product.imgurl, product.id, product.description, product.genre, product.developerId)
         window.location.href = "../views/gameview.html";

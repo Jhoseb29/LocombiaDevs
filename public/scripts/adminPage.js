@@ -1,4 +1,3 @@
-
 const targets = document.querySelectorAll('[data-target]');
 const content = document.querySelectorAll('[data-content]');
 

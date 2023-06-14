@@ -5,6 +5,16 @@
       "username": "admin",
       "email": "admin@insano.com",
       "password": "admin"
+    },
+    {
+      "username": "Jhoseb",
+      "email": "jhoseb29@gmail.com",
+      "password": "2123478Pp@",
+      "firstname": "Jose",
+      "lastname": "Moya",
+      "document": "1007155706",
+      "img": "https://images7.memedroid.com/images/UPLOADED430/6075afd2d51ec.jpeg",
+      "id": 1
     }
   ],
   "products": [],
