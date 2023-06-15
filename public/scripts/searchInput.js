@@ -22,20 +22,12 @@ function renderProducts(products) {
 
   products.forEach((product) => {
     const productElement = `<div class="search-div">${product.name}</div>`;
-    //console.log(product)
-    // productElement.addEventListener('click', async () => {
-    //   //console.log(product)
-    //   //await saveinfogameview(product.id,product.name,product.brand,product.description,product.stock,product.solidUnits,product.price,product.genre, product.categoryId, product.developerId, product.imgurl, product.likes)
-    //   await saveinfogameview(currentUser.id, product.name ,product.price, product.imgurl, product.id, product.description, product.genre, product.developerId)
-    //   window.location.href = "../views/gameview.html";
-
-    // });
     fragment.push([productElement,product]);
   });
   resultsContainer.insertAdjacentHTML("afterbegin", fragment[0][0]);
   const product = fragment[0][1]
   resultsContainer.querySelector(".search-div").addEventListener("click",async()=>{
-    await saveinfogameview(currentUser.id, product.name ,product.price, product.imgurl, product.id, product.description, product.genre, product.developerId)
+    await saveinfogameview(currentUser.id, product.name ,product.price, product.imgurl, product.id, product.description, product.genre, product.brand)
     window.location.href = "../views/gameview.html";
   })
 }

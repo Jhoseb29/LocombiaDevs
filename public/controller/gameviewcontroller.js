@@ -25,22 +25,12 @@ export async function getProductLikes(productId) {
     .then((product) => {
       // Obtener la cantidad de likes del producto
       const likesCount = product.likes.length;
-      console.log(`El producto ${productId} tiene ${likesCount} likes`);
       return likesCount;
     })
     .catch((error) => console.error(error));
 }
 
-export async function getDev(devID) {
-  return fetch(`${API_URL}developers/${devID}`)
-    .then((response) => response.json())
-    .then((dev) => {
-      //obtener dev name
 
-      const devName = dev.name;
-      return devName;
-    });
-}
 
 export async function saveinfogameview(
   userid,
@@ -50,18 +40,9 @@ export async function saveinfogameview(
   productId,
   productdescription,
   productgenre,
-  developerID
-) {
-  console.log(
-    userid,
-    productname,
-    productprice,
-    producturl,
-    productId,
-    productdescription,
-    productgenre,
-    developerID
-  );
+  brand
+) 
+{
   let likes = await getProductLikes(productId);
   let liked;
   if (await hasUserLikedProduct(userid, productId)) {
@@ -69,14 +50,13 @@ export async function saveinfogameview(
   } else {
     liked = "nolike";
   }
-  const developer = await getDev(developerID);
   // Guardar los valores en el almacenamiento local
 
   let data = {
     productId:productId,
     productName: productname,
     productPrice: productprice,
-    developer: developer,
+    brand: brand,
     productGenre: productgenre,
     likes: likes,
     productURL: producturl,
@@ -85,5 +65,4 @@ export async function saveinfogameview(
   };
   data = JSON.stringify(data);
   localStorage.setItem("dataGameView", data);
-  console.log(`datos para el gameview ${data}`);
 }

@@ -1,4 +1,4 @@
-export const productsviewtemplate = (name,price,desarrollador,categoria,likes,imgurl,description,liked) => {
+export const productsviewtemplate = (name,price, brand, categoria,likes,imgurl,description,liked) => {
   const html = `<div class="view">
   <img class="productimg" src="${imgurl}"></img>
   <div class="infocontainer">
@@ -16,7 +16,7 @@ export const productsviewtemplate = (name,price,desarrollador,categoria,likes,im
       </svg>
       <p id="likecount">${likes}</p>
     </div>
-    <p class="info">${desarrollador}</p>
+    <p class="info">${brand}</p>
     <p class="info">category: ${categoria}</p>
     <p class="info">price: $${price}</p>
     <div class="btns">

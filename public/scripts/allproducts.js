@@ -43,7 +43,7 @@ export function renderProducts(productsPerPage, products, currentPage) {
     console.log(product)
     productImage.addEventListener("click",async(event)=>{
       const iduser = JSON.parse(localStorage.getItem("currentUser"));
-      await saveinfogameview(iduser.id,product.name,product.price,product.imgurl,product.id,product.description,product.genre,product.developerId)
+      await saveinfogameview(iduser.id,product.name,product.price,product.imgurl,product.id,product.description,product.genre,product.brand)
       window.location.href = "../views/gameview.html";
     })
   });

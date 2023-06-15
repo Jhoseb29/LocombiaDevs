@@ -18,7 +18,7 @@ Get("products?_sort=soldUnits&_order=desc").then((productsDB)=>{
         const productId = productsDB[i].id;
         const productdescription = productsDB[i].description;
         const productgenre = productsDB[i].genre;
-        const developerID = productsDB[i].developerId;
+        const brand = productsDB[i].brand;
         childrens[0].src = producturl
         childrens[1].textContent = productname
         childrens[2].textContent = productprice + "$" 
@@ -30,8 +30,7 @@ Get("products?_sort=soldUnits&_order=desc").then((productsDB)=>{
         //     imgproducthtml.classList.remove('agregado')
         // }
         imgproducthtml.addEventListener("click",async (event)=>{
-            console.log(iduser.id,productname,productprice,producturl,productId,productdescription,productgenre,developerID)
-            await saveinfogameview(iduser.id,productname,productprice,producturl,productId,productdescription,productgenre,developerID)
+            await saveinfogameview(iduser.id,productname,productprice,producturl,productId,productdescription,productgenre,brand)
             window.location.href = "../views/gameview.html";
             
             // const cart = getidproductsaves();

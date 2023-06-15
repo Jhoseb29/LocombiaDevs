@@ -11,10 +11,9 @@ product.addEventListener('submit', function(event){
     const stock = document.getElementById('stock');
     const price = document.getElementById('price');
     const genre = document.getElementById('genre');
-    const developerId = document.getElementById('developerId')
     const image = document.getElementById('image');
 
-    addPro(name, description, brand, stock, price, genre, developerId, image)
+    addPro(name, description, brand, stock, price, genre, image)
     .then(function(){
         product.reset()
         swal('Congratulation', 'Your product was successfully uploaded', 'success');

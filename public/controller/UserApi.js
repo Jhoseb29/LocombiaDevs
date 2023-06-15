@@ -128,7 +128,7 @@ export function toggleLike(userId, productId, likebutton, likecount) {
         productId,
         product.description,
         product.genre,
-        product.developerId
+        product.brand
       );
     })
     .catch((error) => {

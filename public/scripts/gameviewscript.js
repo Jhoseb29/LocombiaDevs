@@ -15,7 +15,6 @@ window.addEventListener("load", function () {
 });
 
 export async function createviewproduct() {
-  console.log(container);
   const dataGameView = JSON.parse(localStorage.getItem("dataGameView"));
   console.log(dataGameView);
   container.insertAdjacentHTML(
@@ -23,7 +22,7 @@ export async function createviewproduct() {
     productsviewtemplate(
       dataGameView.productName,
       dataGameView.productPrice,
-      dataGameView.developer,
+      dataGameView.brand,
       dataGameView.productGenre,
       dataGameView.likes,
       dataGameView.productURL,

@@ -43,7 +43,7 @@ footer{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px; /* Ajusta el espacio entre los elementos según tus preferencias */
-    height: 300px;
+    height: 400px;
     width: 80%;
     overflow: hidden;
 }

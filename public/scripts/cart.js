@@ -4,7 +4,6 @@ import { getCartProductsByUserId, updateCartItemQuantity, getStockProductById } 
 import { removeFromCart } from "../controller/shoppingCartController.js";
 
 const cartproductscontainer = document.getElementById("cart_products__container");
-const userImg = document.getElementById("avatar_user");
 const Subtotal = document.getElementById("Subtotal");
 const totaltaxes = document.getElementById("total");
 const totalbtn = document.getElementById("totalbtn");

@@ -124,13 +124,13 @@ async function createhistoric(last4card,cardbrand) {
     return { productId: item1.productId, name: item2.name, quantity: item1.quantity, price: item2.price, imgurl:item2.imgurl };
   });
   console.log("productsArray:",productsArray)
-  
+  const orderNumber = generarNumeroAleatorio().toString()
   //* organisar los datos en la estrucuta correcta
   const data = {
     userId : cartuser.userId,
     date: formattedDate,
     products:productsArray,
-    order: generarNumeroAleatorio().toString(),
+    order: orderNumber,
     card: `**** **** **** ${last4card} ${cardbrand}`,
     status: generarEstadoAleatorio(),
   }
@@ -144,7 +144,7 @@ async function createhistoric(last4card,cardbrand) {
     email:iduser.email,
     date: formattedDate,
     products:productsArray,
-    order: generarNumeroAleatorio().toString(),
+    order: orderNumber,
     card:`**** **** **** ${last4card} ${cardbrand}`,
   }
   //* llamamos a addHistoric para añadir ala base de datos
@@ -163,11 +163,7 @@ function showCircleAndCheckmark() {
   }, 100);
 }
 
-function hideCircleAndCheckmark() {
-  let iconContainer = document.querySelector(".icon_container");
-  iconContainer.classList.remove("active");
-  iconContainer.style.display = "none";
-}
+
 function generarNumeroAleatorio() {
   const min = 100000000; // Valor mínimo de 9 dígitos (100,000,000)
   const max = 999999999; // Valor máximo de 9 dígitos (999,999,999)

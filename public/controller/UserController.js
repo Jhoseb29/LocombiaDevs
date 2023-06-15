@@ -37,18 +37,18 @@ export const LoginUser = async(username, password) =>{
 export const UpdateUserForm = async (userId, username, email, password) => {
   const existingUser = await FindExistingUser(username, { email: email });
   if (existingUser != null) {
-    throw new Error('El nombre de usuario o el correo electrónico ya están en uso');
+    throw new Error('Username or email is already in use');
   }
 
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   if (currentUser.password !== password) {
-    throw new Error('Contraseña incorrecta. No se pueden realizar los cambios');
+    throw new Error('Incorrect password. Changes cannot be made');
   }
 
   // Obtener la información actual del usuario desde el archivo db.json
   const response = await fetch(API_URL + "users/" + userId);
   if (!response.ok) {
-    throw new Error("Error al obtener la información del usuario");
+    throw new Error("Error getting user information");
   }
   const userData = await response.json();
   // Actualizar los campos solo si se proporcionaron valores en el formulario

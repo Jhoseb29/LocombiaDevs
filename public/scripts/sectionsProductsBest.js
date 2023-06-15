@@ -1,6 +1,4 @@
 import { Get } from "../controller/UserApi.js";
-import { getidproductsaves } from "../controller/productseccionController.js";
-import { addToCart, removeFromCart, isProductInCart, getStock, createCart } from "../controller/shoppingCartController.js";
 import { saveinfogameview } from "../controller/gameviewcontroller.js"
 const products = document.querySelectorAll("#BestProduct")
 const iduser = JSON.parse(localStorage.getItem("currentUser"));
@@ -8,7 +6,6 @@ const iduser = JSON.parse(localStorage.getItem("currentUser"));
 
 
 Get("products?_sort=likes&_order=desc").then((productsDB)=>{
-    const productssave = getidproductsaves();
     for(var i = 0; i<5;i++){
         const childrens = products[i].children;
         const producturl = productsDB[i].imgurl;
@@ -17,7 +14,7 @@ Get("products?_sort=likes&_order=desc").then((productsDB)=>{
         const productId = productsDB[i].id;
         const productdescription = productsDB[i].description;
         const productgenre = productsDB[i].genre;
-        const developerID = productsDB[i].developerId;
+        const brand = productsDB[i].brand;
         childrens[0].src = producturl
         childrens[1].textContent = productname
         childrens[2].textContent = productprice + "$" 
@@ -28,10 +25,9 @@ Get("products?_sort=likes&_order=desc").then((productsDB)=>{
         // if(!productssave.includes(productId.toString())){
         //     imgproducthtml.classList.remove('agregado')
         // }
-        imgproducthtml.addEventListener("click",async(event)=>{
+        imgproducthtml.addEventListener("click",async()=>{
 
-            console.log(iduser.id,productname,productprice,producturl,productId,productdescription,productgenre,developerID)
-            await saveinfogameview(iduser.id,productname,productprice,producturl,productId,productdescription,productgenre,developerID)
+            await saveinfogameview(iduser.id,productname,productprice,producturl,productId,productdescription,productgenre,brand)
             window.location.href = "../views/gameview.html";
             // const cart = getidproductsaves();
             // const elemt = event.target
