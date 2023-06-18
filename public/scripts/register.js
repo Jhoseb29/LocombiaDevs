@@ -1,34 +1,30 @@
-import { postUser } from "../controller/UserController.js";
+import { RegisterUser } from "../controller/UserController.js";
+import { validateConfirmPass } from "./validationFormRegister.js";
+
 const registerForm = document.getElementById('registerForm');
 
+registerForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+  const username = document.getElementById('name');
+  const email = document.getElementById('email');
+  const password = document.getElementById('password');
+  const confirmPassword = document.getElementById('confirmPassword');
+  const firstname = document.getElementById('firstname'); 
+  const lastname = document.getElementById('lastname'); 
+  const docu = document.getElementById('document'); 
 
-registerForm.addEventListener('submit', function (event){
-    event.preventDefault();
-    
-    const username = document.getElementById('name').value
-    const email = document.getElementById('email').value
-    const password = document.getElementById('password').value
-    const confirmPassword = document.getElementById('confirmPassword').value;
+  if (password.value !== confirmPassword.value) {
+    validateConfirmPass(password, confirmPassword);
+    return; // Detener la ejecución si no coinciden
+  }
 
-    if (password !== confirmPassword) {
-        alert("Password and password confirmation don't match");
-        return; // Detener la ejecución si no coinciden
-    }
-    
-    postUser(username, email, password)
+  RegisterUser(username, email, password.value, firstname.value, lastname.value, docu.value)
     .then(function () {
-        // Realizar acciones adicionales después del registro exitoso
-        window.location.href = '../views/login.html'
+      // Realizar acciones adicionales después del registro exitoso
+      window.location.href = '../views/login.html';
     })
-    .catch(function (error) {
-        // Mostrar una alerta al usuario con el mensaje de error
-        alert(error.message);
-
-        document.getElementById('name').value = '';
-        document.getElementById('email').value = '';
-        document.getElementById('password').value = '';
-        document.getElementById('confirmPassword').value = '';
+    .catch(function () {
+      document.getElementById('name').value = '';
+      document.getElementById('email').value = '';
     });
-
-})
-
+});

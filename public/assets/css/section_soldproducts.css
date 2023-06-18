@@ -1,0 +1,89 @@
+
+.banner{
+    height: 400px;
+    
+}
+
+footer{
+    height: 400px;
+}
+
+.section_soldproducts,.section_bestsProducts{
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titlesectioncontainer{
+    display: flex;
+    align-items: center;
+    width: 95%;
+}
+
+.titlesectioncontainer p{
+    font-family: 'Roboto';
+    width: 120px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.line{
+    background-color: #FFFFFF;
+    width: 90%;
+    height: 1px;
+    border-radius: 5px;
+}
+
+.products_conatiner{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px; /* Ajusta el espacio entre los elementos según tus preferencias */
+    height: 400px;
+    width: 80%;
+    overflow: hidden;
+}
+
+.products_conatiner:hover {
+    cursor: pointer;
+}
+
+.prodcutsections{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.prodcutsections img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.prodcutsections img:hover {
+    transform: scale(0.9);
+}
+
+
+.prodcutsections p{
+    width: 100%;
+    margin-top: 0.3rem;
+    text-align: left;
+    text-transform: uppercase;
+    font-family: 'Oxygen';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #FFFFFF;
+}
+
+.agregado{
+    opacity: 0.3;
+}

@@ -1,0 +1,203 @@
+body {
+  background-color: rgb(17, 0, 24);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-family: "Oxygen";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20.8943px;
+  line-height: 48px;
+  color: #e1e1e1;
+}
+
+header button {
+  background: #3e0064;
+  box-shadow: inset 0px 3px 3px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  border: none;
+  width: 50px;
+  height: 50px;
+}
+
+header h2 {
+  height: 38px;
+
+  font-family: "Abhaya Libre Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 28px;
+  /* identical to box height */
+
+  color: #ffffff;
+  -webkit-text-stroke: 0.5px black; /* Para navegadores basados en WebKit */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.view {
+  display: flex;
+}
+
+.description {
+  margin-top: 40px;
+  align-self: center;
+  text-align: center;
+  width: 50%;
+  overflow-wrap: break-word;
+  font-family: "Oxygen";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20.8943px;
+  line-height: 25px;
+  color: #b6b6b6;
+}
+
+.productimg {
+  width: 250px;
+  margin-right: 70px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.title p {
+  font-family: "Oxygen";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15.8943px;
+  line-height: 48px;
+  color: #b6b6b6;
+}
+
+.title h1 {
+  margin-right: 5px;
+  font-family: "Oxygen";
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(34px, 2vw, 20px); /* Rango de tamaño de fuente */
+  color: #e1e1e1;
+  width: 300px; /* Ancho del contenedor */
+  word-wrap: break-word;
+  overflow: hidden; /* Ocultar el texto excedente */
+  text-overflow: ellipsis; /* Agregar puntos suspensivos */
+}
+
+.iconlike {
+  width: 20px;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: c;
+}
+
+.iconcart {
+  width: 50px;
+}
+
+button {
+  padding: 0px 0px;
+  height: 70px;
+  width: 140px;
+  margin-right: 70px;
+  outline: none;
+  border: none;
+  background: #673897;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Oxygen";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20.8943px;
+  line-height: 48px;
+  color: #e1e1e1;
+}
+
+.infocontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 280px;
+}
+
+.info {
+  font-family: "Oxygen";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20.8943px;
+  line-height: 48px;
+  color: #b6b6b6;
+}
+
+.addbtn {
+  background-color: #095458;
+}
+
+.activebtn {
+  opacity: 0.5;
+}
+
+.pito {
+  fill: rebeccapurple;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.like {
+  fill: red;
+}
+
+.nolike {
+  fill: #b6b6b6;
+}
+
+.agregado {
+  opacity: 0.5;
+}
+
+.errorms {
+  display: none;
+  text-align: left;
+  width: 80%;
+  word-wrap: break-word;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 12px;
+  color: red;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+  
+}
+
+svg:hover{
+  cursor: pointer;
+}
+
+svg{
+  margin-right: 10px;
+}

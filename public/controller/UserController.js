@@ -1,61 +1,78 @@
 // Funcion de registro 
-export function postUser(username, email, password) {
-    const userData = {
-      username: username,
-      email: email,
-      password: password,
-    };
-  
-    // Realizar una solicitud GET para verificar si las credenciales ya existen
-    return fetch('http://localhost:3000/users')
-      .then(response => {
-        return response.json();
-      })
-      .then(users => {
-        const existingUser = users.find(user => user.username === username || user.email === email);
-        if (existingUser) {
-          throw new Error('El nombre de usuario o el correo electrónico ya están en uso');
-        } else {
-          // Si las credenciales no existen, realizar la solicitud POST de registro
-          return fetch('http://localhost:3000/users', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(userData)
-          })
-            .then(response => {
-              
-              return response.json();
-            });
-        }
-      });
+
+const API_URL = "http://localhost:3000/"
+
+import { CreateUser, FindExistingUser } from "./UserApi.js";
+import { ValidationUser } from "../scripts/validationFormRegister.js";
+import { ValidateLogin } from "../scripts/validationFormLogin.js";
+
+export const RegisterUser = async (user, emailhtml, password, firstname, lastname, document) => {
+  const username = user.value
+  const email = emailhtml.value
+  const existingUser = await FindExistingUser(username, {email:email});
+  if(existingUser != null){
+    ValidationUser(user,emailhtml);
+    throw new Error('El nombre de usuario o el correo electrónico ya están en uso');
+  }
+  else{
+    CreateUser(username, email, password, firstname, lastname, document)
+  }
+};
+export const LoginUser = async(username, password) =>{
+  const existingUser = await FindExistingUser(username, {password:password});
+  if(existingUser == null){
+    ValidateLogin(true)
+    throw new Error("Invalid Credentials")
+  }
+  else {
+    ValidateLogin(false)
+    return existingUser
+  }
 }
 
-//Function Get User
-export function loginValidation(username, password){
-     
-    return fetch('http://localhost:3000/users', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }})
-    .then((response) =>{
-        return response.json()
-    })
-    .then((data) => {
 
-        const user = data.find(user => user.username === username && user.password === password); 
-        if (user) { 
-            return user;
-        }
-        else{
-            throw new Error("Invalid Credentials");
-        }
-    })
-    
-}
 
+
+
+export const UpdateUserForm = async (userId, username, email, password) => {
+  const existingUser = await FindExistingUser(username, { email: email });
+  if (existingUser != null) {
+    throw new Error('Username or email is already in use');
+  }
+
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  if (currentUser.password !== password) {
+    throw new Error('Incorrect password. Changes cannot be made');
+  }
+
+  // Obtener la información actual del usuario desde el archivo db.json
+  const response = await fetch(API_URL + "users/" + userId);
+  if (!response.ok) {
+    throw new Error("Error getting user information");
+  }
+  const userData = await response.json();
+  // Actualizar los campos solo si se proporcionaron valores en el formulario
+  if (username !== '') {
+    userData.username = username;
+  }
+  if (email !== '') {
+    userData.email = email;
+  }
+  if (password !== '') {
+    userData.password = password;
+  }
+
+  const response_1 = await fetch(API_URL + "users/" + userId, {
+    method: "PUT",
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(userData),
+  });
+  if (!response_1.ok) {
+    throw new Error("Error al actualizar el usuario");
+  }
+};
 
   
 

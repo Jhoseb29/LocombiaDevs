@@ -4,6 +4,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+input {
+    display: initial !important;
+  }
+  
 body
 {
     min-height: 100vh;
@@ -73,7 +78,6 @@ body
     font-size: 32px;
     line-height: 39px;
     text-align: center;
-
     color: #FFFFFF;
 }
 
@@ -81,8 +85,9 @@ body
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 40%;
+    height: 50%;
     margin-top: 30%;
+    
 }
 
 .inputInfoUser{
@@ -132,15 +137,12 @@ body
     color: #FFFCFC;
 }
 
-.agreement a{
-    text-decoration: none;
-}
+
 
 .createAccountButton{
     background: #095458;
     border-radius: 8px;
     height: 45px;
-
     font-family: 'Inter';
     font-style: normal;
     font-size: var(--font-size);
@@ -165,9 +167,28 @@ body
     /*backdrop-filter: blur(2px);*/
 }
 
+.msError{
+    display: none;
+    text-align: left;
+    width: 500px;
+    word-wrap: break-word;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 12px;
+    color: red;
+}
+
+.inputError{
+    border-bottom: 1px solid rgba(255, 0, 0, 1);
+}
+
+
 .loginLink{
     color: #ED63F2;
 }
+
 
 /* No sé para qué sirve esto xd
 .btn_login:hover{

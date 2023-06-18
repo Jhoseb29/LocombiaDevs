@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Courier New', Courier, monospace;
+    color: #fff;
+}
+
+body{
+    background-image: url('https://wallpaperaccess.com/full/16668.jpg');
+    min-height: 100vh;
+    background-size: cover;
+}
+
+.active{
+    align-items: center;
+    
+}
+
+input{
+    color: black;
+}
+
+#welcome h1{
+    color: #fff;
+    font-size: 50px;
+    padding: 100px;
+}
+
+.menu{
+    align-itlems: center;
+    justify-content: center;
+    height: 50px;
+    display: flex;
+    background-color: black;
+    margin-bottom: 50px;
+}
+
+.menu p {
+    margin-right: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-product{
+    background-color: black;
+    position: absolute;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 480px;
+    width: 500px;
+    border-color: black;
+    border-radius: 20px;
+}
+
+.form-product h1{
+    color: white;
+    margin-top: 13px;
+}
+
+.add-product{
+    margin-top: 20px;
+    display: flexbox;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inp{
+    margin: 12px;
+    width: 180px;
+    height: 40px;
+    border-radius:7px;
+}
+.add{
+    margin-top: 10px;
+    width: 80%;
+    height: 35px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.add :active{
+    transform: scale(0.6);
+}
+
+[data-content]{
+    display: none;
+}
+
+.active[data-content]{
+    display: block;
+}
+
+.historic{
+    display: flexbox;
+    background-color: black;
+    text-align: center;
+    width: 500px;
+    border-color: black;
+    border-radius: 20px;
+}
+
+.historic h1{
+    padding: 20px;
+}
+
+.list{
+    display: flexbox;
+    background-color: black;
+    text-align: center;
+    width: 500px;
+    border-color: black;
+    border-radius: 20px;
+}
+
+.list h1{
+    padding: 20px;
+}

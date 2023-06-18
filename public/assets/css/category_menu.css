@@ -1,0 +1,33 @@
+.HM_items_containe {
+    list-style: none;
+}
+
+.HM_items_container #category_li {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    transition: height 0.3s ease;
+}
+
+.HM_items_container .submenu {
+    border: none;
+    overflow: hidden;
+    height: 0;
+    transition: height 1s ease;
+}
+
+.HM_items_container .submenu li {
+    border: none;
+}
+
+.HM_items_container .submenu li a {
+    transition: color 0.6s ease;
+}
+
+.HM_items_container .submenu li:hover a {
+    color: aqua;
+}
+
+.HM_items_container li:hover .submenu {
+    height: 15em;
+}

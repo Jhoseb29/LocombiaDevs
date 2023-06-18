@@ -1,174 +1,480 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "josemon",
-      "email": "dycjh@example.com",
-      "password": "contraseña"
+      "id": 0,
+      "username": "admin",
+      "email": "admin@insano.com",
+      "password": "admin"
     },
     {
-      "id": 2,
-      "username": "maria",
-      "email": "dycjh@example.com",
-      "password": "contraseña"
+      "username": "Jhoseb",
+      "email": "jhoseb29@gmail.com",
+      "password": "DanCas19@@",
+      "firstname": "Jose",
+      "lastname": "Moya",
+      "document": "1007155706",
+      "img": "https://images7.memedroid.com/images/UPLOADED430/6075afd2d51ec.jpeg",
+      "id": 1
     }
   ],
   "products": [
     {
       "id": 1,
-      "name": "Producto1",
-      "brand": "Marca1",
-      "description": "Descripción del producto 1",
-      "stock": 10,
+      "name": "Minecraft",
+      "brand": "Microsoft",
+      "description": "Minecraft is a sandbox type video game, its literal translation would be \"sandbox\" and it is what represents the gaming experience. Players can shape the world to their liking, destroy and build, just as if they were playing in a sandbox.",
+      "stock": 20,
+      "soldUnits": 0,
+      "price": 15.47,
+      "genre": "Adventure",
+      "developerId": 3,
+      "imgurl": "https://cdn-products.eneba.com/resized-products/Dbdx7ihzJk48bASi_G0jHEgx2obfGYE_tNyWsjtJ4a4_350x200_1x-0.png",
+      "likes": []
+    },
+    {
+      "id": 2,
+      "name": "The Witcher 3: Wild Hunt",
+      "brand": "CD Projekt",
+      "description": "An immersive open-world RPG set in a dark fantasy world, where players take on the role of Geralt of Rivia, a monster hunter on a quest to find his adopted daughter.",
+      "stock": 7,
       "soldUnits": 3,
-      "price": 19.99,
-      "genre": "RPG",
-      "categoryId": 1,
-      "developerId": 1,
-      "imgurl": "https://example.com/producto1.jpg",
-      "likes": [
-        1
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Producto2",
-      "brand": "Marca2",
-      "description": "Descripción del producto 2",
-      "stock": 10,
-      "soldUnits": 2,
-      "price": 19.99,
-      "genre": "survival",
-      "categoryId": 2,
-      "developerId": 2,
-      "imgurl": "https://example.com/producto2.jpg",
-      "likes": [
-        1,
-        2
-      ]
-    }
-  ],
-  "categories": [
-    {
-      "id": 1,
-      "name": "Categoria1"
-    },
-    {
-      "id": 2,
-      "name": "Categoria2"
-    }
-  ],
-  "developers": [
-    {
-      "id": 1,
-      "name": "Fabricante1"
-    },
-    {
-      "id": 2,
-      "name": "Fabricante2"
-    }
-  ],
-  "likes": [
-    {
-      "id": 1,
-      "productId": 1,
-      "userId": 1
-    },
-    {
-      "id": 2,
-      "productId": 2,
-      "userId": 1
+      "price": 39.99,
+      "genre": "Role",
+      "developerId": 4,
+      "likes": [],
+      "imgurl": "https://th.bing.com/th/id/R.d513b547b68ab381833c08b919ca840c?rik=uz8XsRPScd3yiA&pid=ImgRaw&r=0"
     },
     {
       "id": 3,
-      "productId": 2,
-      "userId": 2
+      "name": "Grand Theft Auto V",
+      "brand": "Rockstar Games",
+      "description": "A sprawling open-world action game that takes place in Los Santos, a fictional city inspired by Los Angeles. Players can engage in a variety of criminal activities and missions, and explore a vast and detailed environment.",
+      "stock": 11,
+      "soldUnits": 4,
+      "price": 29.99,
+      "genre": "Action",
+      "developerId": 5,
+      "likes": [],
+      "imgurl": "https://th.bing.com/th/id/OIP.-UN7h2FNpPCKGwYRo2f3zgHaJH?pid=ImgDet&rs=1"
+    },
+    {
+      "id": 4,
+      "name": "FIFA 22",
+      "brand": "EA Sports",
+      "description": "Experience the excitement of football with FIFA 22. This realistic sports simulation game features updated player rosters, improved graphics, and engaging gameplay. Take your favorite team to victory in thrilling matches and compete against players from around the world.",
+      "stock": 20,
+      "soldUnits": 0,
+      "price": 59.99,
+      "genre": "Sports",
+      "developerId": 6,
+      "likes": [
+        1
+      ],
+      "imgurl": "https://th.bing.com/th/id/OIP.zsvUKOU1Ozlzf0Hy63c-GgHaJQ?pid=ImgDet&rs=1"
+    },
+    {
+      "id": 6,
+      "name": "Overwatch",
+      "brand": "Blizzard Entertainment",
+      "description": "Join the fight for the future in Overwatch, a team-based first-person shooter. Choose from a diverse cast of heroes, each with their own unique abilities and playstyles, and engage in fast-paced, objective-based matches. Coordinate with your team to secure victory and become a legend in the world of Overwatch.",
+      "stock": 12,
+      "soldUnits": 3,
+      "price": 19.99,
+      "genre": "Action",
+      "developerId": 8,
+      "likes": [],
+      "imgurl": "https://as01.epimg.net/meristation/imagenes/2017/09/14/noticia/1505393160_922483_1541682443_portada_normal.jpg"
+    },
+    {
+      "id": 5,
+      "name": "The Legend of Zelda: Breath of the Wild",
+      "brand": "Nintendo",
+      "description": "Embark on an epic adventure in the kingdom of Hyrule with Link in The Legend of Zelda: Breath of the Wild. Explore a vast open world, solve puzzles, battle fearsome enemies, and uncover the secrets of the ancient Sheikah technology to save the land from the clutches of Calamity Ganon.",
+      "stock": 15,
+      "soldUnits": 0,
+      "price": 49.99,
+      "genre": "Adventure",
+      "developerId": 7,
+      "likes": [],
+      "imgurl": "https://http2.mlstatic.com/D_NQ_NP_778183-MLM46742854337_072021-F.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Assassin's Creed Valhalla",
+      "brand": "Ubisoft",
+      "description": "Set sail on a Viking adventure in Assassin's Creed Valhalla. Explore the stunning landscapes of England, lead your clan in epic raids, build your settlement, and forge alliances to secure your place in history. Experience the brutal yet captivating world of the Vikings and shape the destiny of your people.",
+      "stock": 15,
+      "soldUnits": 0,
+      "price": 44.99,
+      "genre": "Action",
+      "developerId": 9,
+      "likes": [],
+      "imgurl": "https://image.jeuxvideo.com/medias/158826/1588264397-5261-jaquette-avant.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Red Dead Redemption 2",
+      "brand": "Rockstar Games",
+      "description": "Immerse yourself in the sprawling landscapes of the Wild West in Red Dead Redemption 2. Play as Arthur Morgan, a rugged outlaw, and experience an epic tale of loyalty, betrayal, and redemption. Engage in intense gunfights, thrilling heists, and embark on a journey that will test your morality in a vast and atmospheric open world.",
+      "stock": 25,
+      "soldUnits": 0,
+      "price": 39.99,
+      "genre": "Adventure",
+      "developerId": 5,
+      "likes": [],
+      "imgurl": "https://th.bing.com/th/id/R.5f2cc932eab5e7635db3abab4341a730?rik=ZAIycui%2faSqptw&pid=ImgRaw&r=0"
+    },
+    {
+      "id": 12,
+      "name": "Super Mario Odyssey",
+      "brand": "Nintendo",
+      "description": "Embark on a whimsical 3D platforming adventure with Mario in Super Mario Odyssey. Join Mario and his new ally, Cappy, as they travel across various kingdoms, collecting Power Moons and battling the nefarious Bowser to rescue Princess Peach. Explore vibrant worlds, solve puzzles, and experience the magic of Mario's iconic platforming gameplay.",
+      "stock": 69,
+      "soldUnits": 0,
+      "price": 49.99,
+      "genre": "Adventure",
+      "developerId": 7,
+      "likes": [],
+      "imgurl": "https://th.bing.com/th/id/R.b39e0d07bcab14cfa32b9f6f7d18ea66?rik=lOsPj3jz8PJYvg&pid=ImgRaw&r=0"
+    },
+    {
+      "id": 13,
+      "name": "The Elder Scrolls V: Skyrim",
+      "brand": "Bethesda",
+      "description": "Immerse yourself in the vast and breathtaking world of Skyrim, a critically acclaimed open-world RPG. Embark on epic quests, slay fearsome dragons, and unravel the mysteries of the land. Customize your character, master various skills, and shape your own destiny in this legendary fantasy adventure.",
+      "stock": 30,
+      "soldUnits": 0,
+      "price": 29.99,
+      "genre": "Role",
+      "developerId": 13,
+      "likes": [],
+      "imgurl": "https://th.bing.com/th/id/R.6888ecb6575920c821c275b5200cb3ac?rik=WJn8KojOwRnMcQ&pid=ImgRaw&r=0"
+    },
+    {
+      "id": 14,
+      "name": "Uncharted 4: A Thief's End",
+      "brand": "Naughty Dog",
+      "description": "Join Nathan Drake on his final adventure in Uncharted 4: A Thief's End. Follow Drake as he reunites with his long-lost brother and embarks on a globetrotting journey to uncover a hidden treasure. Experience breathtaking action sequences, solve challenging puzzles, and witness the stunning visuals of this cinematic action-adventure game.",
+      "stock": 20,
+      "soldUnits": 0,
+      "price": 34.99,
+      "genre": "Adventure",
+      "developerId": 14,
+      "likes": [],
+      "imgurl": "https://th.bing.com/th/id/R.5a57e4791f11c7113ee6674114477166?rik=JYgmHSGdlZ7sLg&pid=ImgRaw&r=0"
+    },
+    {
+      "id": 16,
+      "name": "Horizon Zero Dawn",
+      "brand": "Guerrilla Games",
+      "description": "Embark on a post-apocalyptic adventure in Horizon Zero Dawn. Play as Aloy, a skilled hunter, and explore a lush and dangerous world inhabited by robotic creatures. Uncover the mysteries of the past, harness advanced technology, and unravel the secrets of your own origin in this captivating action RPG.",
+      "stock": 25,
+      "soldUnits": 0,
+      "price": 39.99,
+      "genre": "Action",
+      "developerId": 15,
+      "likes": [],
+      "imgurl": "https://static.chollometro.com/threads/raw/default/593613_2/re/1024x1024/qt/60/593613_2.jpg"
+    },
+    {
+      "id": 17,
+      "name": "Dark Souls III",
+      "brand": "FromSoftware",
+      "description": "Embark on a dark and challenging journey in Dark Souls III. Face deadly enemies, navigate treacherous landscapes, and uncover the mysteries of the fading world. With intense combat, intricate level design, and deep lore, Dark Souls III offers a truly immersive and rewarding action RPG experience.",
+      "stock": 15,
+      "soldUnits": 0,
+      "price": 19.99,
+      "genre": "Action",
+      "developerId": 1,
+      "likes": [],
+      "imgurl": "https://th.bing.com/th/id/OIP.V0HsLTB5Arv9c3MV50SgoQHaHa?pid=ImgDet&rs=1"
+    },
+    {
+      "id": 19,
+      "name": "God of War",
+      "brand": "Santa Monica Studio",
+      "description": "Experience the epic saga of Kratos in God of War. Journey through Norse mythology as Kratos, a vengeful god seeking redemption. Battle fearsome creatures, solve intricate puzzles, and engage in intense combat in this critically acclaimed action-adventure game.",
+      "stock": 25,
+      "soldUnits": 0,
+      "price": 49.99,
+      "genre": "Action",
+      "developerId": 2,
+      "likes": [],
+      "imgurl": "https://th.bing.com/th/id/R.7f94c0ec035d07f02ec4e715a005137c?rik=zV%2bnwpoaZFHpIA&riu=http%3a%2f%2ffc05.deviantart.net%2ffs70%2fi%2f2010%2f071%2fb%2fc%2fGod_Of_War_III_Wallpaper_by_j_trogen.jpg&ehk=4bA8scoNXyNCN2zbiOuKHQat2lTVmOV2GzNJuAlFmUg%3d&risl=&pid=ImgRaw&r=0"
+    },
+    {
+      "id": 21,
+      "name": "Mortal Kombat 11",
+      "brand": "NetherRealm Studios",
+      "description": "Engage in brutal and visceral combat in Mortal Kombat 11. Choose from a roster of iconic fighters, each with their own unique abilities and fatalities, and engage in intense battles against AI or other players. With stunning graphics and a deep fighting system, Mortal Kombat 11 delivers the ultimate fighting game experience.",
+      "stock": 25,
+      "soldUnits": 0,
+      "price": 24.99,
+      "genre": "Action",
+      "developerId": 10,
+      "likes": [],
+      "imgurl": "https://th.bing.com/th/id/OIP.uMhvSo9EFKYsX-N7iszOOQHaHa?pid=ImgDet&rs=1"
+    },
+    {
+      "id": 22,
+      "name": "The Last of Us Part II",
+      "brand": "Naughty Dog",
+      "description": "Experience a gripping and emotional journey in The Last of Us Part II. Set in a post-apocalyptic world, follow Ellie as she embarks on a quest for vengeance, facing dangerous enemies and moral dilemmas along the way. With intense gameplay, stunning visuals, and a compelling story, this game pushes the boundaries of storytelling in video games.",
+      "stock": 15,
+      "soldUnits": 0,
+      "price": 59.99,
+      "genre": "Action",
+      "developerId": 14,
+      "likes": [],
+      "imgurl": "https://th.bing.com/th/id/R.849535d585273f648481acc2279bcc05?rik=ouIGNgZp3ebIOw&pid=ImgRaw&r=0"
+    },
+    {
+      "id": 23,
+      "name": "Cyberpunk 2077",
+      "brand": "CD Projekt",
+      "description": "Enter the futuristic open-world of Night City in Cyberpunk 2077. Play as V, a mercenary seeking immortality, and navigate a world of advanced technology, cybernetic enhancements, and corporate intrigue. With a branching narrative, deep customization options, and immersive gameplay, this game offers a unique cyberpunk experience.",
+      "stock": 20,
+      "soldUnits": 0,
+      "price": 49.99,
+      "genre": "Role",
+      "developerId": 4,
+      "likes": [],
+      "imgurl": "https://th.bing.com/th/id/R.845df5b7db56f9f86a920b57372b26b5?rik=jcX8gROgpfErxg&pid=ImgRaw&r=0"
+    },
+    {
+      "id": 24,
+      "name": "Resident Evil Village",
+      "brand": "Capcom",
+      "description": "Step into the world of survival horror once again in Resident Evil Village. Play as Ethan Winters as he explores a mysterious village plagued by grotesque creatures and unravel the dark secrets that lie within. With stunning graphics, intense gameplay, and a thrilling storyline, this game is a must-play for horror fans.",
+      "stock": 25,
+      "soldUnits": 0,
+      "price": 39.99,
+      "genre": "Action",
+      "developerId": 18,
+      "likes": [],
+      "imgurl": "https://th.bing.com/th/id/OIP.OwC--9wgkRFzcd3K8Z5LfQHaKj?pid=ImgDet&rs=1"
+    },
+    {
+      "id": 25,
+      "name": "Hades",
+      "brand": "Supergiant Games",
+      "description": "Descend into the underworld and defy the gods in Hades. Play as Zagreus, the son of Hades, as you battle your way through hordes of mythical creatures in an ever-changing labyrinth. With fast-paced combat, rich storytelling, and stunning artwork, this roguelike game offers a compelling and addictive gameplay experience.",
+      "stock": 20,
+      "soldUnits": 0,
+      "price": 24.99,
+      "genre": "Action",
+      "developerId": 27,
+      "likes": [],
+      "imgurl": "https://th.bing.com/th/id/R.d3414d1bd5004d895f482cf60fc0d9d4?rik=3RkdOPcv%2fTa9uA&pid=ImgRaw&r=0"
+    },
+    {
+      "id": 26,
+      "name": "Ghost of Tsushima",
+      "brand": "Sucker Punch Productions",
+      "description": "Embark on an epic samurai adventure in Ghost of Tsushima. Set in feudal Japan, follow Jin Sakai as he becomes a legendary warrior, fighting against the Mongol invasion. With a vast open world, breathtaking visuals, and intense sword combat, this game captures the essence of the samurai genre.",
+      "stock": 15,
+      "soldUnits": 0,
+      "price": 49.99,
+      "genre": "Action",
+      "developerId": 11,
+      "likes": [],
+      "imgurl": "https://th.bing.com/th/id/R.393f37585240ad30d658cf57d0a6ccb7?rik=ZW2EXP%2fMWEdJ4w&pid=ImgRaw&r=0"
+    },
+    {
+      "id": 27,
+      "name": "Animal Crossing: New Horizons",
+      "brand": "Nintendo",
+      "description": "Escape to a deserted island paradise in Animal Crossing: New Horizons. Create your own dream island, customize your character and home, and engage in various activities such as fishing, bug catching, and fossil hunting. With charming visuals, relaxing gameplay, and a vibrant community, this game offers a peaceful and delightful gaming experience.",
+      "stock": 17,
+      "soldUnits": 3,
+      "price": 23.99,
+      "genre": "Adventure",
+      "developerId": 7,
+      "likes": [],
+      "imgurl": "https://th.bing.com/th/id/OIP.Y7lFMUv3s_Z6mEAt1YaFFwHaE8?pid=ImgDet&rs=1"
+    },
+    {
+      "id": 28,
+      "name": "Doom Eternal",
+      "brand": "id Software",
+      "description": "Rip and tear through hordes of demons in Doom Eternal. As the Doom Slayer, wage war against the forces of Hell across multiple dimensions, utilizing a vast arsenal of powerful weapons and abilities. With intense first-person shooting, fast-paced gameplay, and heavy metal soundtrack, this game delivers an adrenaline-pumping experience.",
+      "stock": 15,
+      "soldUnits": 0,
+      "price": 39.99,
+      "genre": "Action",
+      "developerId": 23,
+      "likes": [],
+      "imgurl": "https://th.bing.com/th/id/R.f57244950cf991266d93b7c05cbf36b6?rik=Ni82Qf%2fb%2fYVbug&pid=ImgRaw&r=0"
+    },
+    {
+      "id": 29,
+      "name": "Final Fantasy VII Remake",
+      "brand": "Square Enix",
+      "description": "Relive the classic tale of Final Fantasy VII in a stunning remake. Join Cloud Strife and his allies as they battle against the oppressive Shinra Corporation and uncover the truth behind the mysterious Sephiroth. With breathtaking visuals, engaging combat, and a captivating storyline, this game revitalizes a beloved RPG for a new generation.",
+      "stock": 25,
+      "soldUnits": 0,
+      "price": 49.99,
+      "genre": "Role",
+      "developerId": 26,
+      "likes": [],
+      "imgurl": "https://th.bing.com/th/id/R.a2c65f253cb289cb7f1551691979d1a7?rik=pss4tFZb4VbX4w&riu=http%3a%2f%2fsolismagazine.com%2fwp-content%2fuploads%2f2020%2f04%2ffinal-fantasy-vii-remake-button-fin-1586205679705.jpg&ehk=y1uJ9MCEF7l%2bq%2b3PFceppyHJoBxJDD3VdduTbOKvfqU%3d&risl=&pid=ImgRaw&r=0"
+    },
+    {
+      "id": 30,
+      "name": "Super Smash Bros. Ultimate",
+      "brand": "Nintendo",
+      "description": "Join the ultimate crossover battle in Super Smash Bros. Ultimate. Play as iconic video game characters from various franchises and engage in frantic multiplayer battles. With a vast roster of fighters, diverse stages, and addictive gameplay, this game offers endless fun for both casual and competitive players.",
+      "stock": 15,
+      "soldUnits": 0,
+      "price": 59.99,
+      "genre": "Action",
+      "developerId": 7,
+      "likes": [],
+      "imgurl": "https://th.bing.com/th/id/OIP.tYG2avGTr63bWEOSS_A0FQAAAA?pid=ImgDet&rs=1"
+    },
+    {
+      "id": 31,
+      "name": "Age of Empires IV",
+      "brand": "Microsoft",
+      "description": "Age of Empires IV is a real-time strategy game that transports you to different historical eras. Build empires, manage resources, lead armies, and conquer territories in this acclaimed title from the Age of Empires series.",
+      "stock": 10,
+      "soldUnits": 0,
+      "price": 24.59,
+      "genre": "Strategy",
+      "developerId": 3,
+      "likes": [],
+      "imgurl": "https://th.bing.com/th/id/OIP._C5gxta3OO86YPrCgTeOcwAAAA?pid=ImgDet&rs=1"
+    },
+    {
+      "id": 32,
+      "name": "Civilization VI",
+      "brand": "2K Games",
+      "description": "Civilization VI is a turn-based strategy game where you build and expand your civilization throughout history. Explore, research technologies, establish diplomatic relationships, and compete for victory in this acclaimed strategy franchise.",
+      "stock": 10,
+      "soldUnits": 0,
+      "price": 23.65,
+      "genre": "Strategy",
+      "developerId": 19,
+      "likes": [],
+      "imgurl": "https://www.juegosparawindows.com/wp-content/uploads/2020/05/Civilization-VI.jpg"
+    },
+    {
+      "id": 33,
+      "name": "Total War: Warhammer II",
+      "brand": "Sega",
+      "description": "Total War: Warhammer II combines the large-scale strategy of the Total War series with the fantasy world of Warhammer. Control mighty factions, conquer regions, lead armies, and unleash magic in epic battles of strategy and tactics.",
+      "stock": 15,
+      "soldUnits": 0,
+      "price": 12.99,
+      "genre": "Strategy",
+      "developerId": 28,
+      "likes": [],
+      "imgurl": "https://th.bing.com/th/id/R.9dcd3617463ae6f36c8457ad55cc699e?rik=pvJ0XRth6OV%2fHQ&pid=ImgRaw&r=0"
+    },
+    {
+      "id": 34,
+      "name": "XCOM 2",
+      "brand": "2K Games",
+      "description": "XCOM 2 is a turn-based strategy game where you lead the human resistance against an alien invasion. Build and manage your base, recruit and train soldiers, research alien technologies, and engage in intense tactical missions.",
+      "stock": 20,
+      "soldUnits": 0,
+      "price": 20.99,
+      "genre": "Strategy",
+      "developerId": 19,
+      "likes": [],
+      "imgurl": "https://th.bing.com/th/id/OIP.G1SzPT_-EoazfzlHGcZebgAAAA?pid=ImgDet&rs=1"
+    },
+    {
+      "id": 35,
+      "name": "Crusader Kings III",
+      "brand": "Paradox Interactive",
+      "description": "Crusader Kings III is a strategy game that immerses you in the Middle Ages, where you lead a noble dynasty and make decisions to secure the power and legacy of your lineage. Negotiate marriages, forge alliances, engage in intrigues, and guide your family to greatness.",
+      "stock": 25,
+      "soldUnits": 0,
+      "price": 10.99,
+      "genre": "Strategy",
+      "developerId": 29,
+      "likes": [],
+      "imgurl": "https://th.bing.com/th/id/R.ef30f706208bb0a9b651ea6a6212cb7b?rik=oUo1E1Qn%2fjkahQ&pid=ImgRaw&r=0"
+    },
+    {
+      "name": "Call of Duty: Black Ops IIII",
+      "brand": "Activition",
+      "description": "Call of Duty: Black Ops 4 is a 2018 multiplayer first-person shooter developed by Treyarch and published by Activision. It was released worldwide for PlayStation 4, Windows, and Xbox One on October 12, 2018.",
+      "stock": 20,
+      "soldUnits": 0,
+      "price": 35.64,
+      "genre": "Action",
+      "developerId": 12,
+      "imgurl": "https://th.bing.com/th/id/OIP.pH95DZemtRDHg2iobjG3YwHaG1?pid=ImgDet&rs=1",
+      "likes": [],
+      "id": 36
+    },
+    {
+      "name": "Naruto Shippuden: Ultimate Ninja Storm 4",
+      "brand": "BANDAI NAMCO",
+      "description": "The narrative follows the young ninjas Naruto Uzumaki and Sasuke Uchiha as they participate in a world war between shinobi – the Fourth Shinobi World War – against the terrorist organization Akatsuki and unite to defeat it.",
+      "stock": 20,
+      "soldUnits": 0,
+      "price": 1.04,
+      "genre": "Action",
+      "imgurl": "https://cdn-products.eneba.com/resized-products/SV-WZ1beYkO-BmkdP91jFM5gXxHS1p6bRmc3n4d0koQ_350x200_1x-0.jpeg",
+      "likes": [
+        0
+      ],
+      "id": 37
     }
   ],
   "carts": [
     {
-      "id": 1,
       "userId": 1,
-      "products": [
-        {
-          "productId": 1,
-          "quantity": 1,
-          "price": 19.99
-        }
-      ]
+      "products": [],
+      "id": 1
     },
     {
-      "id": 2,
-      "userId": 2,
-      "products": [
-        {
-          "productId": 1,
-          "quantity": 2,
-          "price": 39.98
-        }
-      ]
+      "userId": 0,
+      "products": [],
+      "id": 2
     }
   ],
   "historic": [
     {
-      "id": 1,
       "userId": 1,
-      "date": "2023-05-18",
+      "date": "2023-06-14",
       "products": [
         {
-          "productId": 1,
-          "name": "Producto1",
+          "productId": 27,
+          "name": "Animal Crossing: New Horizons",
           "quantity": 1,
-          "price": 19.99
+          "price": 23.99,
+          "imgurl": "https://th.bing.com/th/id/OIP.Y7lFMUv3s_Z6mEAt1YaFFwHaE8?pid=ImgDet&rs=1"
+        },
+        {
+          "productId": 3,
+          "name": "Grand Theft Auto V",
+          "quantity": 1,
+          "price": 29.99,
+          "imgurl": "https://th.bing.com/th/id/OIP.-UN7h2FNpPCKGwYRo2f3zgHaJH?pid=ImgDet&rs=1"
+        },
+        {
+          "productId": 6,
+          "name": "Overwatch",
+          "quantity": 1,
+          "price": 19.99,
+          "imgurl": "https://as01.epimg.net/meristation/imagenes/2017/09/14/noticia/1505393160_922483_1541682443_portada_normal.jpg"
         },
         {
           "productId": 2,
-          "name": "Producto2",
+          "name": "The Witcher 3: Wild Hunt",
           "quantity": 1,
-          "price": 10
+          "price": 39.99,
+          "imgurl": "https://th.bing.com/th/id/R.d513b547b68ab381833c08b919ca840c?rik=uz8XsRPScd3yiA&pid=ImgRaw&r=0"
         }
       ],
-      "order": "123456789",
-      "card": "123456789",
-      "status": "pending"
-    },
-    {
-      "id": 2,
-      "userId": 2,
-      "date": "2023-05-18",
-      "products": [
-        {
-          "productId": 1,
-          "name": "Producto2",
-          "quantity": 1,
-          "price": 10
-        },
-        {
-          "productId": 2,
-          "name": "Producto1",
-          "quantity": 1,
-          "price": 19.99
-        }
-      ],
-      "order": "123456789",
-      "card": "123456789",
-      "status": "pending"
-    },
-    {
-      "id": 3,
-      "userId": 1,
-      "date": "2023-06-05",
-      "products": [
-        {
-          "productId": 1,
-          "name": "Producto1",
-          "quantity": 1,
-          "price": 19.99
-        }
-      ],
-      "order": "123456789",
-      "card": "123456789",
-      "status": "pending"
+      "order": "368549662",
+      "card": "**** **** **** 4444 mastercard",
+      "status": "Success",
+      "id": 1
     }
   ]
 }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/images/1-04_icon-icons.com_69203.png">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/shoppingHistory.css">
+    <link rel="stylesheet" href="../assets/css/asideUser-configuration.css">
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Shopping History</title>
+</head>
+  <body>
+    <header>
+      <div class="user-container" id="profile">
+          <img class="img-profile" id="profile-image" src="" alt="Profile Image">
+          <p id="usernameContainer"></p>
+        </div>
+        <h2 class="section-title">Shopping History</h3>
+          </header>
+          <section class="leftside">
+            <h2 class="configuration-title">User Configuration</h2>
+            <h4>Update:</h4>
+            <form class="form-update" id="form-update">
+                <input class="name inputInfoUser " type="text" name="user" id="username" placeholder="User name">
+                <input class="email inputInfoUser" type="email" name="email" id="email" placeholder="Email address">
+                <input class="password inputInfoUser" type="password" name="password" id="password" required placeholder="Password">
+                <input class="update-user" type="submit" value="Update User">
+            </form>
+            <h4>Profile Image:</h4>
+            <form class="updateImgContainer" id="profile-form">
+                <input class="upload-box" type="file" id="image" accept="image/*">
+                <input class="upload-btn" type="submit" value="Upload">
+            </form>
+            <h4>Delete Account:</h4>
+            <input class="delete-user" id="deleteUserButton" type="submit" value="Delete User">
+        </section>
+        <section class="history-container" id="historyContainer"></section>
+    <script type="module" src="../scripts/historySection.js"></script>
+    <script src="../scripts/deleteUser.js" type="module"></script>
+    <script src="../scripts/updateUser.js" type="module"></script>
+    <script src="../scripts/uploadImage.js" type="module"></script>
+    <script src="../scripts/showUsername.js"></script>
+  </body>
+</html>
